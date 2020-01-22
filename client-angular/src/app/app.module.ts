@@ -4,10 +4,11 @@ import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { TaskDisplayComponent } from "./task-display/task-display.component";
+import { PLoginComponent } from './modules/provider-ui/login/login.component';
+import { AuthenticationComponent } from './Shared/services/authentication/authentication.component';
 
 @NgModule({
-  declarations: [AppComponent, TaskDisplayComponent],
+  declarations: [AppComponent, PLoginComponent, AuthenticationComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]

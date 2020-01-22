@@ -47,3 +47,5 @@ module.exports = function(sequelize, DataTypes) {
     tableName: 'client_profile'
   });
 };
+
+
