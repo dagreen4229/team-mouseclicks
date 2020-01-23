@@ -8,9 +8,10 @@ import { PLoginComponent } from './modules/provider-ui/login/login.component';
 import { CloginComponent } from './modules/client-ui/clogin/clogin.component';
 import { AuthenticationComponent } from './Shared/services/authentication/authentication.component';
 import { HomeComponent } from './modules/home/home.component';
+import { DashboardComponent } from './modules/provider-ui/dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [AppComponent, PLoginComponent, AuthenticationComponent, HomeComponent, CloginComponent],
+  declarations: [AppComponent, PLoginComponent, AuthenticationComponent, HomeComponent, CloginComponent, DashboardComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]
