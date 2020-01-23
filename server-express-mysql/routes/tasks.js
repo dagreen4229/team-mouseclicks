@@ -2,27 +2,50 @@ var express = require("express");
 var router = express.Router();
 var models = require("../models");
 
+router.get('/', function(req,res,next) {
+  models.provider_user.findAll({ })
+    .then(pusers => {
+      let mappedPUsers = pusers.map(provider_user => (
+        {PUserId: provider_user.User_ID,
+          Username: provider_user.Username,
+          Password: provider_user.Password,
+          Email_Address: provider_user.Email_Address,
+          Admin: provider_user.Admin,
+          Deleted: provider_user.Deleted
+        }
+      ));
+      res.send(JSON.stringify(mappedPUsers));
+    });
+});
+
+
+
+
+
+/*
+
+
 router.get("/", function(req, res, next) {
-  models.Task.findAll().then(tasks => res.json(tasks));
+  models.provider_user.findAll().then(pusers => res.json(pusers));
 });
 
 router.post("/", function(req, res, next) {
-  let newTask = new models.Task();
-  newTask.name = req.body.name;
-  newTask.complete = req.body.complete;
-  newTask.save().then(task => res.json(task));
+  let newProvider = new models.provider_user();
+  newProvider.name = req.body.name;
+  newProvider.complete = req.body.complete;
+  newProvider.save().then(puser => res.json(puser));
 });
 
 router.delete("/:id", function(req, res, next) {
-  let taskId = parseInt(req.params.id);
-  models.Task.findByPk(taskId)
-    .then(task => task.destroy())
-    .then(() => res.send({ taskId }))
+  let UserId = parseInt(req.params.id);
+  models.provider_user.findByPk(UserId)
+    .then(puser => puser.destroy())
+    .then(() => res.send({ UserId }))
     .catch(err => res.status(400).send(err));
 });
 
 router.put("/:id", function(req, res, next) {
-  models.Task.update(
+  models.UserId.update(
     {
       name: req.body.name,
       complete: req.body.complete
@@ -30,7 +53,7 @@ router.put("/:id", function(req, res, next) {
     {
       where: { id: parseInt(req.params.id) }
     }
-  ).then(task => res.json(task));
+  ).then(puser => res.json(puser));
 });
-
+*/
 module.exports = router;
