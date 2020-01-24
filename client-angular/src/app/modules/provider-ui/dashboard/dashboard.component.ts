@@ -8,6 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
+  // Links for the mat-tab tags
+  navLinks = [
+    { path: 'view-calendar', label: 'Appointments'},
+    { path: 'search-records', label: 'Records Search'}
+    
+  ];
+ 
   constructor() { }
 
   ngOnInit() {
