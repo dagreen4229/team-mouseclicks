@@ -6,7 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-calendar.component.css']
 })
 export class ViewCalendarComponent implements OnInit {
-
+  navLinks = [
+    { path: '/pdashboard/view-calendar', label: 'Appointments'},
+    { path: '/pdashboard/search-records', label: 'Records Search'}
+    
+  ];
   constructor() { }
 
   ngOnInit() {

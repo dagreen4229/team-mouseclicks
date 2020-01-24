@@ -7,7 +7,8 @@ import { HomeComponent } from './modules/home/home.component';
 import { CloginComponent } from './modules/client-ui/clogin/clogin.component';
 import { DashboardComponent } from './modules/provider-ui/dashboard/dashboard.component';
 import { PaccountComponent } from './modules/provider-ui/paccount/paccount.component'
-import { ViewCalendarComponent } from './modules/dashboard/view-calendar/view-calendar.component';
+import { ViewCalendarComponent } from './modules/provider-ui/dashboard/view-calendar/view-calendar.component';
+import { SearchRecordsComponent } from './modules/provider-ui/dashboard/search-records/search-records.component';
 
 
 const routes: Routes = [
@@ -35,6 +36,10 @@ const routes: Routes = [
   {
     path: 'pdashboard/view-calendar',
     component: ViewCalendarComponent
+  },
+  {
+    path: 'pdashboard/search-records',
+    component: SearchRecordsComponent
   }
 
 ];
