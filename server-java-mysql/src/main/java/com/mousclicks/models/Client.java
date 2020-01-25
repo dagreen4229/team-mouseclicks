@@ -8,8 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "task")
-public class Patient {
+@Table(name = "client_profile")
+public class Client {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)

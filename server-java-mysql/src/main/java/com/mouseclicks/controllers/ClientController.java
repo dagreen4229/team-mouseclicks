@@ -13,39 +13,39 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mousclicks.models.Patient;
-import com.mousclicks.models.PatientRepository;
+import com.mousclicks.models.Client;
+import com.mousclicks.models.ClientRepository;
 
 @RestController
 @RequestMapping("/tasks")
-public class PatientController {
+public class ClientController {
 
   @Autowired
-  PatientRepository taskRepository;
+  ClientRepository clientRepository;
 
   @GetMapping()
-  public List<Patient> getTasks() {
-    return taskRepository.findAll();
+  public List<Client> getTasks() {
+    return clientRepository.findAll();
   }
 
   @PostMapping()
-  public Patient addTask(@RequestBody Patient task) {
-    return taskRepository.save(task);
+  public Client addTask(@RequestBody Client task) {
+    return clientRepository.save(task);
   }
 
   @DeleteMapping("/{id}")
   public void deleteTask(@PathVariable Long id) {
-    taskRepository.deleteById(id);
+    clientRepository.deleteById(id);
   }
 
   @PutMapping("/{id}")
-  public Patient updateProject(@PathVariable Long id, @RequestBody Patient task) {
-    Patient foundTask = taskRepository.findById(id).orElse(null);
-    if (foundTask != null) {
-    	foundTask.setName(task.getName());
-    	foundTask.setComplete(task.getComplete());
-      taskRepository.save(foundTask);
-      return foundTask;
+  public Client updateProject(@PathVariable Long id, @RequestBody Client client) {
+    Client foundClient = clientRepository.findById(id).orElse(null);
+    if (foundClient != null) {
+    	foundClient.setName(client.getName());
+    	foundClient.setComplete(client.getComplete());
+      clientRepository.save(foundClient);
+      return foundClient;
     }
     return null;
   }
