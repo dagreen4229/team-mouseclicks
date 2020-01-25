@@ -3,6 +3,7 @@ package com.mouseclicks.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,18 +18,19 @@ import com.mousclicks.models.Client;
 import com.mousclicks.models.ClientRepository;
 
 @RestController
-@RequestMapping("/Clients")
+//@RequestMapping("/profile")
 public class ClientController {
 
   @Autowired
   ClientRepository clientRepository;
 
-  @GetMapping()
-  public List<Client> getClients() {
+  
+  @GetMapping("/test")
+  public List<Client> getClients() { 
     return clientRepository.findAll();
   }
 
-  @PostMapping()
+  @PostMapping("/update")
   public Client addTask(@RequestBody Client client) {
     return clientRepository.save(client);
   }
@@ -42,8 +44,8 @@ public class ClientController {
   public Client updateProject(@PathVariable Long id, @RequestBody Client client) {
     Client foundClient = clientRepository.findById(id).orElse(null);
     if (foundClient != null) {
-    	foundClient.setName(client.getName());
-    	foundClient.setComplete(client.getComplete());
+    	foundClient.setFirst_Name(client.getFirst_Name());
+    	foundClient.setLast_Name(client.getLast_Name());
       clientRepository.save(foundClient);
       return foundClient;
     }
