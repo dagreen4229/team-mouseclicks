@@ -17,20 +17,20 @@ import com.mousclicks.models.Client;
 import com.mousclicks.models.ClientRepository;
 
 @RestController
-@RequestMapping("/tasks")
+@RequestMapping("/Clients")
 public class ClientController {
 
   @Autowired
   ClientRepository clientRepository;
 
   @GetMapping()
-  public List<Client> getTasks() {
+  public List<Client> getClients() {
     return clientRepository.findAll();
   }
 
   @PostMapping()
-  public Client addTask(@RequestBody Client task) {
-    return clientRepository.save(task);
+  public Client addTask(@RequestBody Client client) {
+    return clientRepository.save(client);
   }
 
   @DeleteMapping("/{id}")
