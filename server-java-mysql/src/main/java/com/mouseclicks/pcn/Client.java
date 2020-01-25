@@ -1,4 +1,4 @@
-package com.mousclicks.models;
+package com.mouseclicks.pcn;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

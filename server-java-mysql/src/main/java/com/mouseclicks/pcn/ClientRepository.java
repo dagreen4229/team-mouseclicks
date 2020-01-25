@@ -1,4 +1,4 @@
-package com.mousclicks.models;
+package com.mouseclicks.pcn;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
