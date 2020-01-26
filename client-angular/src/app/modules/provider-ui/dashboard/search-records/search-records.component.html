@@ -1,0 +1,19 @@
+<nav>
+    <a routerLink = "" routerLinkActive = "active">Logout</a> 
+    <br>
+    <a routerLink = "/pdashboard/account" routerLinkActine = "active">My Account</a>
+</nav>
+
+<nav mat-tab-nav-bar>
+    <a mat-tab-link
+       *ngFor="let link of navLinks"
+       [routerLink]="link.path"
+       routerLinkActive #rla="routerLinkActive"
+       [active]="rla.isActive">
+      {{link.label}}
+    </a>
+  </nav>
+
+  <h1> Search Records works! </h1>
+
+  <router-outlet></router-outlet>
