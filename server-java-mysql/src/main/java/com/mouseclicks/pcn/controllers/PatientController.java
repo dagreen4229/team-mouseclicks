@@ -1,4 +1,4 @@
-package com.example.groupproject.controllers;
+package com.mouseclicks.pcn.controllers;
 
 import java.util.List;
 
@@ -13,38 +13,38 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.groupproject.models.Task;
-import com.example.groupproject.models.TaskRepository;
+import com.mouseclicks.pcn.models.Patient;
+import com.mouseclicks.pcn.models.PatientRepository;
 
 @RestController
 @RequestMapping("/tasks")
-public class TaskController {
+public class PatientController {
 
   @Autowired
-  TaskRepository taskRepository;
+  PatientRepository PatientRepository;
 
   @GetMapping()
-  public List<Task> getTasks() {
-    return taskRepository.findAll();
+  public List<Patient> getTasks() {
+    return PatientRepository.findAll();
   }
 
   @PostMapping()
-  public Task addTask(@RequestBody Task task) {
-    return taskRepository.save(task);
+  public Patient addTask(@RequestBody Patient task) {
+    return PatientRepository.save(task);
   }
 
   @DeleteMapping("/{id}")
   public void deleteTask(@PathVariable Long id) {
-    taskRepository.deleteById(id);
+    PatientRepository.deleteById(id);
   }
 
   @PutMapping("/{id}")
-  public Task updateProject(@PathVariable Long id, @RequestBody Task task) {
-    Task foundTask = taskRepository.findById(id).orElse(null);
+  public Patient updateProject(@PathVariable Long id, @RequestBody Patient task) {
+    Patient foundTask = PatientRepository.findById(id).orElse(null);
     if (foundTask != null) {
     	foundTask.setName(task.getName());
     	foundTask.setComplete(task.getComplete());
-      taskRepository.save(foundTask);
+      PatientRepository.save(foundTask);
       return foundTask;
     }
     return null;
