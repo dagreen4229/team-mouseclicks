@@ -3,16 +3,16 @@
     <br>
     <a routerLink = "account" routerLinkActine = "active">My Account</a>
 </nav>
-Provider Dashboard
+
 <nav mat-tab-nav-bar>
-    <a mat-tab-link
-       *ngFor="let link of navLinks"
-       [routerLink]="link.path"
-       routerLinkActive #rla="routerLinkActive"
-       [active]="rla.isActive">
+    <a mat-tab-link 
+      *ngFor="let link of navLinks"
+      [routerLink]="link.path"
+      routerLinkActive #rla="routerLinkActive"
+      [active]="rla.isActive">
       {{link.label}}
     </a>
   </nav>
-  
+  <h3>This is test text.  Pay no heed to the man behind the curtain</h3>
   <router-outlet></router-outlet>
 

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Puser } from 'src/app/models/puser'
+import { fromEventPattern } from 'rxjs';
 
 @Component({
   selector: 'app-paccount',
@@ -6,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./paccount.component.css']
 })
 export class PaccountComponent implements OnInit {
+  @Input() Puser: Puser;
 
   constructor() { }
 
