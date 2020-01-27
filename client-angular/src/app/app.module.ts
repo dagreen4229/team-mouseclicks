@@ -1,6 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
 
@@ -13,31 +13,36 @@ import { DashboardComponent } from './modules/provider-ui/dashboard/dashboard.co
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatTabsModule } from '@angular/material/tabs';
+//import { FilterPipe } from './Shared/services/filter.pipe';
+//import { ProviderUIModule } from './modules/provider-ui/provider-ui.module';
+import { PaccountComponent } from './modules/provider-ui/paccount/paccount.component';
 import { ViewCalendarComponent } from './modules/provider-ui/dashboard/view-calendar/view-calendar.component';
 import { SearchRecordsComponent } from './modules/provider-ui/dashboard/search-records/search-records.component';
-import { PaccountComponent } from './modules/provider-ui/paccount/paccount.component';
 import { DisplayClientComponent } from './modules/provider-ui/dashboard/display-client/display-client.component';
+import { SearchClientsComponent } from './modules/provider-ui/dashboard/search-clients/search-clients.component';
 
 
 
 @NgModule({
 
   declarations: [
-    AppComponent, 
-    PLoginComponent, 
+    AppComponent,  
     AuthenticationComponent, 
     HomeComponent, 
-    CloginComponent, 
-    DashboardComponent, 
-    ViewCalendarComponent, 
-    SearchRecordsComponent,
+    CloginComponent,   
+//    FilterPipe,
+    PLoginComponent,
+    DashboardComponent,
     PaccountComponent,
+    ViewCalendarComponent,
+    SearchRecordsComponent,
+    SearchClientsComponent,
     DisplayClientComponent
   ],
 
   imports: [
     BrowserModule, 
-    AppRoutingModule, 
+    AppRoutingModule,
     FormsModule, 
     HttpClientModule, 
     BrowserAnimationsModule, 

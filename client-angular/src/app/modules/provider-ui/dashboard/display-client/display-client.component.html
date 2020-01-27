@@ -1,5 +1,25 @@
-<div class="client-listing">
+<!--<div class="client-listing">
     <div class="clientName">
         {{ cprofiles.Last_name }}, {{ cprofiles.First_name }}
     </div>
-</div>
+    <div class="client-detail">
+        <div>Client ID - {{ cprofiles.Client_ID }}</div>
+        <div>
+            Client Date of Birth: {{ cprofiles.DOB }}
+        </div>
+        <div>Client Address: {{ cprofiles.Street_Address }}, {{ cprofiles.City }} {{ cprofiles.State }}</div>
+        <div>Client Phone Number: {{ cprofiles.Phone_number }}</div>
+    </div>
+    <button data-toggle="collapse" data-target='#client-detail' >Client Details</button>
+</div> -->
+
+<tr>
+    <td>{{ cprofiles.Client_ID }}</td>
+    <td>{{ cprofiles.Last_name }}</td>
+    <td>{{ cprofiles.First_name }}</td>
+    <td>{{ cprofiles.DOB }}</td>
+    <td>{{ cprofiles.Phone_number }}</td>
+    <td>{{ cprofiles.Street_Address }}</td>
+    <td>{{ cprofiles.City }}</td>
+    <td>{{ cprofiles.State }}</td>
+</tr>
