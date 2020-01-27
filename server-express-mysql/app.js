@@ -1,9 +1,11 @@
+var createError = require('http-errors');
 var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var models = require("./models");
 var cors = require("cors");
+
 
 var tasksRouter = require("./routes/tasks");
 
@@ -16,7 +18,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
 
-app.use("/tasks", tasksRouter);
+app.use("", tasksRouter);
 
 models.sequelize.sync().then(function() {
   console.log("DB Sync'd up");
