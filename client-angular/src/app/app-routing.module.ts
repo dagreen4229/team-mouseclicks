@@ -3,24 +3,29 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 
 import { PLoginComponent } from './modules/provider-ui/login/login.component';
+
 import { HomeComponent } from './modules/home/home.component';
 import { CloginComponent } from './modules/client-ui/clogin/clogin.component';
 import { DashboardComponent } from './modules/provider-ui/dashboard/dashboard.component';
 import { PaccountComponent } from './modules/provider-ui/paccount/paccount.component'
 import { ViewCalendarComponent } from './modules/provider-ui/dashboard/view-calendar/view-calendar.component';
 import { SearchRecordsComponent } from './modules/provider-ui/dashboard/search-records/search-records.component';
+ group-dev-file
 
 
 const routes: Routes = [
+
 
 {
     path: '',
     component: HomeComponent
   },
+group-dev-file
   {
     path: 'plogin',
     component: PLoginComponent
   },
+
   {
     path: 'clogin',
     component: CloginComponent
@@ -41,6 +46,7 @@ const routes: Routes = [
     path: 'pdashboard/search-records',
     component: SearchRecordsComponent
   }
+group-dev-file
 
 ];
 

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 
+=======
+
+group-dev-file
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -8,6 +11,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
+
+=======
   // Links for the mat-tab tags
   navLinks = [
     { path: 'view-calendar', label: 'Appointments'},
@@ -15,6 +20,7 @@ export class DashboardComponent implements OnInit {
     
   ];
  
+group-dev-file
   constructor() { }
 
   ngOnInit() {

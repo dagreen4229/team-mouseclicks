@@ -5,6 +5,13 @@ import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { PLoginComponent } from './modules/provider-ui/login/login.component';
+
+import { AuthenticationComponent } from './Shared/services/authentication/authentication.component';
+
+@NgModule({
+  declarations: [AppComponent, PLoginComponent, AuthenticationComponent],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+=======
 import { CloginComponent } from './modules/client-ui/clogin/clogin.component';
 import { AuthenticationComponent } from './Shared/services/authentication/authentication.component';
 import { HomeComponent } from './modules/home/home.component';
@@ -19,6 +26,7 @@ import { SearchRecordsComponent } from './modules/provider-ui/dashboard/search-r
 @NgModule({
   declarations: [AppComponent, PLoginComponent, AuthenticationComponent, HomeComponent, CloginComponent, DashboardComponent, PaccountComponent, ViewCalendarComponent, SearchRecordsComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, BrowserAnimationsModule, MatSliderModule, MatTabsModule],
+group-dev-file
   providers: [],
   bootstrap: [AppComponent]
 })
