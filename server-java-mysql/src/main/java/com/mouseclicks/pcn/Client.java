@@ -1,5 +1,7 @@
 package com.mouseclicks.pcn;
 
+// import java.util.UUID;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,76 +13,88 @@ import javax.persistence.Table;
 @Table(name = "client_profile")
 public class Client {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  private Long id;
-  private String First_Name;
-  private String Last_Name;
-  private String DOB;
-  private String Phone_Number;
-  private String Street_Address;
-  private String City;
-  private String State;
-  private String Profile_Pic;
-  
-  
-public Long getId() {
-	return id;
-}
-public void setId(Long id) {
-	this.id = id;
-}
-public String getFirst_Name() {
-	return First_Name;
-}
-public void setFirst_Name(String first_Name) {
-	First_Name = first_Name;
-}
-public String getLast_Name() {
-	return Last_Name;
-}
-public void setLast_Name(String last_Name) {
-	Last_Name = last_Name;
-}
-public String getDOB() {
-	return DOB;
-}
-public void setDOB(String dOB) {
-	DOB = dOB;
-}
-public String getPhone_Number() {
-	return Phone_Number;
-}
-public void setPhone_Number(String phone_Number) {
-	Phone_Number = phone_Number;
-}
-public String getStreet_Address() {
-	return Street_Address;
-}
-public void setStreet_Address(String street_Address) {
-	Street_Address = street_Address;
-}
-public String getCity() {
-	return City;
-}
-public void setCity(String city) {
-	City = city;
-}
-public String getState() {
-	return State;
-}
-public void setState(String state) {
-	State = state;
-}
-public String getProfile_Pic() {
-	return Profile_Pic;
-}
-public void setProfile_Pic(String profile_Pic) {
-	Profile_Pic = profile_Pic;
-}
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer id_client_user;
+	private String city;
+	private String dob;
+	private String first_name;
+	private String last_name;
+	private String phone_number;
+	private String profile_pic;
+	private String state;
+	private String street_address;
 
+	public Integer getId_client_user() {
+		return id_client_user;
+	}
+
+	public void setId_client_user(Integer id_client_user) {
+		this.id_client_user = id_client_user;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getDob() {
+		return dob;
+	}
+
+	public void setDob(String dob) {
+		this.dob = dob;
+	}
+
+	public String getFirst_name() {
+		return first_name;
+	}
+
+	public void setFirst_name(String first_name) {
+		this.first_name = first_name;
+	}
+
+	public String getLast_name() {
+		return last_name;
+	}
+
+	public void setLast_name(String last_name) {
+		this.last_name = last_name;
+	}
+
+	public String getPhone_number() {
+		return phone_number;
+	}
+
+	public void setPhone_number(String phone_number) {
+		this.phone_number = phone_number;
+	}
+
+	public String getProfile_pic() {
+		return profile_pic;
+	}
+
+	public void setProfile_pic(String profile_pic) {
+		this.profile_pic = profile_pic;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public String getStreet_address() {
+		return street_address;
+	}
+
+	public void setStreet_address(String street_address) {
+		this.street_address = street_address;
+	}
 
 }
-
-
- 
