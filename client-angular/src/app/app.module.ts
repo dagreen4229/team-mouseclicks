@@ -20,6 +20,8 @@ import { ViewCalendarComponent } from './modules/provider-ui/dashboard/view-cale
 import { SearchRecordsComponent } from './modules/provider-ui/dashboard/search-records/search-records.component';
 import { DisplayClientComponent } from './modules/provider-ui/dashboard/display-client/display-client.component';
 import { SearchClientsComponent } from './modules/provider-ui/dashboard/search-clients/search-clients.component';
+import { RegisterComponent } from './modules/provider-ui/register/register.component';
+import { SetupAccountComponent } from './modules/provider-ui/register/setup-account/setup-account.component';
 
 
 
@@ -37,7 +39,9 @@ import { SearchClientsComponent } from './modules/provider-ui/dashboard/search-c
     ViewCalendarComponent,
     SearchRecordsComponent,
     SearchClientsComponent,
-    DisplayClientComponent
+    DisplayClientComponent,
+    RegisterComponent,
+    SetupAccountComponent
   ],
 
   imports: [

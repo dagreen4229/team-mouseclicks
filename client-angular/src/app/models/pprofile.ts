@@ -6,5 +6,6 @@ export class pprofile {
     City: string;
     State: string;
     Phone_number: number;
+    Bio:string;
     Deleted: boolean
 }

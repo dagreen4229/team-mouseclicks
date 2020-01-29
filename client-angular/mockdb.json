@@ -8,6 +8,8 @@
             "City": "Los Angeles",
             "State":"CA",
             "Phone_number": "5551234567",
+            "Bio":"This is where the doctors bio would be...",
+            "PPic": "/mockdrpics/drphil",
             "Deleted":"0"
         },
         {
@@ -18,6 +20,7 @@
             "City": "Calabasas",
             "State":"CA",
             "Phone_number": "5554564567",
+            "Bio":"This is where the doctors bio would be...",
             "Deleted":"0"
         },
         {
@@ -28,6 +31,7 @@
             "City": "Springfield",
             "State":"VA",
             "Phone_number": "5550001234",
+            "Bio":"This is where the doctors bio would be...",
             "Deleted":"0"
         },
         {
@@ -38,6 +42,7 @@
             "City": "Los Angeles",
             "State":"CA",
             "Phone_number": "5557894567",
+            "Bio":"This is where the doctors bio would be...",
             "Deleted":"0"
         },
         {
@@ -48,6 +53,7 @@
             "City": "London",
             "State":"EU",
             "Phone_number": "7646517894",
+            "Bio":"This is where the doctors bio would be...",
             "Deleted":"0"
         }
     ],
@@ -172,7 +178,7 @@
             "Street_Address": "1040 Howie St",
             "City": "New York",
             "State":"NY",
-            "Profile_Pic":"",
+            "Profile_Pic":"/mockclientpics/pic004",
             "Deleted":0
         }
     ]

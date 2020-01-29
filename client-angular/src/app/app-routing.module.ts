@@ -9,6 +9,8 @@ import { DashboardComponent } from './modules/provider-ui/dashboard/dashboard.co
 import { PaccountComponent } from './modules/provider-ui/paccount/paccount.component'
 import { ViewCalendarComponent } from './modules/provider-ui/dashboard/view-calendar/view-calendar.component';
 import { SearchRecordsComponent } from './modules/provider-ui/dashboard/search-records/search-records.component';
+import { RegisterComponent } from './modules/provider-ui/register/register.component';
+import { SetupAccountComponent } from './modules/provider-ui/register/setup-account/setup-account.component';
 
 
 const routes: Routes = [
@@ -40,6 +42,14 @@ const routes: Routes = [
   {
     path: 'pdashboard/search-records',
     component: SearchRecordsComponent
+  },
+  {
+    path: 'plogin/register',
+    component: RegisterComponent
+  },
+  {
+    path: 'plogin/setup-account',
+    component: SetupAccountComponent
   }
 
 ];

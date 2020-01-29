@@ -9,7 +9,8 @@
        *ngFor="let link of navLinks"
        [routerLink]="link.path"
        routerLinkActive #rla="routerLinkActive"
-       [active]="rla.isActive">
+       [active]="rla.isActive"
+       style="color:black">
       {{link.label}}
     </a>
   </nav>
@@ -40,14 +41,14 @@
         <td>{{ cprofiles.Street_Address }}</td>
         <td>{{ cprofiles.City }}</td>
         <td>{{ cprofiles.State }}</td>
-        <td><a href=" ">Medical History</a></td>
+        <td><a href="">Medical History</a></td>
       </tr>
       
   <!--  <app-display-client *ngFor="let cprofiles of cprofiles" [cprofiles] = 'cprofiles'></app-display-client>-->
     </tbody>
   </table>
 
-      
+
     
   
 
