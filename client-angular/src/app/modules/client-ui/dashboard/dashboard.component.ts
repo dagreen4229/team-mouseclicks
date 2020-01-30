@@ -1,51 +1,24 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { first } from 'rxjs/operators';
+import { Component, OnInit } from '@angular/core';
 
-import { Task } from '@../../models';
-import { UserService, AuthenticationService } from //'@/_services';
-    import { Task } from 'src/app/models/task';
 
-@Component({ templateUrl: 'dashboard.component.html' })
-export class HomeComponent implements OnInit, OnDestroy {
-    currentUser: Task,
-    currentUserSubscription: Subscription;
-    users: Task[] = [];
 
-    constructor(
-        private authenticationService: AuthenticationService,
-        private userService: UserService
-    ) {
-        this.currentUserSubscription =  this.authenticationService.currentUser.subscribe(task => {
-            this.currentUser = task;
-        });
-    }
-}
+@Component({
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css']
+})
+export class DashboardComponent implements OnInit {
 
-//  selector: 'app-dashboard',
-//  templateUrl: './dashboard.component.html',
-// styleUrls: ['./dashboard.component.css']
-//})
-
+  // Links for the mat-tab tags
+  navLinks = [
+    { path: 'view-calendar', label: 'Appointments'},
+    { path: 'search-records', label: 'Records Search'}
+    
+  ];
+ 
+  constructor() { }
 
   ngOnInit() {
-      this.loadAllUsers();
-  }
-
-  ngOnDestroy() {
-      this.currentUserSubscription.unsubscribe();
-  }
-
-  deleteUser(id: number) {
-      this.userService.delete(id).pipe(first()).subscribe(() => {
-          this.loadAllUsers()
-      });
-  }
-
-  private loadAllUsers() {
-      this.userService.getAll().pipe(first()).subscribe(users => {
-          this.users = users;
-      });
   }
 
 }
