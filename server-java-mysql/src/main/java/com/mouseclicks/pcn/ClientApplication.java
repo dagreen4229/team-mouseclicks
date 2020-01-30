@@ -7,7 +7,7 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
-public class PatientApplication {
+public class ClientApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(PcnApplication.class, args);
