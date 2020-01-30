@@ -1,21 +1,17 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 
-import { PLoginComponent } from './modules/provider-ui/login/login.component';
+import { DashboardComponent } from './dashboard';
+import { LoginComponent } from './login';
+import { RegisterComponent } from './register';
 
 
-const routes: Routes = [
+const appRoutes: Routes = [
+    { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+    { path: 'login', component: LoginComponent },
+    { path: 'register', component: RegisterComponent },
 
-  {
-    path: 'plogin',
-    component: PLoginComponent
-  },
-
+    // otherwise redirect to home
+    { path: '**', redirectTo: '' }
 ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+export const routing = RouterModule.forRoot(appRoutes);

@@ -1,5 +1,8 @@
 export class Task {
-  id: string;
-  name: string;
+  id: number;
+  username: string;
+  password: string;
+  firstName: string;
+  lastName: string;
   complete: boolean;
 }
