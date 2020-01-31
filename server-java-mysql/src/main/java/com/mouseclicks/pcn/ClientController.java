@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/client")
-public class clientProfileController {
+public class ClientController {
 
 	@Autowired
 	ClientRepository clientRepository;
@@ -43,6 +43,7 @@ public class clientProfileController {
 
 	}
 
+	// Create client profiles.
 	@PostMapping("/create")
 	public ResponseEntity<Client> addClient(@RequestBody Client client) {
 		//Code to eventually add UUID's, it's just a stretch goal for now.
