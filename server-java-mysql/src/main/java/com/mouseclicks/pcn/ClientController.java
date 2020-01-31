@@ -54,7 +54,7 @@ public class ClientController {
 	}
 
 	// Update client profiles.
-	@PutMapping("/post/{id}")
+	@PutMapping("/update/{id}")
 	public ResponseEntity<Client> updatePost(@RequestBody Client client, @PathVariable(value = "id") Long id) {
 		Client foundClient = clientRepository.findById(id).orElse(null);
 		if (foundClient == null) {
