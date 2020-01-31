@@ -8,7 +8,7 @@ import { CloginComponent } from './modules/client-ui/clogin/clogin.component';
 import { DashboardComponent } from './modules/provider-ui/dashboard/dashboard.component';
 import { PaccountComponent } from './modules/provider-ui/paccount/paccount.component'
 import { ViewCalendarComponent } from './modules/provider-ui/dashboard/view-calendar/view-calendar.component';
-import { SearchRecordsComponent } from './modules/provider-ui/dashboard/search-records/search-records.component';
+import { SearchRecordsComponent } from './modules/provider-ui/dashboard/search-records/search-records.component'; 
 import { RegisterComponent } from './modules/provider-ui/register/register.component';
 import { SetupAccountComponent } from './modules/provider-ui/register/setup-account/setup-account.component';
 import { ClientDetailComponent } from './modules/provider-ui/dashboard/client-detail/client-detail.component';
