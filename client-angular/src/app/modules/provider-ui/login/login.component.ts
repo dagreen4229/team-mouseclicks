@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 
-=======
 /* This file will show when a user clicks on the "Provider Login" link on the default route */
 
-group-dev-file
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
