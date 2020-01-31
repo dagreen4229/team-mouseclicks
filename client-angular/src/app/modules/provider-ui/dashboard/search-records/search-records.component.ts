@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
 import { cprofile } from 'src/app/models/cprofile';
 import { ClientProfileService } from 'src/app/Shared/services/client-profile.service'
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,7 +17,7 @@ export class SearchRecordsComponent implements OnInit {
   ];
 
   //Inputs for search plug-in
-  @Input() groupFilters: Object;
+  @Input() groupFilters: Object; 
   @Input() searchByKeyword: string;
   filteredProfiles: any[] = [];
 
@@ -25,9 +27,12 @@ export class SearchRecordsComponent implements OnInit {
   getProfiles(): void {
     this.ClientProfileService.getProfiles().subscribe(p => this.cprofiles = p)
   };
-
-  constructor(private ClientProfileService: ClientProfileService
-  //  ,private ref: ChangeDetectorRef
+/*
+  toMedicalHistory() {
+    this.navigate(['/history', this.cprofiles.Client_ID])
+  }
+*/
+  constructor(private ClientProfileService: ClientProfileService, private route:ActivatedRoute, private router: Router  //  ,private ref: ChangeDetectorRef
     ) { }
 
   ngOnInit(): void {

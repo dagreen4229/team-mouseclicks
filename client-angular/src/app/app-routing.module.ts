@@ -11,6 +11,7 @@ import { ViewCalendarComponent } from './modules/provider-ui/dashboard/view-cale
 import { SearchRecordsComponent } from './modules/provider-ui/dashboard/search-records/search-records.component';
 import { RegisterComponent } from './modules/provider-ui/register/register.component';
 import { SetupAccountComponent } from './modules/provider-ui/register/setup-account/setup-account.component';
+import { ClientDetailComponent } from './modules/provider-ui/dashboard/client-detail/client-detail.component';
 
 
 const routes: Routes = [
@@ -50,6 +51,10 @@ const routes: Routes = [
   {
     path: 'plogin/setup-account',
     component: SetupAccountComponent
+  },
+  {
+    path: 'history/:Client_ID',
+    component: ClientDetailComponent
   }
 
 ];

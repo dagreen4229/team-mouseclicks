@@ -22,6 +22,7 @@ import { DisplayClientComponent } from './modules/provider-ui/dashboard/display-
 import { SearchClientsComponent } from './modules/provider-ui/dashboard/search-clients/search-clients.component';
 import { RegisterComponent } from './modules/provider-ui/register/register.component';
 import { SetupAccountComponent } from './modules/provider-ui/register/setup-account/setup-account.component';
+import { ClientDetailComponent } from './modules/provider-ui/dashboard/client-detail/client-detail.component';
 
 
 
@@ -41,7 +42,8 @@ import { SetupAccountComponent } from './modules/provider-ui/register/setup-acco
     SearchClientsComponent,
     DisplayClientComponent,
     RegisterComponent,
-    SetupAccountComponent
+    SetupAccountComponent,
+    ClientDetailComponent
   ],
 
   imports: [

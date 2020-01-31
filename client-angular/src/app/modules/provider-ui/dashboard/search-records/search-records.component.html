@@ -41,7 +41,7 @@
         <td>{{ cprofiles.Street_Address }}</td>
         <td>{{ cprofiles.City }}</td>
         <td>{{ cprofiles.State }}</td>
-        <td><a href="">Medical History</a></td>
+        <td><a [routerLink] = "['/history', cprofiles.Client_ID]">Medical History</a></td>
       </tr>
       
   <!--  <app-display-client *ngFor="let cprofiles of cprofiles" [cprofiles] = 'cprofiles'></app-display-client>-->
