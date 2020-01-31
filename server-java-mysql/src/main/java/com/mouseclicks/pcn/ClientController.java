@@ -24,14 +24,13 @@ public class ClientController {
 
 //I'm not even sure if we'll need a method to list all the profiles, so I'm just leaving this
 //one commented out:
-	
+
 	@GetMapping("/profiles")
-	public ResponseEntity<List<Client>> getClients(){
+	public ResponseEntity<List<Client>> getClients() {
 		return ResponseEntity.ok(clientRepository.findAll());
 	}
 
-	
-	//Find client profiles by id.
+	// Find client profiles by id.
 	@GetMapping("/profile/{id}")
 	public ResponseEntity<Client> getClient(@PathVariable(value = "id") Long id) {
 		Client foundClient = clientRepository.findById(id).orElse(null);
@@ -46,13 +45,37 @@ public class ClientController {
 	// Create client profiles.
 	@PostMapping("/create")
 	public ResponseEntity<Client> addClient(@RequestBody Client client) {
-		//Code to eventually add UUID's, it's just a stretch goal for now.
-		
+		// Code to eventually add UUID's, it's just a stretch goal for now.
+
 		// UUID uuid = UUID.randomUUID();
 		// client.setId(uuid);
-		
 
 		return ResponseEntity.ok(clientRepository.save(client));
+	}
+
+	// Update client profiles.
+	@PutMapping("/post/{id}")
+	public ResponseEntity<Client> updatePost(@RequestBody Client client, @PathVariable(value = "id") Long id) {
+		Client foundClient = clientRepository.findById(id).orElse(null);
+		if (foundClient == null) {
+			return ResponseEntity.notFound().header("Client", "No clients found with that id").build();
+		} else {
+			return ResponseEntity.ok(clientRepository.save(client));
+		}
+
+	}
+
+	// Delete client profiles.
+	@DeleteMapping("/delete/{id}")
+	public ResponseEntity<Client> deleteClient(@RequestBody Client client, @PathVariable(value = "id") Long id) {
+		Client foundClient = clientRepository.findById(id).orElse(null);
+		if (foundClient == null) {
+			return ResponseEntity.notFound().header("Client", "No clients found with that id").build();
+		} else {
+			clientRepository.delete(client);
+			return ResponseEntity.ok().build();
+		}
+
 	}
 
 }
