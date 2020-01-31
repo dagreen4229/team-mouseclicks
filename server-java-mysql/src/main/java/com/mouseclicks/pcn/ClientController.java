@@ -25,10 +25,10 @@ public class ClientController {
 //I'm not even sure if we'll need a method to list all the profiles, so I'm just leaving this
 //one commented out:
 
-	@GetMapping("/profiles")
-	public ResponseEntity<List<Client>> getClients() {
-		return ResponseEntity.ok(clientRepository.findAll());
-	}
+//	@GetMapping("/profiles")
+//	public ResponseEntity<List<Client>> getClients() {
+//		return ResponseEntity.ok(clientRepository.findAll());
+//	}
 
 	// Find client profiles by id.
 	@GetMapping("/profile/{id}")
