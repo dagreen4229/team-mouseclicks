@@ -67,12 +67,12 @@ public class ClientController {
 
 	// Delete client profiles.
 	@DeleteMapping("/delete/{id}")
-	public ResponseEntity<Client> deleteClient(@RequestBody Client client, @PathVariable(value = "id") Long id) {
+	public ResponseEntity<Client> deleteClient(@PathVariable(value = "id") Long id) {
 		Client foundClient = clientRepository.findById(id).orElse(null);
 		if (foundClient == null) {
 			return ResponseEntity.notFound().header("Client", "No clients found with that id").build();
 		} else {
-			clientRepository.delete(client);
+			clientRepository.delete(foundClient);
 			return ResponseEntity.ok().build();
 		}
 
