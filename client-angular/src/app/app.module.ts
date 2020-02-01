@@ -6,8 +6,8 @@ import { AppRoutingModule } from "./app-routing.module";
 
 import { AppComponent } from "./app.component";
 import { PLoginComponent } from './modules/provider-ui/login/login.component';
-import { AuthenticationComponent } from './Shared/services/authentication/authentication.component';
 import { CloginComponent } from './modules/client-ui/clogin/clogin.component';
+import { AuthenticationComponent } from './Shared/services/authentication/authentication.component';
 import { HomeComponent } from './modules/home/home.component';
 import { DashboardComponent } from './modules/provider-ui/dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
