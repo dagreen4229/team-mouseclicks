@@ -11,6 +11,7 @@ import { ProviderProfileService } from 'src/app/Shared/services/provider-profile
   styleUrls: ['./paccount.component.css']
 })
 export class PaccountComponent implements OnInit {
+
   @Input() Puser: Puser;
 
   pprofiles: pprofile [];
