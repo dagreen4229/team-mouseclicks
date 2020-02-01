@@ -7,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CdashboardComponent implements OnInit {
 
+  // Links for the mat-tab tags
+  navLinks = [
+    { path: 'cdashboard/calendar', label: 'Appointments'}
+    
+  ];
+
+
   constructor() { }
 
   ngOnInit() {

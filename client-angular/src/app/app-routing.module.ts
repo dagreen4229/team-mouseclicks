@@ -9,10 +9,12 @@ import { DashboardComponent } from './modules/provider-ui/dashboard/dashboard.co
 import { CdashboardComponent } from './modules/client-ui/cdashboard/cdashboard.component';
 import { PaccountComponent } from './modules/provider-ui/paccount/paccount.component'
 import { ViewCalendarComponent } from './modules/provider-ui/dashboard/view-calendar/view-calendar.component';
+import { CalendarComponent } from './modules/client-ui/cdashboard/calendar/calendar.component';
 import { SearchRecordsComponent } from './modules/provider-ui/dashboard/search-records/search-records.component'; 
 import { RegisterComponent } from './modules/provider-ui/register/register.component';
 import { CregisterComponent } from './modules/client-ui/cregister/cregister.component';
 import { SetupAccountComponent } from './modules/provider-ui/register/setup-account/setup-account.component';
+import { CsetupAccountComponent } from './modules/client-ui/cregister/csetup-account/csetup-account.component';
 import { ClientDetailComponent } from './modules/provider-ui/dashboard/client-detail/client-detail.component';
 
 
@@ -47,6 +49,10 @@ const routes: Routes = [
     component: ViewCalendarComponent
   },
   {
+    path: 'cdashboard/calendar',
+    component: CalendarComponent
+  },
+  {
     path: 'pdashboard/search-records',
     component: SearchRecordsComponent
   },
@@ -61,6 +67,10 @@ const routes: Routes = [
   {
     path: 'plogin/setup-account',
     component: SetupAccountComponent
+  },
+  {
+    path: 'clogin/setup-account',
+    component: CsetupAccountComponent
   },
   {
     path: 'history/:Client_ID',
