@@ -1,12 +1,12 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { Task } from "./models/task";
+import { Puser } from "./models/puser";
 import { Observable } from "rxjs";
 
 @Injectable({
   providedIn: "root"
 })
-export class TaskService {
+export class PuserService {
   // Java Spring Boot uses port 8080
   apiUrl: string = "http://localhost:8080/tasks";
 
@@ -18,11 +18,11 @@ export class TaskService {
 
   constructor(private http: HttpClient) {}
 
-  getTasks(): Observable<Task[]> {
-    return this.http.get<Task[]>(this.apiUrl);
+  getPuser(): Observable<Puser[]> {
+    return this.http.get<Puser[]>(this.apiUrl);
   }
 
-  addTask(task): Observable<Task> {
-    return this.http.post<Task>(this.apiUrl, task);
+  addPuser(task): Observable<Puser> {
+    return this.http.post<Puser>(this.apiUrl, Puser);
   }
 }

@@ -1,0 +1,14 @@
+.hideChildren>div{
+    display: none;
+ }
+
+button {
+    margin: 5px;
+    
+}
+
+button:hover {
+    color: #555;
+    border-bottom: 4px solid #b2b1b1;
+    background: #eee;
+}

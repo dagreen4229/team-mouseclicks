@@ -1,0 +1,44 @@
+{
+    "provider_users": [
+        {
+            "User_ID": "1",
+            "Username":"drphil" ,
+            "Password": "123",
+            "Email_Address": "p.mcgraw@email.com",
+            "Admin": 1,
+            "Deleted": 0
+        },
+        {
+            "User_ID": "2",
+            "Username":"drken" ,
+            "Password": "123",
+            "Email_Address": "k.jeong@email.com",
+            "Admin": 0,
+            "Deleted": 0
+        },
+        {
+            "User_ID": "3",
+            "Username":"drsuess" ,
+            "Password": "123",
+            "Email_Address": "greeneggsnham@email.com",
+            "Admin": 0,
+            "Deleted": 0
+        },
+        {
+            "User_ID": "4",
+            "Username":"drdr" ,
+            "Password": "123",
+            "Email_Address": "givemethenews@email.com",
+            "Admin": 0,
+            "Deleted": 0
+        },
+        {
+            "User_ID": "5",
+            "Username":"drwho" ,
+            "Password": "123",
+            "Email_Address": "tardis.com",
+            "Admin": 0,
+            "Deleted": 0
+        }
+    ]
+}

@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'client';
+  title = 'PCN';
+
+  apiUrl: string = "http://localhost:3000";
 }

@@ -1,0 +1,52 @@
+{
+    "client_profiles": [
+        {
+            "Client_ID":"1",
+            "First_name":"John",
+            "Last_name":"Smith",
+            "DOB": "1995-10-05",
+            "Phone_number": "5551234567",
+            "Street_Address": "123 Fake Street",
+            "City": "Springfield",
+            "State":"OH",
+            "Profile_Pic":"",
+            "Deleted":0
+        },
+        {
+            "Client_ID":"2",
+            "First_name":"Mary",
+            "Last_name":"Turner",
+            "DOB": "1950-01-25",
+            "Phone_number": "5551234568",
+            "Street_Address": "2020 Vision rd",
+            "City": "San Francisco",
+            "State":"CA",
+            "Profile_Pic":"",
+            "Deleted":0
+        },
+        {
+            "Client_ID":"3",
+            "First_name":"Jane",
+            "Last_name":"Doe",
+            "DOB": "1980-11-03",
+            "Phone_number": "5553214567",
+            "Street_Address": "420 High St",
+            "City": "Denver",
+            "State":"CO",
+            "Profile_Pic":"",
+            "Deleted":0
+        },
+        {
+            "Client_ID":"4",
+            "First_name":"Marma",
+            "Last_name":"Duke",
+            "DOB": "2000-01-01",
+            "Phone_number": "5559871234",
+            "Street_Address": "1040 Howie St",
+            "City": "New York",
+            "State":"NY",
+            "Profile_Pic":"",
+            "Deleted":0
+        }
+    ]
+}
