@@ -1,0 +1,56 @@
+<nav>
+    <a routerLink = "" routerLinkActive = "active">Logout</a> 
+    <br>
+    <a routerLink = "/pdashboard/account" routerLinkActine = "active">My Account</a>
+</nav>
+
+<nav mat-tab-nav-bar>
+    <a mat-tab-link
+       *ngFor="let link of navLinks"
+       [routerLink]="link.path"
+       routerLinkActive #rla="routerLinkActive"
+       [active]="rla.isActive"
+       style="color:black">
+      {{link.label}}
+    </a>
+  </nav>
+
+<app-search-clients></app-search-clients> 
+
+  <table class="table table-responsive">
+    <tr>
+      <th>Client ID</th>
+      <th>Last Name</th>
+      <th>First Name</th>
+      <th>DOB</th>
+      <th>Phone Number</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>State</th> 
+           
+    </tr>
+    <tbody>
+ 
+        <tr *ngFor="let cprofiles of cprofiles">
+<!-- <tr *ngFor="cprofiles of filteredProfiles | filter: searchByKeyword: 'name'"></tr> -->  
+        <td>{{ cprofiles.Client_ID }}</td>
+        <td>{{ cprofiles.Last_name }}</td>
+        <td>{{ cprofiles.First_name }}</td>
+        <td>{{ cprofiles.DOB }}</td>
+        <td>{{ cprofiles.Phone_number }}</td>
+        <td>{{ cprofiles.Street_Address }}</td>
+        <td>{{ cprofiles.City }}</td>
+        <td>{{ cprofiles.State }}</td>
+        <td><a [routerLink] = "['/history', cprofiles.Client_ID]">Medical History</a></td>
+      </tr>
+      
+  <!--  <app-display-client *ngFor="let cprofiles of cprofiles" [cprofiles] = 'cprofiles'></app-display-client>-->
+    </tbody>
+  </table>
+
+
+    
+  
+
+
+  <router-outlet></router-outlet>
