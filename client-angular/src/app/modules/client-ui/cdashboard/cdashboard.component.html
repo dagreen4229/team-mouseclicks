@@ -1,10 +1,12 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<nav>
-    <a routerLink = "" routerLinkActive = "active">Logout</a> 
-    <br>
-    <a routerLink = "account" routerLinkActine = "active">My Account</a>
-</nav>
+<div class="navbar">
+  <a routerLink = "cdashboard" routerLinkActive = "active">Dashboard</a>
+  <a routerLink ="cdashboard/calendar" routerLinkActive = "active">Appointments</a>
+  <a routerLink = "" routerLinkActive = "active">Logout</a>
+</div>
 
+<!--
 <nav mat-tab-nav-bar>
     <a mat-tab-link 
       *ngFor="let link of navLinks"
@@ -15,5 +17,5 @@
       {{link.label}}
     </a>
   </nav>
- 
+-->
   <router-outlet></router-outlet>
