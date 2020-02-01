@@ -1,4 +1,10 @@
-<!--The content below is only a placeholder and can be replaced.-->
+<!-- nav -->
+<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" routerLink="/">Home</a>
+        <a class="nav-item nav-link" (click)="logout()">Logout</a>
+    </div>
+</nav>
 
 
 <h1>Provider Care Network</h1>
