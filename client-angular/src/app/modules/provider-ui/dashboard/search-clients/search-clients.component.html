@@ -1,61 +1,51 @@
-This should be replaced with a filter form
-<!--
+<!--This should be replaced with a filter form-->
+
 <form novalidate
 [formGroup]="form">
 <h3>Client Filter</h3>
 <div class="row">
-	<div class="col-md-3">
-		<input type="text"
-		formControlName="First_name"
-		class="form-control"
-		placeholder="First Name"
-		/>
-	</div>
-	<div class="col-md-3">
+	<div class="col-lg-3 col-md-12">
 		<input type="text"
 		formControlName="Last_name"
 		class="form-control"
 		placeholder="Last Name"
 		/>
 	</div>
-	<div class="col-md-3">
+	<div class="col-lg-3 col-md-12">
+		<input type="text"
+		formControlName="First_name"
+		class="form-control"
+		placeholder="First Name"
+		/>
+	</div>
+	<div class="col-lg-1 col-md-12">
 		<input type="text"
 		formControlName="DOB"
 		class="form-control"
-		placeholder="Job Title"
+		placeholder="DOB"
 		/>
 	</div>
-	<div class="col-md-3 col-sm-3">
-		<select class="form-control"
-		formControlName="Phone_number"
-        class="form-control"
-		placeholder="Phone Number">
-		</select>
-	</div>
-	<div class="col-md-3">
-		<input type="text"
-		formControlName="Street_Address"
-		class="form-control"
-		placeholder="Address"
-		/>
-	</div>
-	<div class="col-md-3">
+
+	<div class="col-lg-3 col-md-12">
 		<input type="text"
 		formControlName="City"
 		class="form-control"
 		placeholder="City"
-        />
-    <div class="col-md-3">
+		/>
+	</div>
+    <div class="col-lg-2 col-md-12">
         <input type="text"
         formControlName="State"
         class="form-control"
         placeholder="State"
         />
-    </div>
 	</div>
-	<div class="col-md-3 col-sm-3">
+
+	</div>
+	<br>
+	<div class="col-md-12 col-sm-3">
+
 		<button class="btn btn-primary"
 		(click)="search(form.value)">Search</button>
+
 	</div>
-</div>
--->

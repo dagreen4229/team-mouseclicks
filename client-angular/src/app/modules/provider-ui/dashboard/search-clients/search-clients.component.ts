@@ -17,15 +17,13 @@ export class SearchClientsComponent implements OnInit {
   searchText: string = '';
 
   constructor(
-  //  private fb: FormBuilder,
+    private fb: FormBuilder,
     private ClientProfileService: ClientProfileService) { }
 
-  ngOnInit() 
-  //:void 
-  {
-  //  this.buildForm();
+  ngOnInit() :void {
+  this.buildForm();
   };
-/*
+
   buildForm(): void {
     this.form = this.fb.group({
       First_name: new FormControl(''),
@@ -37,7 +35,7 @@ export class SearchClientsComponent implements OnInit {
       State: new FormControl('') 
     });
   };
-*/
+
   search(filters: any): void {
     Object.keys(filters).forEach(key => filters[key] === '' ? delete filters[key] : key);
     this.groupFilters.emit(filters);
