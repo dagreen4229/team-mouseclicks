@@ -4,10 +4,10 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var models = require("./models");
-var cors = require("cors");
+//var cors = require("cors");
 
+var indexRouter = require('./routes/index');
 
-var tasksRouter = require("./routes/tasks");
 
 var app = express();
 
@@ -16,11 +16,19 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
-app.use(cors());
+//app.use(cors());
 
-app.use("", tasksRouter);
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'hbs');
 
-models.sequelize.sync().then(function() {
+// Routes
+app.use('/', indexRouter);
+
+
+
+
+models.sequelize.sync().then(function () {
   console.log("DB Sync'd up");
 });
 

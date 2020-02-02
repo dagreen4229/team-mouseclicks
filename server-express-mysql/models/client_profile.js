@@ -23,6 +23,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.DATEONLY,
       allowNull: false
     },
+    Gender: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     Phone_number: {
       type: DataTypes.STRING(10),
       allowNull: false
@@ -47,5 +51,3 @@ module.exports = function(sequelize, DataTypes) {
     tableName: 'client_profile'
   });
 };
-
-
