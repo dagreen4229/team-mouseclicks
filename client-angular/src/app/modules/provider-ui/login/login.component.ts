@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
-import { ReactiveFormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AlertService, AuthenticationService } from 'src/app/Shared/services';
 
@@ -18,6 +18,8 @@ export class PLoginComponent implements OnInit {
     loading = false;
     submitted = false;
     returnUrl: string;
+
+
 
   constructor(
 

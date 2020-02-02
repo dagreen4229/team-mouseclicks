@@ -59,7 +59,8 @@ import { CregisterComponent } from './modules/client-ui/cregister/cregister.comp
     HttpClientModule, 
     BrowserAnimationsModule, 
     MatSliderModule, 
-    MatTabsModule
+    MatTabsModule,
+    ReactiveFormsModule
   ],
 
   providers: [
