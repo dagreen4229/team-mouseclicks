@@ -19,33 +19,31 @@
 
   <table class="table table-responsive">
     <tr>
-      <th>Client ID</th>
-      <th>Last Name</th>
-      <th>First Name</th>
-      <th>DOB</th>
-      <th>Phone Number</th>
-      <th>Address</th>
-      <th>City</th>
-      <th>State</th> 
-           
+      <th >Client ID</th>
+      <th >Last Name</th>
+      <th >First Name</th>
+      <th >DOB</th>
+      <th >Phone Number</th>
+      <th >Address</th>
+      <th >City</th>
+      <th >State</th>
+      <th >Medical History</th>      
     </tr>
-    <tbody>
  
-        <tr *ngFor="let cprofiles of cprofiles">
-<!-- <tr *ngFor="cprofiles of filteredProfiles | filter: searchByKeyword: 'name'"></tr> -->  
-        <td>{{ cprofiles.Client_ID }}</td>
-        <td>{{ cprofiles.Last_name }}</td>
-        <td>{{ cprofiles.First_name }}</td>
-        <td>{{ cprofiles.DOB }}</td>
-        <td>{{ cprofiles.Phone_number }}</td>
-        <td>{{ cprofiles.Street_Address }}</td>
-        <td>{{ cprofiles.City }}</td>
-        <td>{{ cprofiles.State }}</td>
-        <td><a [routerLink] = "['/history', cprofiles.Client_ID]">Medical History</a></td>
+<!--      <tr *ngFor="let cprofiles of cprofiles">-->  
+<tr *ngFor="let cprofiles of filteredProfiles | filter: searchByKeyword: 'name'">
+        <td >{{ cprofiles.Client_ID }}</td>
+        <td >{{ cprofiles.Last_name }}</td>
+        <td >{{ cprofiles.First_name }}</td>
+        <td >{{ cprofiles.DOB }}</td>
+        <td >{{ cprofiles.Phone_number }}</td>
+        <td >{{ cprofiles.Street_Address }}</td>
+        <td >{{ cprofiles.City }}</td>
+        <td >{{ cprofiles.State }}</td>
+        <td ><a [routerLink] = "['/history', cprofiles.Client_ID]">Medical History</a></td>
       </tr>
       
   <!--  <app-display-client *ngFor="let cprofiles of cprofiles" [cprofiles] = 'cprofiles'></app-display-client>-->
-    </tbody>
   </table>
 
 

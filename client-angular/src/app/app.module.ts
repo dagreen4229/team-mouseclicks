@@ -28,6 +28,7 @@ import { SetupAccountComponent } from './modules/provider-ui/register/setup-acco
 import { ClientDetailComponent } from './modules/provider-ui/dashboard/client-detail/client-detail.component';
 import { CdashboardComponent } from './modules/client-ui/cdashboard/cdashboard.component';
 import { CregisterComponent } from './modules/client-ui/cregister/cregister.component';
+import { FilterPipe } from './Shared/services';
 
 
 
@@ -37,7 +38,7 @@ import { CregisterComponent } from './modules/client-ui/cregister/cregister.comp
     AppComponent,   
     HomeComponent, 
     CloginComponent,   
-//    FilterPipe,
+    FilterPipe,
     PLoginComponent,
     DashboardComponent,
     PaccountComponent,
