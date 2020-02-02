@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
 
+
 import { AppComponent } from "./app.component";
 import { PLoginComponent } from './modules/provider-ui/login/login.component';
 import { CloginComponent } from './modules/client-ui/clogin/clogin.component';
@@ -30,6 +31,7 @@ import { ClientDetailComponent } from './modules/provider-ui/dashboard/client-de
 
 
 
+
 @NgModule({
 
   declarations: [
@@ -51,7 +53,7 @@ import { ClientDetailComponent } from './modules/provider-ui/dashboard/client-de
     CregisterComponent,
     SetupAccountComponent,
     CsetupAccountComponent,
-    ClientDetailComponent
+    ClientDetailComponent,
   ],
 
   imports: [

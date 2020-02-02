@@ -1,10 +1,19 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<div class="navbar">
-  <a routerLink = "cdashboard" routerLinkActive = "active">Dashboard</a>
-  <a routerLink ="cdashboard/calendar" routerLinkActive = "active">Appointments</a>
-  <a routerLink = "" routerLinkActive = "active">Logout</a>
-</div>
+
+<header>
+  <nav class="navbar navbar-expand-md">
+      <div><a href="localhost:4200"></a></div>
+
+     <ul class="navbar-nav">
+         <li><a routerLink = "_" routerLinkActive = "active">Dashboard</a></li>
+         <li><a routerLink = "/cdashboard/calendar" routerLinkActive = "active">Appointments</a></li>
+     </ul>
+     <ul class="navbar-nav navbar-collapse justify-content-end">
+         <li><a routerLink = "" routerLinkActive = "active">Logout</a></li>
+     </ul>
+
+  </nav>
+</header>
 
 <!--
 <nav mat-tab-nav-bar>
