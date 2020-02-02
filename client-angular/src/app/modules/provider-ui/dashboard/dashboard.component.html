@@ -1,7 +1,17 @@
+<!--
 <nav>
-    <a routerLink = "" routerLinkActive = "active">Logout</a> 
-    <br>
-    <a routerLink = "account" routerLinkActine = "active">My Account</a>
+  <a (click)="logout()" routerLink = "/" routerLinkActive = "active">Logout</a>
+  <br>
+  <a routerLink = "/account" routerLinkActine = "active">My Account</a>
+</nav>
+-->
+
+<!-- nav -->
+<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+  <div class="navbar-nav">
+      <a class="nav-item nav-link" (click)="logout()">Logout</a>
+      <a class="nav-item nav-link" routerLink="/account">My Account</a>
+  </div>
 </nav>
 
 <nav mat-tab-nav-bar>
