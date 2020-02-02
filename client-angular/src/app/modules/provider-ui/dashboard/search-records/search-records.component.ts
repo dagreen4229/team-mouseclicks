@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
 import { cprofile } from 'src/app/models/cprofile';
-import { ClientProfileService } from 'src/app/Shared/services/client-profile.service'
+import { ClientProfileService } from 'src/app/Shared/services/client-profile.service';
+import { FilterUserService } from '../../../../Shared/services/filter-user.service';
+import { FilterPipe } from '../../../../Shared/services/filter.pipe';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 
@@ -36,16 +38,20 @@ export class SearchRecordsComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    this.getProfiles();
-  //  if (this.groupFilters) this.filterCProfileList(this.groupFilters, this.cprofiles);
+    this.loadProfiles();
   }
 
+  ngOnChanges(): void {
+    if (this.groupFilters) this.filterCProfileList(this.groupFilters, this.cprofiles);
+  }
+
+  // The below function creates a new array based on the filtered results of cprofiles
   filterCProfileList(filters: any, cprofiles: any): void {
     this.filteredProfiles = this.cprofiles;
     const keys = Object.keys(filters);
     const filterProfile = profile => {
       let result = keys.map(key => {
-        if (!~key.indexOf('Last_name')) {
+        if (!~key.indexOf('Client_ID')) {
           if (profile[key]) {
             return String(profile[key]).toLowerCase().startsWith(String(filters[key]))
           } else {
@@ -54,8 +60,8 @@ export class SearchRecordsComponent implements OnInit {
         }
       });
       result = result.filter(it => it !== undefined);
-      if (filters['ageto'] && filters['Last-name']) {
-        if (+cprofile['Last_name'] >= +filters['Last_name']) {
+      if (filters['Client_ID'] && filters['Client_ID']) {
+        if (+cprofile['Client_ID'] >= +filters['Client_ID']) {
           result.push(true);
         } else {
           result.push(false);
@@ -66,5 +72,13 @@ export class SearchRecordsComponent implements OnInit {
       return result.reduce((acc, cur: any) => { return acc & cur }, 1)
     }
     this.filteredProfiles = this.cprofiles.filter(filterProfile);
+  }
+
+  // the below doesn't seem to be working... 
+
+  loadProfiles(): void {
+    this.ClientProfileService.getProfiles()
+    .subscribe(cprofiles => this.cprofiles = cprofiles);
+    this.filteredProfiles = this.filteredProfiles.length > 0 ? this.filteredProfiles : this.cprofiles;
   }
 }

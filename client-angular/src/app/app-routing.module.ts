@@ -75,8 +75,12 @@ const routes: Routes = [
   {
     path: 'history/:Client_ID',
     component: ClientDetailComponent
-  }
+  },
 
+
+
+  // Otherwise redirect to home
+  { path: '**', redirectTo: ''}
 ];
 
 @NgModule({

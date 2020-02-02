@@ -1,13 +1,16 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
+
+// used to create fake backend
+import { fakeBackendProvider } from './fakeBackend';
+import { JwtInterceptor, ErrorInterceptor } from './fakeBackend';
 
 import { AppComponent } from "./app.component";
 import { PLoginComponent } from './modules/provider-ui/login/login.component';
 import { CloginComponent } from './modules/client-ui/clogin/clogin.component';
-import { AuthenticationComponent } from './Shared/services/authentication/authentication.component';
 import { HomeComponent } from './modules/home/home.component';
 import { DashboardComponent } from './modules/provider-ui/dashboard/dashboard.component';
 import { CdashboardComponent } from './modules/client-ui/cdashboard/cdashboard.component';
@@ -27,17 +30,17 @@ import { CregisterComponent } from './modules/client-ui/cregister/cregister.comp
 import { SetupAccountComponent } from './modules/provider-ui/register/setup-account/setup-account.component';
 import { CsetupAccountComponent } from './modules/client-ui/cregister/csetup-account/csetup-account.component';
 import { ClientDetailComponent } from './modules/provider-ui/dashboard/client-detail/client-detail.component';
+import { FilterPipe } from './Shared/services';
 
 
 
 @NgModule({
 
   declarations: [
-    AppComponent,  
-    AuthenticationComponent, 
+    AppComponent,   
     HomeComponent, 
     CloginComponent,   
-//    FilterPipe,
+    FilterPipe,
     PLoginComponent,
     DashboardComponent,
     CdashboardComponent,
@@ -51,7 +54,8 @@ import { ClientDetailComponent } from './modules/provider-ui/dashboard/client-de
     CregisterComponent,
     SetupAccountComponent,
     CsetupAccountComponent,
-    ClientDetailComponent
+    ClientDetailComponent,
+    CregisterComponent
   ],
 
   imports: [
@@ -61,10 +65,17 @@ import { ClientDetailComponent } from './modules/provider-ui/dashboard/client-de
     HttpClientModule, 
     BrowserAnimationsModule, 
     MatSliderModule, 
-    MatTabsModule
+    MatTabsModule,
+    ReactiveFormsModule
   ],
 
-  providers: [],
+  providers: [
+    
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+
+    // provider used to create fake backend
+    fakeBackendProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

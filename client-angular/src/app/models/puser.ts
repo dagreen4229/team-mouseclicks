@@ -5,6 +5,7 @@ export class Puser {
     Password: string;
     Email_Address: string;
     Admin: boolean;
-    Deleted: boolean
+    Deleted: boolean;
+    token: string;
 }
 
