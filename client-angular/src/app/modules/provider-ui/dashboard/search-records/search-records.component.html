@@ -16,7 +16,7 @@
   </nav>
 
 <app-search-clients></app-search-clients> 
-
+<div style="overflow-x:auto;">
   <table class="table table-responsive">
     <tr>
       <th >Client ID</th>
@@ -30,8 +30,8 @@
       <th >Medical History</th>      
     </tr>
  
-<!--      <tr *ngFor="let cprofiles of cprofiles">-->  
-<tr *ngFor="let cprofiles of filteredProfiles | filter: searchByKeyword: 'name'">
+ <tr *ngFor="let cprofiles of cprofiles">  
+<!-- <tr *ngFor="let cprofiles of filteredProfiles | filter: searchByKeyword: 'name'"> -->
         <td >{{ cprofiles.Client_ID }}</td>
         <td >{{ cprofiles.Last_name }}</td>
         <td >{{ cprofiles.First_name }}</td>
@@ -45,7 +45,7 @@
       
   <!--  <app-display-client *ngFor="let cprofiles of cprofiles" [cprofiles] = 'cprofiles'></app-display-client>-->
   </table>
-
+</div>
 
     
   
