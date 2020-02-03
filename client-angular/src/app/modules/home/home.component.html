@@ -1,4 +1,4 @@
-<!--
+
 <header>
     <nav class="navbar navbar-expand-md">
         <div><a href="www.example.com"></a></div>
@@ -11,72 +11,34 @@
 
     </nav>
 </header>
--->
 
 
+<!---
 <nav>
-    <a routerLink = "plogin" routerLinkActive = "active">Provider Login</a> 
-    <br>
-    <a routerLink = "clogin" routerLinkActive = "active">Client Login</a>
+  <a routerLink="plogin" routerLinkActive="active">Provider Login</a>
+  <br>
+  <a routerLink="clogin" routerLinkActive="active">Client Login</a>
 </nav>
+-->
+<br>
+<br>
 
-<!-- Container for the image gallery -->
-<div class="container">
+<div id="slideshow">
+  <div class="slide-wrapper">
+    <div class="slide"><img src="https://live.staticflickr.com/6080/6104068209_d134b246f5_b.jpg"
+        style="width:100%"></div>
+    <div class="slide"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Chiropractic_spinal_adjustment.jpg"
+        style="width:100%"></div>
+    <div class="slide"><img src="https://cdn18.picryl.com/photo/2019/11/17/workers-in-physical-therapy-unit-1st-floor-roxie-jackson-physical-therapist-0c4da9-1024.jpg"
+        style="width:100%"></div>
+    <div class="slide"><img src="https://www.talkspace.com/blog/wp-content/uploads/2016/11/therapist-psychotherapist-definition.png"
+        style="width:100%"></div>
+    <div class="slide"><img src="https://media2.s-nbcnews.com/j/newscms/2018_33/2534171/180816-va-medical-center-aurora-se-622p_803444e82bf66c6b4865f12268233ec1.fit-760w.jpg"
+        style="width:100%"></div>
 
-    <!-- Full-width images with number text -->
-    <div class="mySlides">
-      <div class="numbertext">1 / 6</div>
-        <img src="https://live.staticflickr.com/6080/6104068209_d134b246f5_b.jpg" style="width:100%">
-    </div>
-  
-    <div class="mySlides">
-      <div class="numbertext">2 / 6</div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Chiropractic_spinal_adjustment.jpg" style="width:100%">
-    </div>
-  
-    <div class="mySlides">
-      <div class="numbertext">3 / 6</div>
-        <img src="https://cdn18.picryl.com/photo/2019/11/17/workers-in-physical-therapy-unit-1st-floor-roxie-jackson-physical-therapist-0c4da9-1024.jpg" style="width:100%">
-    </div>
-  
-    <div class="mySlides">
-      <div class="numbertext">4 / 6</div>
-        <img src="https://www.talkspace.com/blog/wp-content/uploads/2016/11/therapist-psychotherapist-definition.png" style="width:100%">
-    </div>
-  
-    <div class="mySlides">
-      <div class="numbertext">5 / 6</div>
-        <img src="https://media2.s-nbcnews.com/j/newscms/2018_33/2534171/180816-va-medical-center-aurora-se-622p_803444e82bf66c6b4865f12268233ec1.fit-760w.jpg" style="width:100%">
-    </div>
-  
-  
-    <!-- Next and previous buttons -->
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-  
-    <!-- Image text -->
-    <div class="caption-container">
-      <p id="caption"></p>
-    </div>
-  
-    <!-- Thumbnail images -->
-    <div class="row">
-      <div class="column">
-        <img class="demo cursor" src="https://live.staticflickr.com/6080/6104068209_d134b246f5_b.jpg" style="width:100%" onclick="currentSlide(1)" alt="img1">
-      </div>
-      <div class="column">
-        <img class="demo cursor" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Chiropractic_spinal_adjustment.jpg" style="width:100%" onclick="currentSlide(2)" alt="img2">
-      </div>
-      <div class="column">
-        <img class="demo cursor" src="https://cdn18.picryl.com/photo/2019/11/17/workers-in-physical-therapy-unit-1st-floor-roxie-jackson-physical-therapist-0c4da9-1024.jpg" style="width:100%" onclick="currentSlide(3)" alt="img3">
-      </div>
-      <div class="column">
-        <img class="demo cursor" src="https://www.talkspace.com/blog/wp-content/uploads/2016/11/therapist-psychotherapist-definition.png" style="width:100%" onclick="currentSlide(4)" alt="img4">
-      </div>
-      <div class="column">
-        <img class="demo cursor" src="https://media2.s-nbcnews.com/j/newscms/2018_33/2534171/180816-va-medical-center-aurora-se-622p_803444e82bf66c6b4865f12268233ec1.fit-760w.jpg" style="width:100%" onclick="currentSlide(5)" alt="img5">
-      </div>
-    </div>
   </div>
+</div>
+
+
 
 <router-outlet></router-outlet>
