@@ -96,3 +96,8 @@ body {
     display: block;
   }
 } 
+
+#login {
+  border-right: solid;
+  border-color: rgb(169, 212, 219);
+}
