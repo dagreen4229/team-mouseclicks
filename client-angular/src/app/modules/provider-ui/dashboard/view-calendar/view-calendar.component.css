@@ -18,7 +18,10 @@
   };
 */
 
-
+#account {
+  border-right: solid;
+  border-color: rgb(246, 248, 248);
+}
   
 
   /* Background Change when mouse over */

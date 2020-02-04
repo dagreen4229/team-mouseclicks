@@ -7,7 +7,10 @@ th {
     
 }
 
-
+#account {
+  border-right: solid;
+  border-color: rgb(246, 248, 248);
+}
 
 .navbar {
     width: 100%;
