@@ -15,7 +15,8 @@ import { RegisterComponent } from './modules/provider-ui/register/register.compo
 import { CregisterComponent } from './modules/client-ui/cregister/cregister.component';
 import { SetupAccountComponent } from './modules/provider-ui/register/setup-account/setup-account.component';
 import { CsetupAccountComponent } from './modules/client-ui/cregister/csetup-account/csetup-account.component';
-import { ClientDetailComponent } from './modules/provider-ui/dashboard/client-detail/client-detail.component';
+
+import { ClientHistoryComponent } from './modules/provider-ui/dashboard/client-history/client-history.component';
 
 
 const routes: Routes = [
@@ -73,8 +74,8 @@ const routes: Routes = [
     component: CsetupAccountComponent
   },
   {
-    path: 'history/:Client_ID',
-    component: ClientDetailComponent
+    path: 'pdashboard/search-records/history/:Client_ID',
+    component: ClientHistoryComponent
   },
 
 
