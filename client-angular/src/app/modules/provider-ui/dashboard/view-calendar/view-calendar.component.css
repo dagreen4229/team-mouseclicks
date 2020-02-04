@@ -12,6 +12,17 @@
     text-decoration: none;
     font-size: 18px;
   }
+/*
+  th, td {
+    border: solid
+  };
+*/
+
+#account {
+  border-right: solid;
+  border-color: rgb(246, 248, 248);
+}
+  
 
   /* Background Change when mouse over */
  /* .navbar a:hover {

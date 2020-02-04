@@ -23,7 +23,7 @@ export class SearchRecordsComponent implements OnInit {
   @Input() searchByKeyword: string;
   filteredProfiles: any[] = [];
 
-  //Inputs for client profiles
+  //Inputs for client profiles model
   cprofiles: cprofile[];
 
   getProfiles(): void {
