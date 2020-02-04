@@ -1,28 +1,49 @@
 <header>
   <nav class="navbar navbar-expand-md">
-      <div><a href="localhost:4200"></a></div>
+    <div><a href="localhost:4200"></a></div>
 
-     <ul class="navbar-nav">
-         <li><a routerLink = "/pdashboard/account" routerLinkActive = "active">My Account</a></li>
-     </ul>
-     <ul class="navbar-nav navbar-collapse justify-content-end">
-         <li><a routerLink = "" routerLinkActive = "active">Logout</a></li>
-     </ul>
+    <ul class="navbar-nav">
+      <li><a routerLink="/pdashboard/account" routerLinkActive="active">My Account</a></li>
+    </ul>
+    <ul class="navbar-nav navbar-collapse justify-content-end">
+      <li><a routerLink="" routerLinkActive="active">Logout</a></li>
+    </ul>
 
   </nav>
 </header>
 
 <nav mat-tab-nav-bar>
-    <a mat-tab-link
-       *ngFor="let link of navLinks"
-       [routerLink]="link.path"
-       routerLinkActive #rla="routerLinkActive"
-       [active]="rla.isActive"
-       style="color:black">
-      {{link.label}}
-    </a>
-  </nav>
+  <a mat-tab-link *ngFor="let link of navLinks" [routerLink]="link.path" routerLinkActive #rla="routerLinkActive"
+    [active]="rla.isActive" style="color:black">
+    {{link.label}}
+  </a>
+</nav>
 
-  <h1> View calendar works! </h1>
 
-  <router-outlet></router-outlet>
+
+<div style="overflow-x:auto;">
+  <table data-toggle="table" data-search="true" class="table table-bordered table-hover">
+    <tr>
+      <th>Client ID</th> 
+      <th>Provider</th> 
+      <th>Date</th>
+      <th>Time</th>
+      <th>Comments</th>
+      <th></th>
+      <th></th>
+    </tr>
+
+    <tr *ngFor="let appointments of appointment">
+      <td>{{ appointments.Client_ID }}</td> <!--Will be changed to Client Name-->
+      <td>{{ appointments.User_ID}}</td> <!--Will be changed to Provider Name-->
+      <td>{{ appointments.Appointment_Date }}</td>
+      <td>{{ appointments.Appointment_Time }}</td>
+      <td>{{ appointments.Appointment_Notes }}</td>
+      <td><button>Edit Appointment</button></td>
+      <td><button>Delete Appointment</button></td>
+    </tr>
+
+  </table>
+</div>
+
+<router-outlet></router-outlet>

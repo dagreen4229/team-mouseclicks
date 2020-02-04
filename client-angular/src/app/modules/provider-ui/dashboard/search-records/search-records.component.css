@@ -7,13 +7,7 @@ th {
     
 }
 
-table {
-    border-color: black;
-    border: solid;
-    display: flex;
-    flex-direction: column;
-    align-content: space-between;
-}
+
 
 .navbar {
     width: 100%;

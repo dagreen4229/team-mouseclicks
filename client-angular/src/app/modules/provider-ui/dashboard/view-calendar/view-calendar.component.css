@@ -12,6 +12,14 @@
     text-decoration: none;
     font-size: 18px;
   }
+/*
+  th, td {
+    border: solid
+  };
+*/
+
+
+  
 
   /* Background Change when mouse over */
  /* .navbar a:hover {
