@@ -1,4 +1,5 @@
-package com.mouseclicks.auth;
+package com.mouseclicks.pcn;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -6,9 +7,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/provider")
 public class ProviderController { 
 
 	 @Autowired
@@ -19,8 +22,9 @@ public class ProviderController {
 	        List<Provider> foundProvider = dao.findAll();
 	        return foundProvider;
 	    }
+	 
 	 @GetMapping("/chat/{id}")
-	    public ResponseEntity<Provider> getProvider(@PathVariable("id") Integer id) {
+	    public ResponseEntity<Provider> getProvider(@PathVariable("id") Long id) {
 	        Provider foundProvider = dao.findById(id).orElse(null);
 
 	        if(foundProvider == null) {
@@ -40,7 +44,7 @@ public class ProviderController {
 	    }
 
 	    @DeleteMapping("/chat/{id}")
-	    public ResponseEntity<Provider> deleteMessage(@PathVariable(value="id") Integer id) {
+	    public ResponseEntity<Provider> deleteMessage(@PathVariable(value="id") Long id) {
 	        Provider foundProvider = dao.findById(id).orElse(null);
 
 	        if(foundProvider == null) {
