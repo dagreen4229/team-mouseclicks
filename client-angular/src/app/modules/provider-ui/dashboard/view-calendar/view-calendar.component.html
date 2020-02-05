@@ -37,7 +37,7 @@
     <tr *ngFor="let appointments of appointment">
       <td>{{ appointments.Client_ID }}</td> <!--Will be changed to Client Name-->
       <td>{{ appointments.User_ID}}</td> <!--Will be changed to Provider Name-->
-      <td>{{ appointments.Appointment_Date }}</td>
+      <td>{{ appointments.Appointment_Date | date }}</td>
       <td>{{ appointments.Appointment_Time }}</td>
       <td>{{ appointments.Appointment_Notes }}</td>
       <td><button>Edit Appointment</button></td>

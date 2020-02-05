@@ -29,14 +29,14 @@
 <div style="overflow-x:auto;">
   <table data-toggle="table" data-search="true" class="table table-bordered table-hover">
     <tr>
-      <th >Client ID</th>
-      <th >Last Name</th>
-      <th >First Name</th>
-      <th >DOB</th>
-      <th >Phone Number</th>
-      <th >Address</th>
-      <th >City</th>
-      <th >State</th>
+      <th data-field="client_id">Client ID</th>
+      <th data-field="last_name">Last Name</th>
+      <th data-field="first_name">First Name</th>
+      <th data-field="dob">DOB</th>
+      <th data-field="phone_number">Phone Number</th>
+      <th data-field="address">Address</th>
+      <th data-field="city">City</th>
+      <th data-field="state">State</th>
       <th >Medical History</th>      
     </tr>
  
@@ -45,12 +45,12 @@
         <td >{{ cprofiles.Client_ID }}</td>
         <td >{{ cprofiles.Last_name }}</td>
         <td >{{ cprofiles.First_name }}</td>
-        <td >{{ cprofiles.DOB }}</td>
+        <td >{{ cprofiles.DOB | date }}</td>
         <td >{{ cprofiles.Phone_number }}</td>
         <td >{{ cprofiles.Street_Address }}</td>
         <td >{{ cprofiles.City }}</td>
         <td >{{ cprofiles.State }}</td>
-        <td ><a [routerLink] = "['/history', cprofiles.Client_ID]">Medical History</a></td>
+        <td ><a [routerLink] = "['history/', cprofiles.Client_ID]">Medical History</a></td>
       </tr>
       
   <!--  <app-display-client *ngFor="let cprofiles of cprofiles" [cprofiles] = 'cprofiles'></app-display-client>-->
