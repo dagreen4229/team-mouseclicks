@@ -58,6 +58,7 @@ a {
     width: 100%;
     background-color: #12A7F0 ;
     overflow: auto;
+    border: 1px solid grey;
   }
   
   .navbar a {
@@ -67,6 +68,10 @@ a {
     color: white;
     text-decoration: none;
     font-size: 18px;
+  }
+
+  .btn {
+    background-color: #12A7F0
   }
   
   @media screen and (max-width: 400px) {
