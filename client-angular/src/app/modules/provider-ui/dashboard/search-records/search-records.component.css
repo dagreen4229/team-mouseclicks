@@ -7,12 +7,9 @@ th {
     
 }
 
-table {
-    border-color: black;
-    border: solid;
-    display: flex;
-    flex-direction: column;
-    align-content: space-between;
+#account {
+  border-right: solid;
+  border-color: rgb(246, 248, 248);
 }
 
 .navbar {
