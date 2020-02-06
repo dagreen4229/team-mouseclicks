@@ -5,6 +5,8 @@ import { FilterUserService } from '../../../../Shared/services/filter-user.servi
 import { FilterPipe } from '../../../../Shared/services/filter.pipe';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { HttpResponse } from '@angular/common/http';
 
 
 @Component({
@@ -14,7 +16,7 @@ import { Router } from '@angular/router';
 })
 export class SearchRecordsComponent implements OnInit {
   navLinks = [
-    { path: '/pdashboard/view-calendar', label: 'Appointments' },
+    { path: '/pdashboard/view-calendar', label: 'Appointment Calendar' },
     { path: '/pdashboard/search-records', label: 'Records Search' }
   ];
 
@@ -24,11 +26,13 @@ export class SearchRecordsComponent implements OnInit {
   filteredProfiles: any[] = [];
 
   //Inputs for client profiles model
-  cprofiles: cprofile[];
-
+  cprofiles: cprofile[] = [];
+/*
   getProfiles(): void {
-    this.ClientProfileService.getProfiles().subscribe(p => this.cprofiles = p)
+    
+    this.ClientProfileService.getProfiles().subscribe(p => this.cprofile = p)
   };
+*/
 /*
   toMedicalHistory() {
     this.navigate(['/history', this.cprofiles.Client_ID])
@@ -44,6 +48,14 @@ export class SearchRecordsComponent implements OnInit {
   ngOnChanges(): void {
     if (this.groupFilters) this.filterCProfileList(this.groupFilters, this.cprofiles);
   }
+
+    // the below doesn't seem to be working... 
+
+    loadProfiles() {
+      this.ClientProfileService.getProfiles()
+      .subscribe(cprofiles => (this.cprofiles = cprofiles));
+  //    this.filteredProfiles = this.filteredProfiles.length > 0 ? this.filteredProfiles : this.cprofile;
+    }
 
   // The below function creates a new array based on the filtered results of cprofiles
   filterCProfileList(filters: any, cprofiles: any): void {
@@ -61,7 +73,7 @@ export class SearchRecordsComponent implements OnInit {
       });
       result = result.filter(it => it !== undefined);
       if (filters['Client_ID'] && filters['Client_ID']) {
-        if (+cprofile['Client_ID'] >= +filters['Client_ID']) {
+        if (+this.cprofiles['Client_ID'] >= +filters['Client_ID']) {
           result.push(true);
         } else {
           result.push(false);
@@ -74,11 +86,5 @@ export class SearchRecordsComponent implements OnInit {
     this.filteredProfiles = this.cprofiles.filter(filterProfile);
   }
 
-  // the below doesn't seem to be working... 
 
-  loadProfiles(): void {
-    this.ClientProfileService.getProfiles()
-    .subscribe(cprofiles => this.cprofiles = cprofiles);
-    this.filteredProfiles = this.filteredProfiles.length > 0 ? this.filteredProfiles : this.cprofiles;
-  }
 }
