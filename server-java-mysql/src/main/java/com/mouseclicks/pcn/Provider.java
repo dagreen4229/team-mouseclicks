@@ -1,15 +1,13 @@
 package com.mouseclicks.pcn;
- import java.sql.Timestamp;
-
- import javax.persistence.*;
+ 
+import java.sql.Timestamp;
+import javax.persistence.*;
  
 
  @Entity
 public class Provider {
 	 @Id
 	 @GeneratedValue(strategy = GenerationType.AUTO)
-	 
-	 
 	 private Long id;
 	 
 	 @Column(nullable = false, unique = true)
@@ -41,8 +39,9 @@ public class Provider {
 		 this.password = password;
 		 
 	 }
+ }
 	 
-	 @GeneratedValue(strategy = GenerationType.AUTO)
+/*	 @GeneratedValue(strategy = GenerationType.AUTO)
 	 private Integer id;
 	 private String name;
 	 private String content;
@@ -51,7 +50,7 @@ public class Provider {
 	 public Integer getId() {
 		 return id;
 	 }
-	 public void setId(Integer id) {
+	 public void setId(Long id) {
 		 this.id = id;
 	 }
 	 
@@ -60,7 +59,7 @@ public class Provider {
 	 }
 	 
 	 public void setName(String name) {
-		 this.first_name = name;
+		 this.name = name;
 	 }
 	 
 	 public String getContent() {
@@ -70,12 +69,12 @@ public class Provider {
 	 public void setContent(String content) {
 		 this.content = content;
 	 }
+ }
 	 
 	 
 	 
 	 
-	 
- private int provider_id;
+/* private int provider_id;
  private String first_name;
  private String last_name;
  private Timestamp last_update;
@@ -126,4 +125,4 @@ public void setLast_update(Timestamp last_update)
 {
 	this.last_update = last_update;
    }
-}
+}*/
