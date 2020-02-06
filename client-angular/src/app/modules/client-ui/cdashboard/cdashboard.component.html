@@ -6,7 +6,6 @@
 
      <ul class="navbar-nav">
          <li><a routerLink = "_" routerLinkActive = "active">Dashboard</a></li>
-         <li><a routerLink = "/cdashboard/calendar" routerLinkActive = "active">Calendar-View</a></li>
      </ul>
      <ul class="navbar-nav navbar-collapse justify-content-end">
          <li><a routerLink = "" routerLinkActive = "active">Logout</a></li>
@@ -45,9 +44,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     <div class="w3-third">
       
       <div class="w3-white w3-text-grey w3-card-4">
-        <div class="w3-display-container">
-         <img src="" style="width:100%" alt="Avatar">
-        </div>
+        <div class="w3-display-container"></div>
         
         <div class="w3-container">
           <h2>"Client Name"</h2>
@@ -72,7 +69,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-calendar fa-fw w3-margin-right w3-xxlarge w3-text-blue"></i>Appointments</h2>
         <div class="w3-container">
           <h5 class="w3-opacity"><b>"Provider Name and Address</b></h5>
-          <h6 class="w3-text-black"><i class="fa fa-calendar fa-fw w3-margin-right"></i>appointment date and time</h6>
+          <h6 class="w3-text-black"><i class="fa fa-calendar fa-fw w3-margin-right"></i><a routerLink = "/cdashboard/calendar" routerLinkActive = "active">Appointment Date and Time</a></h6>
           <p>Provider Information</p>
           <hr>
         </div>
