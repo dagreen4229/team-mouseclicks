@@ -1,0 +1,28 @@
+<header>
+    <nav class="navbar navbar-expand-md">
+        <div><a href="localhost:4200"></a></div>
+  
+       <ul class="navbar-nav">
+           <li><a routerLink = "/pdashboard/account" routerLinkActive = "active" id="account">My Account</a></li>
+           <li><a routerLink = "/pdashboard" routerLinkActive = "active">Dashboard</a></li>
+       </ul>
+       <ul class="navbar-nav navbar-collapse justify-content-end">
+           <li><a routerLink = "" routerLinkActive = "active">Logout</a></li>
+       </ul>
+  
+    </nav>
+  </header>
+  
+  <nav mat-tab-nav-bar>
+      <a mat-tab-link
+         *ngFor="let link of navLinks"
+         [routerLink]="link.path"
+         routerLinkActive #rla="routerLinkActive"
+         [active]="rla.isActive"
+         style="color:black">
+        {{link.label}}
+      </a>
+    </nav>
+
+Client History link works
+<p>{{ Last_name }}, {{ First_name }}</p>

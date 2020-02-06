@@ -26,6 +26,10 @@
   box-sizing: border-box;
 }
 
+a {
+  color: dodgerblue;
+}
+
 /* Style the search field */
 form.example input[type=text] {
   padding: 6px;
@@ -37,9 +41,11 @@ form.example input[type=text] {
   background: #f1f1f1;
 }
 
-/* Style the submit button */
+/* style of submit button */
 form.example button {
   float: left;
+  margin-left: 1031px;
+  margin-top: -39px;
   width: 8%;
   padding: 6px;
   background: #12A7F0;
