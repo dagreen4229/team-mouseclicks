@@ -21,26 +21,60 @@
     }
 } 
 
-body { margin: 0; }
+body { 
+  margin: 0; 
+}
 
-table { width: 100%; box-sizing: border-box; box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.1); font-family: 'Ubuntu'; /*border-collapse: collapse;*/ border-spacing: 0; background-color: #333333; }
+.month {
+  
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+}
 
-th, td { border: 1px solid rgba(255,255,255,0.1); box-sizing: border-box; }
+table {
+   width: 100%; 
+   box-sizing: border-box; 
+   box-shadow: inset 0px 0px 0px 1px rgba(196, 195, 195, 0.1);  
+   border-spacing: 0; 
+   background-color: #eeeeee;
+   }
 
-th { text-transform: uppercase; font-size:10px; font-weight:700; padding: 10px 0; color: rgba(255,255,255,0.5); background-color: #292929; letter-spacing: 1px; }
+th, td {
+   border: 1px solid rgb(0, 0, 0);
+    box-sizing: border-box; 
+  }
 
-td { width: 14.285%; transition: all 0.3s; font-size: 14px; color: rgba(255,255,255,0.6); font-weight: 400; font-size: 14px; padding: 1.5% 1.5% 5%; vertical-align: initial; padding: 1.5% 0 ; height: 75px; }
+th { 
+  text-transform: uppercase; 
+  text-align: center;
+  font: size 13; 
+  font-weight:500;
+  padding: 10px 0;
+  color: rgb(255, 255, 255); 
+  background-color: #12A7F0; 
+  letter-spacing: 1px; 
+  }
 
-.day:hover { background-color: rgba(0,0,0,0.1); cursor:pointer; }
+td { 
+  width: 14.285%; 
+  transition: all 0.3s; 
+  color: rgb(43, 42, 42); 
+  font-weight: 400; 
+  font-size: 12px; 
+  padding: 1.5% 1.5% 5%; 
+  vertical-align: initial; 
+  padding: .5% 0 ; 
+  height: 90px; 
+}
 
-.today { color: #FFF; background-color: rgba(0,0,0,.25) !important; }
+.day:hover { 
+  background-color: rgb(180, 180, 180); 
+  cursor:pointer; 
+}
 
-span.number { margin-left: 10% }
-
-span.event { height: 4px; background-color: rgba(0,0,0,.3); display: block; margin: 5px 10%; border-radius: 2px; background-color: #91c33b; }
-
-span.event-multiday { margin: 5px -2px; border-radius: 0; }
-span.event-multiday-start { margin-right: -4px;  }
-span.event-multiday-finish { margin-left: -4px;  }
-
-span.event-ghost { background-color:transparent; }
+.today { 
+  color: #FFF; 
+  background-color: rgb(199, 199, 199) !important; 
+}

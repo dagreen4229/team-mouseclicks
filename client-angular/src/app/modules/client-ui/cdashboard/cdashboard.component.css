@@ -26,6 +26,10 @@
   box-sizing: border-box;
 }
 
+a {
+  color: dodgerblue;
+}
+
 /* Style the search field */
 form.example input[type=text] {
   padding: 6px;
