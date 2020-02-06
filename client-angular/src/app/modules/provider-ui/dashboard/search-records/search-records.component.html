@@ -41,8 +41,9 @@
       <th >Medical History</th>      
     </tr>
  
- <tr *ngFor="let cprofile of cprofiles">  
-<!-- <tr *ngFor="let cprofiles of filteredProfiles | filter: searchByKeyword: 'name'"> -->
+<tr *ngFor="let cprofile of cprofiles">  
+ <!--<tr *ngFor="let cprofile of filteredProfiles">-->
+<!-- <tr *ngFor="let cprofile of filteredProfiles | filter: searchByKeyword: 'name'"> -->
         <td >{{ cprofile.idClient_User }}</td>
         <td >{{ cprofile.Last_Name }}</td>
         <td >{{ cprofile.First_Name }}</td>
@@ -52,7 +53,7 @@
         <td >{{ cprofile.Street_Address }}</td>
         <td >{{ cprofile.City }}</td>
         <td >{{ cprofile.State }}</td>
-        <td ><a [routerLink] = "['history/', cprofile.Client_ID]">Medical History</a></td>
+        <td ><a [routerLink] = "['history/', cprofile.idClient_User]">Medical History</a></td>
       </tr>
       
   <!--  <app-display-client *ngFor="let cprofiles of cprofiles" [cprofiles] = 'cprofiles'></app-display-client>-->

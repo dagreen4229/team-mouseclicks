@@ -32,13 +32,14 @@ export class SearchClientsComponent implements OnInit {
       Phone_number: new FormControl(''),
       Street_Address: new FormControl(''),
       City: new FormControl(''),
-      State: new FormControl('') 
+      idClient_User: new FormControl('') 
     });
   };
 
   search(filters: any): void {
     Object.keys(filters).forEach(key => filters[key] === '' ? delete filters[key] : key);
     this.groupFilters.emit(filters);
+    console.log(filters)
   }
 
 }

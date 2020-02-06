@@ -51,19 +51,26 @@ export class SearchRecordsComponent implements OnInit {
 
     // the below doesn't seem to be working... 
 
+    // loadProfiles() {
+    //   this.ClientProfileService.getProfiles()
+    //   .subscribe(cprofiles => (this.cprofiles = cprofiles));
+    //   this.filteredProfiles = this.filteredProfiles.length > 0 ? this.filteredProfiles : this.cprofiles;
+    // }
+
     loadProfiles() {
       this.ClientProfileService.getProfiles()
       .subscribe(cprofiles => (this.cprofiles = cprofiles));
-  //    this.filteredProfiles = this.filteredProfiles.length > 0 ? this.filteredProfiles : this.cprofile;
+      this.filteredProfiles = this.filteredProfiles.length > 0 ? this.filteredProfiles : this.cprofiles;
     }
 
   // The below function creates a new array based on the filtered results of cprofiles
-  filterCProfileList(filters: any, cprofiles: any): void {
+  filterCProfileList(filters: any, cprofiles) {
+    console.log('filterCProfile is running!')
     this.filteredProfiles = this.cprofiles;
     const keys = Object.keys(filters);
     const filterProfile = profile => {
       let result = keys.map(key => {
-        if (!~key.indexOf('Client_ID')) {
+        if (!~key.indexOf('idClient_User')) {
           if (profile[key]) {
             return String(profile[key]).toLowerCase().startsWith(String(filters[key]))
           } else {
@@ -72,8 +79,8 @@ export class SearchRecordsComponent implements OnInit {
         }
       });
       result = result.filter(it => it !== undefined);
-      if (filters['Client_ID'] && filters['Client_ID']) {
-        if (+this.cprofiles['Client_ID'] >= +filters['Client_ID']) {
+      if (filters['idClient_User'] && filters['idClient_User']) {
+        if (+this.cprofiles['idClient_User'] >= +filters['idClient_User']) {
           result.push(true);
         } else {
           result.push(false);
