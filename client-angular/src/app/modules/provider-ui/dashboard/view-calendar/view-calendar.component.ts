@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class ViewCalendarComponent implements OnInit {
   navLinks = [
-    { path: '/pdashboard/view-calendar', label: 'Appointments'},
+    { path: '/pdashboard/view-calendar', label: 'Appointment Calendar'},
     { path: '/pdashboard/search-records', label: 'Records Search'}
     
   ];

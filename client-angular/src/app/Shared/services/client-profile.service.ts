@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient, HttpResponse } from "@angular/common/http";
 import { cprofile } from "src/app/models/cprofile"
 import { Observable, of } from "rxjs";
 import { map } from 'rxjs/operators';
@@ -8,17 +8,31 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ClientProfileService {
-  url: string = "http://localhost:3000/client_profiles"
+//  url: string = "http://localhost:3000/client_profiles"
+  url: string = "http://localhost:3000/clientProfiles"
+
+  constructor(private http: HttpClient) { }
+
+  //cprofile: cprofile[]
 
   getProfiles(): Observable<cprofile[]> {
     return this.http.get<cprofile[]>(this.url);
   }
 
+    // getProfiles() {
+    //   return this.http.get(this.url)
+    // }
+
+    // getProfiles() {
+    //   return this.http.get<cprofile[]>(
+    //     this.url, { observe: 'response' });
+    // }
+/*
   getProfile(id: number | string) {
     return this.getProfiles().pipe(
-      map((cprofile: cprofile[]) => cprofile.find( profile => profile.Client_ID === +id))
+      map((cprofile: cprofile[]) => cprofile.find( profile => profile.idClient_User === +id))
     )
   }
-
-  constructor(private http: HttpClient) { }
+*/
+ 
 }
