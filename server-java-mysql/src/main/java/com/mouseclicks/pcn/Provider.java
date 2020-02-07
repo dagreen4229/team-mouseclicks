@@ -1,4 +1,12 @@
 package com.mouseclicks.pcn;
+
+/* Springs code
+ import java.sql.Timestamp;
+ import javax.persistence.*;
+*/ 
+ @Entity
+ @Table(name="provider")
+ 
  
 import java.sql.Timestamp;
 import javax.persistence.*;
@@ -8,6 +16,8 @@ import javax.persistence.*;
 public class Provider {
 	 @Id
 	 @GeneratedValue(strategy = GenerationType.AUTO)
+	 
+	 //change name to what? if not id? 
 	 private Long id;
 	 
 	 @Column(nullable = false, unique = true)
@@ -42,6 +52,8 @@ public class Provider {
  }
 	 
 /*	 @GeneratedValue(strategy = GenerationType.AUTO)
+	 
+	 @GeneratedValue(strategy = GenerationType.IDENTITY)
 	 private Integer id;
 	 private String name;
 	 private String content;
@@ -51,6 +63,7 @@ public class Provider {
 		 return id;
 	 }
 	 public void setId(Long id) {
+	 public void setId(Integer id) {
 		 this.id = id;
 	 }
 	 
@@ -60,6 +73,7 @@ public class Provider {
 	 
 	 public void setName(String name) {
 		 this.name = name;
+		 this.first_name = name;
 	 }
 	 
 	 public String getContent() {
@@ -69,12 +83,12 @@ public class Provider {
 	 public void setContent(String content) {
 		 this.content = content;
 	 }
- }
 	 
 	 
 	 
 	 
-/* private int provider_id;
+	 
+ private int provider_id;
  private String first_name;
  private String last_name;
  private Timestamp last_update;
