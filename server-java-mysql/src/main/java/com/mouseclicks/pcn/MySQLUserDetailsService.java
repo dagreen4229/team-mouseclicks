@@ -13,31 +13,31 @@ import org.springframework.stereotype.Service;
 public class MySQLUserDetailsService implements UserDetailsService {
 	
 	@Autowired
-	private ProviderRepository providerRepository;
+	private ClientRepository clientRepository;
 	
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) {
-		Provider provider = providerRepository.findByUsername(username);
-		if(provider == null) {
+		User user = clientRepository.findByUsername(username);
+		if(user == null) {
 			throw new UsernameNotFoundException(username);
 		}
-		return new org.springframework.security.core.userdetails.Provider
-				(provider.getUsername(), provider.getPassword(), getAuthorities());
+		return new org.springframework.security.core.userdetails.User
+				(user.getUsername(), user.getPassword(), getAuthorities());
 	}
 	
-	public UserDetails Save(Provider newProvider) {
-		newProvider.setPassword(passwordEncoder.encode(newProvider.getPassword()));
-		Provider savedProvider = providerRepository.save(newProvider);
-		return new org.springframework.security.core.userdetails.Provider
-				(saved.Provider.getUsername(), savedProvider.getPassword(), getAuthorities());
+	public UserDetails Save(User newUser) {
+		newUser.setPassword(passwordEncoder.encode(newUser.getPassword()));
+		User savedUser = ClientRepository.save(newUser);
+		return new org.springframework.security.core.userdetails.User
+				(saved.User.getUsername(), savedUser.getPassword(), getAuthorities());
 	}
 	
 	private List<SimpleGrantedAuthority>getAuthorities() {
 		List<SimpleGrantedAuthority> authList = new ArrayList<>();
-		authList.add(new SimpleGrantedAuthority("ROLE_PROVIDER"));
+		authList.add(new SimpleGrantedAuthority("ROLE_USER"));
 		return authList;
 	}
 }

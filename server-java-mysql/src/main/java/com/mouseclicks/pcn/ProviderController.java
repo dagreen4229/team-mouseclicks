@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
-@RestController
-@RequestMapping("/api/provider_profile")
 
-/* Springs Code
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -42,16 +42,24 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 
-@RestController
+
 
 
 @Controller
 
 
-@RequestMapping({"/", "/provider" })
-*/
+@RestController
+@RequestMapping("/api/provider_profile")
+
 
 public class ProviderController {
+	@Autowired
+	private MySQLUserDetailsService userService;
+	
+	@PostMapping("/register")
+	public void register(@RequestBody Provider newUser) {
+		userService.Save(newUser);
+	}
 	
 	@GetMapping("/")
 	public String getHomePage() {
@@ -82,15 +90,15 @@ return ResponseEntity.ok(provider_profile);
 	}
 }
 
-/* Springs Code
-	@Autowired
-	ProviderRepository dao;
+//need david to check provider controller
+	/*@Autowired
+	//ProviderRepository dao;
 	
-	@Value("${spring.datasource.url}")
-	private String url;
+	//@Value("${spring.datasource.url}")
+	//private String url;
 	
-	@Value("${spring.datasource.username}")
-	private String username;
+	//@Value("${spring.datasource.username}")
+	
 	
 	@Value("${spring.datasource.password}")
 	private String password;
@@ -108,8 +116,9 @@ return ResponseEntity.ok(provider_profile);
 	}
 	return ResponseEntity.ok(foundProvider);
  }
+ }
  
- @PostMapping("/provider")
+/* @PostMapping("/provider")
  public ResponseEntity<Provider> postProvider(@RequestBody Provider provider) {
 	 Provider createdProvider = dao.save(provider);
 	 return ResponseEntity.ok(createdProvider);
@@ -156,5 +165,4 @@ return ResponseEntity.ok(provider_profile);
  }
  
 }
-// left off at adding MySQLProviderDetailsService
 */
