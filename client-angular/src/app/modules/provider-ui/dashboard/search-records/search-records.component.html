@@ -29,10 +29,11 @@
 <div style="overflow-x:auto;">
   <table data-toggle="table" data-search="true" class="table table-bordered table-hover">
     <tr>
-      <th data-field="client_id">Client ID</th>
+      <th data-field="idClient_User">Client ID</th>
       <th data-field="last_name">Last Name</th>
       <th data-field="first_name">First Name</th>
       <th data-field="dob">DOB</th>
+      <th data-field="Gender">Gender</th>
       <th data-field="phone_number">Phone Number</th>
       <th data-field="address">Address</th>
       <th data-field="city">City</th>
@@ -40,17 +41,19 @@
       <th >Medical History</th>      
     </tr>
  
- <tr *ngFor="let cprofiles of cprofiles">  
-<!-- <tr *ngFor="let cprofiles of filteredProfiles | filter: searchByKeyword: 'name'"> -->
-        <td >{{ cprofiles.Client_ID }}</td>
-        <td >{{ cprofiles.Last_name }}</td>
-        <td >{{ cprofiles.First_name }}</td>
-        <td >{{ cprofiles.DOB | date }}</td>
-        <td >{{ cprofiles.Phone_number }}</td>
-        <td >{{ cprofiles.Street_Address }}</td>
-        <td >{{ cprofiles.City }}</td>
-        <td >{{ cprofiles.State }}</td>
-        <td ><a [routerLink] = "['history/', cprofiles.Client_ID]">Medical History</a></td>
+<tr *ngFor="let cprofile of cprofiles">  
+ <!--<tr *ngFor="let cprofile of filteredProfiles">-->
+<!-- <tr *ngFor="let cprofile of filteredProfiles | filter: searchByKeyword: 'name'"> -->
+        <td >{{ cprofile.idClient_User }}</td>
+        <td >{{ cprofile.Last_Name }}</td>
+        <td >{{ cprofile.First_Name }}</td>
+        <td >{{ cprofile.DOB | date }}</td>
+        <td >{{ cprofile.Gender }}</td>
+        <td >{{ cprofile.Phone_number }}</td>
+        <td >{{ cprofile.Street_Address }}</td>
+        <td >{{ cprofile.City }}</td>
+        <td >{{ cprofile.State }}</td>
+        <td ><a [routerLink] = "['history/', cprofile.idClient_User]">Medical History</a></td>
       </tr>
       
   <!--  <app-display-client *ngFor="let cprofiles of cprofiles" [cprofiles] = 'cprofiles'></app-display-client>-->

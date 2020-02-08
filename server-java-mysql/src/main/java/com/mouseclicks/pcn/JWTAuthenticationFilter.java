@@ -13,44 +13,8 @@ import java.util.*;
 import static com.auth0.jwt.algorithms.Algorithm.HMAC512;
 import static com.mouseclicks.pcn.AuthConstants.*;
 
-
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 	 private AuthenticationManager authenticationManager;
-	
-	 public JWTAuthenticationFilter(AuthenticationManager authenticationManager) {
-		    this.authenticationManager = authenticationManager;
-		  }
-
-		  @Override
-		  public Authentication attemptAuthentication(HttpServletRequest req, HttpServletResponse res) throws AuthenticationException {
-		    try {
-		      com.fullstackproject.auth.User creds = new ObjectMapper()
-		        .readValue(req.getInputStream(), com.fullstackproject.auth.User.class);
-
-		      return authenticationManager.authenticate(
-		        new UsernamePasswordAuthenticationToken(
-		          creds.getUsername(),
-		          creds.getPassword(),
-		          new ArrayList<>())
-		      );
-		    } catch (IOException e) {
-		      throw new RuntimeException(e);
-		    }
-		  }
-
-		  @Override
-		  protected void successfulAuthentication(HttpServletRequest req, HttpServletResponse res, FilterChain chain, Authentication auth) throws IOException, ServletException {
-		    String token = JWT.create()
-		      .withSubject(((Provider) auth.getPrincipal()).getUsername())
-		      .withExpiresAt(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
-		      .sign(HMAC512(SECRET.getBytes()));
-		    res.addHeader(HEADER_STRING, TOKEN_PREFIX + token);
-		  }
-
-		  @Override
-		  protected void unsuccessfulAuthentication(HttpServletRequest req, HttpServletResponse res, AuthenticationException failed) throws IOException, ServletException {
-		    super.unsuccessfulAuthentication(req, res, failed);
-		  }
-		}
+}
 
 
