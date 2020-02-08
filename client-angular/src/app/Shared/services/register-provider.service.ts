@@ -9,4 +9,9 @@ import { Observable, of } from "rxjs";
 export class RegisterProviderService {
   url: string = "http://localhost:3000/registerPUser"
   constructor(private http: HttpClient) { }
+
+  RegisterPUser(value) {
+    console.log(value)
+    return this.http.post<Puser[]>(this.url, value);
+  }
 }
