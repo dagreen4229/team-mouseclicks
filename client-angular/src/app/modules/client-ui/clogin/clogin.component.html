@@ -23,7 +23,7 @@
           <div *ngIf="f.password.errors.required">Password is required</div>
       </div>
       <hr>
-      <button onclick="onSubmit()" type="submit" class="btn btn-primary">Login</button>
+      <button [disabled]="loading" type="submit" class="btn btn-primary">Login</button>
       <a href="/clogin/register" class="btn1 btn-link">Register</a>
     </div>
 
