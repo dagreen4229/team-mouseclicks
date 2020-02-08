@@ -3,7 +3,10 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
-import { AlertService, UserService, AuthenticationService } from '../../../Shared/services';
+import { AlertService, 
+//    UserService, 
+    AuthenticationService
+ } from '../../../Shared/services';
 
 @Component({templateUrl: 'register.component.html'})
 export class RegisterComponent implements OnInit {
@@ -16,7 +19,7 @@ export class RegisterComponent implements OnInit {
         private formBuilder: FormBuilder,
         private router: Router,
         private authenticationService: AuthenticationService,
-        private userService: UserService,
+ //       private userService: UserService,
         private alertService: AlertService
     ) { 
         // redirect to home if already logged in
@@ -35,7 +38,8 @@ export class RegisterComponent implements OnInit {
 
     // convenience getter for easy access to form fields
     get f() { return this.registerForm.controls; }
-
+// under construction
+/*
     onSubmit() {
         this.submitted = true;
 
@@ -56,6 +60,6 @@ export class RegisterComponent implements OnInit {
                     this.alertService.error(error);
                     this.loading = false;
                 });
-    }
+    } */
 }
 
