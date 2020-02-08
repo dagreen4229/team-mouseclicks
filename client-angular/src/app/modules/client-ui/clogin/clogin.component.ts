@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { HardcodedAuthenticationService } from 'src/app/service/hardcoded-authentication.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { first } from 'rxjs/operators';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+
+import { AuthenticationService, AlertService } from 'src/app/Shared/services';
+
 
 @Component({
   selector: 'app-clogin',
@@ -10,33 +14,57 @@ import { HardcodedAuthenticationService } from 'src/app/service/hardcoded-authen
 export class CloginComponent implements OnInit {
 
   //authentication//
-  username = ''
-  password = ''
-  errorMessage = 'Invalid Credentials'
-  invalidLogin = false
+  loginform: FormGroup;
+  loading = false;
+  submitted = false;
+  returnUrl: string;
+ 
 
 
-  //Router
-  //Angular.giveMeRouter
-  //Dependency Injection, add private router: Router, private hardcodedAuthenticationService: ...
-  constructor(private router: Router,
-    private hardcodedAuthenticationService: HardcodedAuthenticationService) { }
+
+  constructor(
+
+    private formBuilder: FormBuilder,
+    private route: ActivatedRoute,
+    private router: Router,
+    private authenticationService: AuthenticationService,
+    private alertService: AlertService
+   ) {
+
+    if (this.authenticationService.currentUserValue) {
+      this.router.navigate(['/cdashboard']);
+    }
+    }
 
   ngOnInit() {
+    this.loginform = this.formBuilder.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required]
+    });
+
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
-  handleLogin() {
-    //console.log(this.username);
-    //if(this.username==="" && this.password === "") {
-    if(this.hardcodedAuthenticationService.authenticate(this.username, this.password)) {
-      this.router.navigate(['welcome', this.username])
-      this.invalidLogin = false
-    } else {
-      this.invalidLogin = true
+  get f() { return this.loginform.controls; }
+
+
+  onSubmit() {
+    this.submitted = true;
+
+    if (this.loginform.invalid) {
+      return;
     }
-      
-  }
 
-
-
+    this.loading = true;
+    this.authenticationService.login(this.f.username.value, this.f.password.value)
+      .pipe(first())
+      .subscribe(
+          data => {
+              this.router.navigate([this.returnUrl]);
+          },
+          error => {
+              this.alertService.error(error);
+              this.loading = false;
+          });
+}
 }
