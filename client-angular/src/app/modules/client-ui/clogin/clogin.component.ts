@@ -14,7 +14,7 @@ import { AuthenticationService, AlertService } from 'src/app/Shared/services';
 export class CloginComponent implements OnInit {
 
   //authentication//
-  loginform: FormGroup;
+  loginForm: FormGroup;
   loading = false;
   submitted = false;
   returnUrl: string;
@@ -37,7 +37,7 @@ export class CloginComponent implements OnInit {
     }
 
   ngOnInit() {
-    this.loginform = this.formBuilder.group({
+    this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
@@ -45,13 +45,13 @@ export class CloginComponent implements OnInit {
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
-  get f() { return this.loginform.controls; }
+  get f() { return this.loginForm.controls; }
 
 
   onSubmit() {
     this.submitted = true;
 
-    if (this.loginform.invalid) {
+    if (this.loginForm.invalid) {
       return;
     }
 
