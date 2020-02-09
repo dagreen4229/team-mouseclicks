@@ -28,9 +28,9 @@
                     "field": "DOB",
                     "seqType": "Sequelize.DATEONLY"
                 },
-                "GENDER": {
+                "Gender": {
                     "allowNull": false,
-                    "field": "GENDER",
+                    "field": "Gender",
                     "seqType": "Sequelize.STRING"
                 },
                 "Phone_number": {
@@ -230,5 +230,5 @@
             "indexes": []
         }
     },
-    "revision": 5
+    "revision": 6
 }

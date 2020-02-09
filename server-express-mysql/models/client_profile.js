@@ -8,44 +8,50 @@ module.exports = function(sequelize, DataTypes) {
       primaryKey: true,
       references: {
         model: 'client_user',
-        key: 'idClient_User'
+        key: 'idClient_User', 
+        autoIncrement: true
       }
     },
     First_Name: {
       type: DataTypes.STRING(45),
-      allowNull: false
+     allowNull: false
     },
     Last_Name: {
       type: DataTypes.STRING(45),
-      allowNull: false
+     allowNull: false
     },
     DOB: {
-      type: DataTypes.DATEONLY,
-      allowNull: false
+      type: DataTypes.STRING(10),
+     allowNull: false
     },
     Gender: {
-      type: DataTypes.STRING,
-      allowNull: false
+      type: DataTypes.STRING(6),
+     allowNull: false
     },
     Phone_number: {
-      type: DataTypes.STRING(10),
-      allowNull: false
+      type: DataTypes.INTEGER(10),
+     allowNull: false
     },
     Street_Address: {
       type: DataTypes.STRING(45),
-      allowNull: false
+     allowNull: false
     },
     City: {
       type: DataTypes.STRING(45),
-      allowNull: false
+     allowNull: false
     },
     State: {
       type: DataTypes.STRING(45),
-      allowNull: false
+     allowNull: false
     },
     Profile_Pic: {
       type: DataTypes.STRING(45),
-      allowNull: true
+     allowNull: true
+    },
+    Deleted: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: '0'
     }
   }, {
     tableName: 'client_profile'
