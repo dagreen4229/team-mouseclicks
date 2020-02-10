@@ -7,7 +7,7 @@ import { AlertService,
 //    UserService, 
     AuthenticationService
  } from '../../../../Shared/services';
-import { pprofile } from 'src/app/models/pprofile';
+import { cprofile } from 'src/app/models/cprofile';
 
 @Component({
   selector: 'app-csetup-account',
@@ -56,7 +56,7 @@ export class CsetupAccountComponent implements OnInit {
          this.registerProviderService.RegisterCProfile(this.registerForm.value)
          .pipe(first())
          .subscribe(
-         pprofile => {
+         cprofile => {
              this.alertService.success('Registration successful', true);
              this.router.navigate(['/clogin/setup-account']);
          },
