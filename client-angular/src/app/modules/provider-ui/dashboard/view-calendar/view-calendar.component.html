@@ -35,8 +35,10 @@
     </tr>
 
     <tr *ngFor="let appointments of appointment">
-      <td>{{ appointments.Client_ID }}</td> <!--Will be changed to Client Name-->
-      <td>{{ appointments.User_ID}}</td> <!--Will be changed to Provider Name-->
+      <td>[Client Name Goes Here]</td>
+      <td>[Provider Name Goes Here]</td>
+      <!-- <td>{{ cprofile.Last_Name}}, {{ cprofile.First_Name }}</td> 
+      <td>{{ pprofile.Last_Name}}, {{ pprofile.First_Name }}</td>  -->
       <td>{{ appointments.Appointment_Date | date }}</td>
       <td>{{ appointments.Appointment_Time }}</td>
       <td>{{ appointments.Appointment_Notes }}</td>

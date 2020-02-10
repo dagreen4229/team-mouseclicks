@@ -5,5 +5,6 @@ export class Appointment {
     User_ID: number;
     Appointment_Date: Date;
     Appointment_Time: Time;
-    Appointment_Notes: String
+    Appointment_Notes: String;
+    Deleted: Boolean;
 }
