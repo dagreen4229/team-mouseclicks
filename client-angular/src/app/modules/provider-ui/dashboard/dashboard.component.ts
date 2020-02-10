@@ -15,7 +15,7 @@ export class DashboardComponent implements OnInit {
 
   // Links for the mat-tab tags
   navLinks = [
-    { path: 'view-calendar', label: 'Appointments'},
+    { path: 'view-calendar', label: 'Appointment Calendar'},
     { path: 'search-records', label: 'Records Search'}
     
   ];

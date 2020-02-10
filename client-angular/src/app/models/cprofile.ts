@@ -1,8 +1,9 @@
-export class cprofile {
-    Client_ID: number;
-    First_name: string;
-    Last_name: string;
-    DOB: Date;
+export interface cprofile {
+    idClient_User: number;
+    First_Name: string;
+    Last_Name: string;
+    DOB: String;
+    Gender: String;
     Phone_number: number;
     Street_Address: string;
     City: string;

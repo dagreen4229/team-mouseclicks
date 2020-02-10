@@ -30,10 +30,11 @@ import { PaccountComponent } from './modules/provider-ui/paccount/paccount.compo
 import { ViewCalendarComponent } from './modules/provider-ui/dashboard/view-calendar/view-calendar.component';
 import { SearchRecordsComponent } from './modules/provider-ui/dashboard/search-records/search-records.component';
 import { DisplayClientComponent } from './modules/provider-ui/dashboard/display-client/display-client.component';
-import { SearchClientsComponent } from './modules/provider-ui/dashboard/search-clients/search-clients.component';
+import { SearchClientsComponent } from './modules/provider-ui/dashboard/search-records/search-clients/search-clients.component';
 import { RegisterComponent } from './modules/provider-ui/register/register.component';
 import { SetupAccountComponent } from './modules/provider-ui/register/setup-account/setup-account.component';
-import { ClientDetailComponent } from './modules/provider-ui/dashboard/client-detail/client-detail.component';
+
+import { ClientHistoryComponent } from './modules/provider-ui/dashboard/client-history/client-history.component';
 
 
 
@@ -58,8 +59,9 @@ import { ClientDetailComponent } from './modules/provider-ui/dashboard/client-de
     CregisterComponent,
     SetupAccountComponent,
     CsetupAccountComponent,
-    ClientDetailComponent,
-    CregisterComponent
+
+    CregisterComponent,
+    ClientHistoryComponent
   ],
 
   imports: [

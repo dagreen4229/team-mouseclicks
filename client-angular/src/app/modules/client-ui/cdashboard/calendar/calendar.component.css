@@ -1,0 +1,80 @@
+.navbar {
+    width: 100%;
+    background-color: #12A7F0 ;
+    overflow: auto;
+    border: 1px solid grey;
+  }
+  
+  .navbar a {
+    float: left;
+    text-align: center;
+    padding: 5px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  @media screen and (max-width: 400px) {
+    .navbar a {
+      float: none;
+      display: block;
+    }
+} 
+
+body { 
+  margin: 0; 
+}
+
+.month {
+  
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+table {
+   width: 100%; 
+   box-sizing: border-box; 
+   box-shadow: inset 0px 0px 0px 1px rgba(196, 195, 195, 0.1);  
+   border-spacing: 0; 
+   background-color: #eeeeee;
+   }
+
+th, td {
+   border: 1px solid rgb(0, 0, 0);
+    box-sizing: border-box; 
+  }
+
+th { 
+  text-transform: uppercase; 
+  text-align: center;
+  font: size 13; 
+  font-weight:500;
+  padding: 10px 0;
+  color: rgb(255, 255, 255); 
+  background-color: #12A7F0; 
+  letter-spacing: 1px; 
+  }
+
+td { 
+  width: 14.285%; 
+  transition: all 0.3s; 
+  color: rgb(43, 42, 42); 
+  font-weight: 400; 
+  font-size: 12px; 
+  padding: 1.5% 1.5% 5%; 
+  vertical-align: initial; 
+  padding: .5% 0 ; 
+  height: 90px; 
+}
+
+.day:hover { 
+  background-color: rgb(180, 180, 180); 
+  cursor:pointer; 
+}
+
+.today { 
+  color: #FFF; 
+  background-color: rgb(199, 199, 199) !important; 
+}

@@ -11,7 +11,7 @@ import { PaccountComponent } from './paccount/paccount.component';
 import { SearchRecordsComponent } from './dashboard/search-records/search-records.component';
 import { DisplayClientComponent } from './dashboard/display-client/display-client.component';
 //import { ClientDetailComponent } from './dashboard/client-detail/client-detail.component';
-import { SearchClientsComponent } from './dashboard/search-clients/search-clients.component';
+import { SearchClientsComponent } from './dashboard/search-records/search-clients/search-clients.component';
 //import { ViewCalendarComponent } from './dashboard/view-calendar/view-calendar.component';
 
 

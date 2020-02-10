@@ -1,8 +1,17 @@
-<nav>
-    <a routerLink = "" routerLinkActive = "active">Logout</a> 
-    <br>
-    <a routerLink = "/pdashboard/account" routerLinkActine = "active">My Account</a>
-</nav>
+<header>
+  <nav class="navbar navbar-expand-md">
+      <div><a href="localhost:4200"></a></div>
+
+     <ul class="navbar-nav">
+         <li><a routerLink = "/pdashboard/account" routerLinkActive = "active" id="account">My Account</a></li>
+         <li><a routerLink = "/pdashboard" routerLinkActive = "active">Dashboard</a></li>
+     </ul>
+     <ul class="navbar-nav navbar-collapse justify-content-end">
+         <li><a routerLink = "" routerLinkActive = "active">Logout</a></li>
+     </ul>
+
+  </nav>
+</header>
 
 <nav mat-tab-nav-bar>
     <a mat-tab-link
@@ -16,36 +25,40 @@
   </nav>
 
 <app-search-clients></app-search-clients> 
-
-  <table class="table table-responsive">
+<br>
+<div style="overflow-x:auto;">
+  <table data-toggle="table" data-search="true" class="table table-bordered table-hover">
     <tr>
-      <th >Client ID</th>
-      <th >Last Name</th>
-      <th >First Name</th>
-      <th >DOB</th>
-      <th >Phone Number</th>
-      <th >Address</th>
-      <th >City</th>
-      <th >State</th>
+      <th data-field="idClient_User">Client ID</th>
+      <th data-field="last_name">Last Name</th>
+      <th data-field="first_name">First Name</th>
+      <th data-field="dob">DOB</th>
+      <th data-field="Gender">Gender</th>
+      <th data-field="phone_number">Phone Number</th>
+      <th data-field="address">Address</th>
+      <th data-field="city">City</th>
+      <th data-field="state">State</th>
       <th >Medical History</th>      
     </tr>
  
-<!--      <tr *ngFor="let cprofiles of cprofiles">-->  
-<tr *ngFor="let cprofiles of filteredProfiles | filter: searchByKeyword: 'name'">
-        <td >{{ cprofiles.Client_ID }}</td>
-        <td >{{ cprofiles.Last_name }}</td>
-        <td >{{ cprofiles.First_name }}</td>
-        <td >{{ cprofiles.DOB }}</td>
-        <td >{{ cprofiles.Phone_number }}</td>
-        <td >{{ cprofiles.Street_Address }}</td>
-        <td >{{ cprofiles.City }}</td>
-        <td >{{ cprofiles.State }}</td>
-        <td ><a [routerLink] = "['/history', cprofiles.Client_ID]">Medical History</a></td>
+<tr *ngFor="let cprofile of cprofiles">  
+ <!--<tr *ngFor="let cprofile of filteredProfiles">-->
+<!-- <tr *ngFor="let cprofile of filteredProfiles | filter: searchByKeyword: 'name'"> -->
+        <td >{{ cprofile.idClient_User }}</td>
+        <td >{{ cprofile.Last_Name }}</td>
+        <td >{{ cprofile.First_Name }}</td>
+        <td >{{ cprofile.DOB | date }}</td>
+        <td >{{ cprofile.Gender }}</td>
+        <td >{{ cprofile.Phone_number }}</td>
+        <td >{{ cprofile.Street_Address }}</td>
+        <td >{{ cprofile.City }}</td>
+        <td >{{ cprofile.State }}</td>
+        <td ><a [routerLink] = "['history/', cprofile.idClient_User]">Medical History</a></td>
       </tr>
       
   <!--  <app-display-client *ngFor="let cprofiles of cprofiles" [cprofiles] = 'cprofiles'></app-display-client>-->
   </table>
-
+</div>
 
     
   

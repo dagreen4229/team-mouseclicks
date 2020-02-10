@@ -1,0 +1,252 @@
+{
+    "tables": {
+        "client_user": {
+            "tableName": "client_user",
+            "schema": {
+                "idClient_User": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "idClient_User",
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "Username": {
+                    "allowNull": false,
+                    "unique": true,
+                    "field": "Username",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "Password": {
+                    "allowNull": false,
+                    "field": "Password",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "EmailAddress": {
+                    "allowNull": false,
+                    "unique": true,
+                    "field": "EmailAddress",
+                    "seqType": "Sequelize.STRING(45)"
+                }
+            },
+            "indexes": []
+        },
+        "provider_profile": {
+            "tableName": "provider_profile",
+            "schema": {
+                "User_ID": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "references": {
+                        "model": "provider_user",
+                        "key": "User_ID"
+                    },
+                    "field": "User_ID",
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "First_name": {
+                    "allowNull": false,
+                    "field": "First_name",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "Last_name": {
+                    "allowNull": false,
+                    "field": "Last_name",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "Office_Address": {
+                    "allowNull": false,
+                    "field": "Office_Address",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "City": {
+                    "allowNull": false,
+                    "field": "City",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "State": {
+                    "allowNull": false,
+                    "field": "State",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "Phone_number": {
+                    "allowNull": false,
+                    "field": "Phone_number",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "Deleted": {
+                    "allowNull": false,
+                    "defaultValue": {
+                        "value": "0"
+                    },
+                    "field": "Deleted",
+                    "seqType": "Sequelize.INTEGER(4)"
+                }
+            },
+            "indexes": []
+        },
+        "provider_user": {
+            "tableName": "provider_user",
+            "schema": {
+                "User_ID": {
+                    "allowNull": false,
+                    "autoIncrement": true,
+                    "primaryKey": true,
+                    "field": "User_ID",
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "Username": {
+                    "allowNull": false,
+                    "unique": true,
+                    "field": "Username",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "Password": {
+                    "allowNull": false,
+                    "field": "Password",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "Email_Address": {
+                    "allowNull": false,
+                    "unique": true,
+                    "field": "Email_Address",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "Admin": {
+                    "allowNull": false,
+                    "defaultValue": {
+                        "value": "0"
+                    },
+                    "field": "Admin",
+                    "seqType": "Sequelize.INTEGER(4)"
+                },
+                "Deleted": {
+                    "allowNull": false,
+                    "defaultValue": {
+                        "value": "0"
+                    },
+                    "field": "Deleted",
+                    "seqType": "Sequelize.INTEGER(4)"
+                }
+            },
+            "indexes": []
+        },
+        "client_profile": {
+            "tableName": "client_profile",
+            "schema": {
+                "idClient_User": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "references": {
+                        "model": "client_user",
+                        "key": "idClient_User",
+                        "autoIncrement": true
+                    },
+                    "field": "idClient_User",
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "First_Name": {
+                    "allowNull": false,
+                    "field": "First_Name",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "Last_Name": {
+                    "allowNull": false,
+                    "field": "Last_Name",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "DOB": {
+                    "allowNull": false,
+                    "field": "DOB",
+                    "seqType": "Sequelize.STRING(10)"
+                },
+                "Gender": {
+                    "allowNull": false,
+                    "field": "Gender",
+                    "seqType": "Sequelize.STRING(6)"
+                },
+                "Phone_number": {
+                    "allowNull": false,
+                    "field": "Phone_number",
+                    "seqType": "Sequelize.INTEGER(10)"
+                },
+                "Street_Address": {
+                    "allowNull": false,
+                    "field": "Street_Address",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "City": {
+                    "allowNull": false,
+                    "field": "City",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "State": {
+                    "allowNull": false,
+                    "field": "State",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "Profile_Pic": {
+                    "allowNull": true,
+                    "field": "Profile_Pic",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "Deleted": {
+                    "allowNull": false,
+                    "defaultValue": {
+                        "value": "0"
+                    },
+                    "field": "Deleted",
+                    "seqType": "Sequelize.BOOLEAN"
+                }
+            },
+            "indexes": []
+        },
+        "appointments": {
+            "tableName": "appointments",
+            "schema": {
+                "APT_ID": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "APT_ID",
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "idClientUser": {
+                    "allowNull": false,
+                    "field": "idClientUser",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "User_ID": {
+                    "allowNull": false,
+                    "field": "User_ID",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "Appointment_Date": {
+                    "allowNull": false,
+                    "field": "Appointment_Date",
+                    "seqType": "Sequelize.STRING(10)"
+                },
+                "Appointment_Time": {
+                    "allowNull": false,
+                    "field": "Appointment_Time",
+                    "seqType": "Sequelize.STRING(6)"
+                },
+                "Appointment_Notes": {
+                    "allowNull": false,
+                    "field": "Appointment_Notes",
+                    "seqType": "Sequelize.INTEGER(10)"
+                },
+                "Deleted": {
+                    "allowNull": false,
+                    "defaultValue": {
+                        "value": "0"
+                    },
+                    "field": "Deleted",
+                    "seqType": "Sequelize.BOOLEAN"
+                }
+            },
+            "indexes": []
+        }
+    },
+    "revision": 8
+}

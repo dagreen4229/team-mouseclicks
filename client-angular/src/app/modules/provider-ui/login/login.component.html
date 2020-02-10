@@ -1,8 +1,8 @@
-<nav>
+<nav class="navbar">
     <a routerLink = "" routerLinkActive = "active">Back</a> 
 </nav>
+<br>
 
-<h2>Login</h2>
 <!--
 <form> 
     <div class="form-group">
@@ -29,6 +29,10 @@
 Original Code-->
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
+        <h1>Login</h1>
+
+        <hr>
+
         <label for="username">Username</label>
         <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
         <div *ngIf="submitted && f.username.errors" class="invalid-feedback">

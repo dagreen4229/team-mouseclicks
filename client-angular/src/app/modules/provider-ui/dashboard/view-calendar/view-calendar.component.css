@@ -1,0 +1,40 @@
+.navbar {
+    width: 100%;
+    background-color:  #595959;
+    overflow: auto;
+  }
+  
+  .navbar a {
+    float: left;
+    text-align: center;
+    padding: 5px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+/*
+  th, td {
+    border: solid
+  };
+*/
+
+#account {
+  border-right: solid;
+  border-color: rgb(246, 248, 248);
+}
+  
+
+  /* Background Change when mouse over */
+ /* .navbar a:hover {
+      background: #ddd;
+      color: black;
+    
+  }
+  */
+  
+  @media screen and (max-width: 400px) {
+    .navbar a {
+      float: none;
+      display: block;
+    }
+} 

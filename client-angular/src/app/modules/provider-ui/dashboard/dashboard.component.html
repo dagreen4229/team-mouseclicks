@@ -1,3 +1,29 @@
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+  </style>
+  </head>
+
+
+<header>
+  <nav class="navbar navbar-expand-md">
+      <div><a href="localhost:4200"></a></div>
+
+     <ul class="navbar-nav">
+         <li><a routerLink = "account" routerLinkActive = "active">My Account</a></li>
+     </ul>
+     <ul class="navbar-nav navbar-collapse justify-content-end">
+         <li><a routerLink = "" routerLinkActive = "active">Logout</a></li>
+     </ul>
+
+  </nav>
+</header>
+
+
+
 <!--
 <nav>
   <a (click)="logout()" routerLink = "/" routerLinkActive = "active">Logout</a>
@@ -24,7 +50,97 @@
       {{link.label}}
     </a>
   </nav>
-  <h3>This is test text.  Pay no heed to the man behind the curtain</h3>
+
+
+  
+    <body class="w3-light-grey">
+    
+    <!-- Page Container -->
+    <div class="w3-content w3-margin-top" style="max-width:1400px;">
+    
+      <!-- The Grid -->
+      <div class="w3-row-padding">
+      
+        <!-- Left Column -->
+        <div class="w3-third">
+        
+          <div class="w3-white w3-text-grey w3-card-4">
+            <div class="w3-display-container">
+<!--            <img src="" style="width:100%" alt="Avatar">   -->  
+            </div>
+            
+            <div class="w3-container">
+              <h2>"Provider Name"</h2>
+              <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-blue"></i>"Office Address"</p>
+              <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-blue"></i>"Email"</p>
+              <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-blue"></i>"Phone Number"</p>
+              <hr>
+              <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-blue"></i>Language</b></p>
+              <p>"English"</p>
+              <div class="w3-light-grey w3-round-large"></div>
+              <br>
+            </div>
+          </div><br>
+          </div>
+     <!-- End Left Column -->
+      
+    
+        <!-- Right Column -->
+        <div class="w3-twothird">
+        
+          <div class="w3-container w3-card w3-white w3-margin-bottom">
+            <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-calendar fa-fw w3-margin-right w3-xxlarge w3-text-blue"></i>Today's Appointments</h2>
+            <div class="w3-container">
+              <h5 class="w3-opacity"><b>Sample title text</b></h5>
+              <h6 class="w3-text-black"><i class="fa fa-calendar fa-fw w3-margin-right"></i>appointment date and time</h6>
+              <p>Client Information</p>
+              <hr>
+            </div>
+            <div class="w3-container">
+              <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-arrow-right fa-fw w3-margin-right w3-xxlarge w3-text-blue"></i>Communications</h2>
+              <h5 class="w3-opacity"><b>Client Messages</b></h5>
+              <h6 class="w3-text-black"><i class=" fa-fw w3-margin-right"></i>Date Taking Medications</h6>
+              <hr>
+            </div>
+            <div class="w3-container">
+              <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-bars fa-fw w3-margin-right w3-xxlarge w3-text-blue"></i>Medical History</h2>
+              <p>"Medical History Information/Notes" </p><br>
+            </div>
+          </div>
+    
+          <div class="w3-container w3-card w3-white">
+            
+            <div class="w3-container">
+              
+            </div>
+          </div>
+    
+        <!-- End Right Column -->
+        </div>
+        
+      <!-- End Grid -->
+      </div>
+      
+      <!-- End Page Container -->
+    </div>
+    
+    
+    </body>
+    
+    
+    <!--
+    <nav mat-tab-nav-bar>
+        <a mat-tab-link 
+          *ngFor="let link of navLinks"
+          [routerLink]="link.path"
+          routerLinkActive #rla="routerLinkActive"
+          [active]="rla.isActive"
+          style="color:black">
+          {{link.label}}
+        </a>
+      </nav>
+    -->
+      <router-outlet></router-outlet>
   <router-outlet></router-outlet>
 
 
