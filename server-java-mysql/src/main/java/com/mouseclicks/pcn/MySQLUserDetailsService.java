@@ -5,6 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.sercurity.core.userdetails.*;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -19,7 +23,7 @@ public class MySQLUserDetailsService implements UserDetailsService {
 	private PasswordEncoder passwordEncoder;
 	
 	@Override
-	public UserDetails loadUserByUsername(String username) {
+	public User loadUserByUsername(String username) {
 		User user = clientRepository.findByUsername(username);
 		if(user == null) {
 			throw new UsernameNotFoundException(username);
@@ -29,8 +33,8 @@ public class MySQLUserDetailsService implements UserDetailsService {
 	}
 	
 	public UserDetails Save(User newUser) {
-		newUser.setPassword(passwordEncoder.encode(newUser.getPassword()));
-		User savedUser = ClientRepository.save(newUser);
+		((Object) newUser).setPassword(passwordEncoder.encode(newUser.getPassword()));
+		User savedUser = ClientRepository.saveAll(newUser);
 		return new org.springframework.security.core.userdetails.User
 				(saved.User.getUsername(), savedUser.getPassword(), getAuthorities());
 	}

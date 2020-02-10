@@ -17,20 +17,19 @@ public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
 	super(authenticationManager);	
 	}
 	
-	@Override
 	protected void doFilterinternal(HttpServletRequest req, HttpServletResponse res, FilterChain chain)
 	throws IOException, ServletException {
 		String header = req.getHeader(HEADER_STRING);
 		if (header == null  || !header.startsWith(TOKEN_PREFIX)){
-			chain.doFilter(request,  res);
+			chain.doFilter(req,  res);
 			return;
 	}
-		private UsernamePasswordAuthenticationToken authentication = getauthentication(req);
+		UsernamePasswordAuthenticationToken authentication = getAuthentication(req);
 		SecurityContextHolder.getContext().setAuthentication(authentication);
-		chain.doFilter(request,  res);
+		chain.doFilter(req,  res);
 }
 	private UsernamePasswordAuthenticationToken getAuthentication(HttpServletRequest reuest) {
-		String token = request.getHeader(HEADER_STRING);
+		String token = req.getHeader(HEADER_STRING);
 		if (token != null) {
 			String user = JWT.require(Algorithm.HMAC512(SECRET.getBytes()))
 					.build()
