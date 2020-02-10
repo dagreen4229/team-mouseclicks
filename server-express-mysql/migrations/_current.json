@@ -6,6 +6,7 @@
                 "idClient_User": {
                     "allowNull": false,
                     "primaryKey": true,
+                    "autoIncrement": true,
                     "field": "idClient_User",
                     "seqType": "Sequelize.INTEGER(11)"
                 },
@@ -35,6 +36,7 @@
                 "User_ID": {
                     "allowNull": false,
                     "primaryKey": true,
+                    "autoIncrement": true,
                     "references": {
                         "model": "provider_user",
                         "key": "User_ID"
@@ -137,7 +139,8 @@
                     "primaryKey": true,
                     "references": {
                         "model": "client_user",
-                        "key": "idClient_User"
+                        "key": "idClient_User",
+                        "autoIncrement": true
                     },
                     "field": "idClient_User",
                     "seqType": "Sequelize.INTEGER(11)"
@@ -155,17 +158,17 @@
                 "DOB": {
                     "allowNull": false,
                     "field": "DOB",
-                    "seqType": "Sequelize.DATEONLY"
+                    "seqType": "Sequelize.STRING(10)"
                 },
                 "Gender": {
                     "allowNull": false,
                     "field": "Gender",
-                    "seqType": "Sequelize.STRING"
+                    "seqType": "Sequelize.STRING(6)"
                 },
                 "Phone_number": {
                     "allowNull": false,
                     "field": "Phone_number",
-                    "seqType": "Sequelize.STRING(10)"
+                    "seqType": "Sequelize.INTEGER(10)"
                 },
                 "Street_Address": {
                     "allowNull": false,
@@ -186,10 +189,64 @@
                     "allowNull": true,
                     "field": "Profile_Pic",
                     "seqType": "Sequelize.STRING(45)"
+                },
+                "Deleted": {
+                    "allowNull": false,
+                    "defaultValue": {
+                        "value": "0"
+                    },
+                    "field": "Deleted",
+                    "seqType": "Sequelize.BOOLEAN"
+                }
+            },
+            "indexes": []
+        },
+        "appointments": {
+            "tableName": "appointments",
+            "schema": {
+                "APT_ID": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "APT_ID",
+                    "seqType": "Sequelize.INTEGER(11)"
+                },
+                "idClientUser": {
+                    "allowNull": false,
+                    "field": "idClientUser",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "User_ID": {
+                    "allowNull": false,
+                    "field": "User_ID",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "Appointment_Date": {
+                    "allowNull": false,
+                    "field": "Appointment_Date",
+                    "seqType": "Sequelize.STRING(10)"
+                },
+                "Appointment_Time": {
+                    "allowNull": false,
+                    "field": "Appointment_Time",
+                    "seqType": "Sequelize.STRING(6)"
+                },
+                "Appointment_Notes": {
+                    "allowNull": false,
+                    "field": "Appointment_Notes",
+                    "seqType": "Sequelize.INTEGER(10)"
+                },
+                "Deleted": {
+                    "allowNull": false,
+                    "defaultValue": {
+                        "value": "0"
+                    },
+                    "field": "Deleted",
+                    "seqType": "Sequelize.BOOLEAN"
                 }
             },
             "indexes": []
         }
     },
-    "revision": 7
+    "revision": 8
 }

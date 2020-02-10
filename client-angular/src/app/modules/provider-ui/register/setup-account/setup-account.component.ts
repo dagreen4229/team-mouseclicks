@@ -14,7 +14,7 @@ import { AlertService,
   styleUrls: ['./setup-account.component.css']
 })
 export class SetupAccountComponent implements OnInit {
-  registerForm: FormGroup;
+  ProfileForm: FormGroup;
   loading = false;
   submitted = false;
 
@@ -27,7 +27,7 @@ export class SetupAccountComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.registerForm = this.formBuilder.group({
+    this.ProfileForm = this.formBuilder.group({
       User_ID: ['', Validators.required],
       First_name: ['', Validators.required],
       Last_name: ['', Validators.required],
@@ -40,16 +40,16 @@ export class SetupAccountComponent implements OnInit {
   }
 
       // convenience getter for easy access to form fields
-      get f() { return this.registerForm.controls; }
+      get f() { return this.ProfileForm.controls; }
 
       onSubmit() {
         this.submitted = true;
 
         // stop here if form is invalid
-        if (this.registerForm.invalid) {
+        if (this.ProfileForm.invalid) {
             return;
         } else {
-            this.registerProviderService.RegisterPProfile(this.registerForm.value)
+            this.registerProviderService.RegisterPProfile(this.ProfileForm.value)
             .pipe(first())
             .subscribe(
             puser => {

@@ -22,6 +22,15 @@ router.get('/clientUsers', function(req, res, next) {
     });
   });
 
+  // Call to pull all appointments -- *Functional*
+router.get('/appointments', function(req, res, next) {
+  models.appointments.findAll({}).then(appointmentsFound => {
+      res.setHeader('Content-Type', 'application/json')
+      res.send(JSON.stringify(appointmentsFound)
+    );
+  });
+});
+
 // Call to POST a new Provider user
 router.post('/registerPUser', function(req,res,next){
   models.provider_user.create(req.body)
@@ -67,6 +76,18 @@ router.post('/registerPProfile', function(req,res,next){
   .then(newPProfile => {
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify(newPProfile));
+  })
+  .catch(err => {
+    res.status(400);
+    res.send(err.message)
+  })
+});
+
+router.post('/createAppointment', function(req,res,next) {
+  models.appointments.create(req.body)
+  .then(newApt => {
+    res.setHeader('Content-Type', 'application/json');
+    res.send.apply(JSON.stringify(newApt));
   })
   .catch(err => {
     res.status(400);
