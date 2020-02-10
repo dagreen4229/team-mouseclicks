@@ -1,128 +1,84 @@
 package com.mouseclicks.pcn;
- 
+
 import java.sql.Timestamp;
 import javax.persistence.*;
- 
 
- @Entity
+@Entity
+@Table(name = "provider_profile")
 public class Provider {
-	 @Id
-	 @GeneratedValue(strategy = GenerationType.AUTO)
-	 private Long id;
-	 
-	 @Column(nullable = false, unique = true)
-	 private String username;
-	 
-	 private String password;
-	 
-	 public Long getId() {
-		 return id;
-	 }
-	 
-	 public void setId(Long id) {
-		 this.id = id;
-	 }
-	 
-	 public String getUsername() {
-		 return username;
-	 }
-	 
-	 public void setUsername (String username) {
-		 this.username = username;
-	 }
-	 
-	 public String getPassword() {
-		 return password;
-	 }
-	 
-	 public void setPassword(String password) {
-		 this.password = password;
-		 
-	 }
- }
-	 
-/*	 @GeneratedValue(strategy = GenerationType.AUTO)
-	 private Integer id;
-	 private String name;
-	 private String content;
-	 
-	 
-	 public Integer getId() {
-		 return id;
-	 }
-	 public void setId(Long id) {
-		 this.id = id;
-	 }
-	 
-	 public String getName() {
-		 return name;
-	 }
-	 
-	 public void setName(String name) {
-		 this.name = name;
-	 }
-	 
-	 public String getContent() {
-		 return content;
-	 }
-	 
-	 public void setContent(String content) {
-		 this.content = content;
-	 }
- }
-	 
-	 
-	 
-	 
-/* private int provider_id;
- private String first_name;
- private String last_name;
- private Timestamp last_update;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer User_ID;
+	private String First_name;
+	private String Last_name;
+	private String Office_Address;
+	private String City;
+	private String State;
+	private String Phone_number;
+	private String Deleted;
 
+	public Integer getUser_ID() {
+		return User_ID;
+	}
 
-public int getProvider() {
-	return provider_id;
-   }
+	public void setUser_ID(Integer user_ID) {
+		User_ID = user_ID;
+	}
 
+	public String getFirst_name() {
+		return First_name;
+	}
 
-public void setProvider(int provider_id) 
-{
-     this.provider_id = provider_id;
-     }
+	public void setFirst_name(String first_name) {
+		First_name = first_name;
+	}
 
+	public String getLast_name() {
+		return Last_name;
+	}
 
-public String getFirst_name() 
-{
-       return first_name;
-      }
+	public void setLast_name(String last_name) {
+		Last_name = last_name;
+	}
 
+	public String getOffice_Address() {
+		return Office_Address;
+	}
 
-public void setFirst_name(String first_name) 
-{
-	this.first_name = first_name;
-    }
+	public void setOffice_Address(String office_Address) {
+		Office_Address = office_Address;
+	}
 
+	public String getCity() {
+		return City;
+	}
 
-public String getLast_name() 
-{
-	return last_name;
-   }
+	public void setCity(String city) {
+		City = city;
+	}
 
+	public String getState() {
+		return State;
+	}
 
-public void setLast_name(String last_name) 
-{
-	this.last_name = last_name;
-   }
+	public void setState(String state) {
+		State = state;
+	}
 
+	public String getPhone_number() {
+		return Phone_number;
+	}
 
-public Timestamp getLast_update() 
-{
-	return last_update;
-   }
+	public void setPhone_number(String phone_number) {
+		Phone_number = phone_number;
+	}
 
+	public String getDeleted() {
+		return Deleted;
+	}
 
-public void setLast_update(Timestamp last_update) 
-{
-	this.last_update = last_update;
-   }
-}*/
+	public void setDeleted(String deleted) {
+		Deleted = deleted;
+	}
+
+}
