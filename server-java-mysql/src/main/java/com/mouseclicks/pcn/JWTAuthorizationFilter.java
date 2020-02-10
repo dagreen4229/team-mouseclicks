@@ -29,15 +29,15 @@ public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 		chain.doFilter(request,  res);
 }
-	private UsernamePawwordAuthenticationToken getAuthentication(HttpServletRequest reuest) {
+	private UsernamePasswordAuthenticationToken getAuthentication(HttpServletRequest reuest) {
 		String token = request.getHeader(HEADER_STRING);
 		if (token != null) {
-			String provider = JWT.require(Algorithm.HMAC512(SECRET.getBytes()))
+			String user = JWT.require(Algorithm.HMAC512(SECRET.getBytes()))
 					.build()
 					.verify(token.replace(TOKEN_PREFIX, ""))
 					.getSubject();
-			if (provider != null) {
-				return new UsernamePasswordAuthenticationToken(provider, null, new Arraylist<>());
+			if (user != null) {
+				return new UsernamePasswordAuthenticationToken(user, null, new Arraylist<>());
 			}
 			return null;
 		}

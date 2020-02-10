@@ -32,7 +32,7 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 	 throws AuthenticationException {
 		 try {
 			 com.mouseclicks.pcn.Provider creds = new ObjectMappeer()
-					 .readValue(req.getInputStream(), com.mouseclicks.pcn.Provider.class);
+					 .readValue(req.getInputStream(), com.mouseclicks.pcn.User.class);
 			 
 			 return authenticationManager.authenticate(
 					 new UsernamePasswordAuthticationToken(
@@ -48,7 +48,7 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 	 protected void succesfulAuthentication(HttpServletRequest req, HttpServletResponse rex, FilterChain chain, Authentication auth)
 	 throws IOException, ServletException {
 		 String token = JWT.create()
-				 .withSubject((Provider) auth.getPrincipal()).getUsername())
+				 .withSubject((User) auth.getPrincipal()).getUsername())
                  .withExpiresAt( new Date(System.currentTimeMillis() + EXPIRATION_TIME))
                  .sign(HMAC512(SECRET.getBytes()));
                  res.addHeader(HEADER_STRING, TOKEN_PREFIX + token);
