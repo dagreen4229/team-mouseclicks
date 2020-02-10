@@ -12,12 +12,12 @@
       <hr>
   
       <label for="username"><b>Username</b></label>
-      <input type="text" class="form-control" formControlName="email" placeholder="Enter Username" name="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+      <input type="text" class="form-control" formControlName="username" placeholder="Enter Username" name="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
       <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
           <div *ngIf="f.username.errors.required">Username is required</div>
       </div>  
 
-      <label for="psw"><b>Password</b></label>
+      <label for="password"><b>Password</b></label>
       <input type="password" class="form-control" fromControlName="password" placeholder="Enter Password" name="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
       <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
           <div *ngIf="f.password.errors.required">Password is required</div>

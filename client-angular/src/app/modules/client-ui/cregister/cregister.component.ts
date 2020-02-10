@@ -3,23 +3,30 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { RegisterProviderService } from 'src/app/Shared/services/register-provider.service'
-import { AlertService } from '../../../Shared/services';
+import { AlertService,
+  CauthenticationService
+} from '../../../Shared/services';
 
-@Component({
-  selector: 'app-cregister',
-  templateUrl: './cregister.component.html',
-  styleUrls: ['./cregister.component.css']
-})
+@Component({templateUrl: 'cregister.component.html'})
+
 export class CregisterComponent implements OnInit {
   registerForm: FormGroup;
   loading = false;
   submitted = false;
+
+
   constructor(
-    private RegisterProviderService:RegisterProviderService,
+    private RegisterProviderService: RegisterProviderService,
     private formBuilder: FormBuilder,
     private router: Router,
+    private cauthenticationService: CauthenticationService,
     private alertService: AlertService
-    ) { }
+    ) { 
+
+      if(this.cauthenticationService.currentUserValue) {
+        this.router.navigate(['/cdashboard']);
+      }
+    }
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
@@ -28,6 +35,8 @@ export class CregisterComponent implements OnInit {
       Password: ['', [Validators.required, Validators.minLength(6)]]
   });
   }
+
+  get f() { return this.registerForm.controls; }
 
 
   onSubmit() {
@@ -40,9 +49,9 @@ export class CregisterComponent implements OnInit {
         this.RegisterProviderService.RegisterCUser(this.registerForm.value)
         .pipe(first())
         .subscribe(
-        puser => {
+        Cuser => {
             this.alertService.success('Registration successful', true);
-            this.router.navigate(['/cdashboard']);
+            this.router.navigate(['/clogin/csetup-account']);
         },
         );
     }

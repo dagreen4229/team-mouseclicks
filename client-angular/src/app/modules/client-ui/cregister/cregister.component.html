@@ -23,17 +23,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <nav class="navbar navbar-expand-md">
         <div><a href="www.example.com"></a></div>
-
-        <ul class="navbar-nav">
-            <li><a routerLink="/clogin" routerLinkActive="active">Back</a></li>
-        </ul>
+            
+            <div class="navbar-nav">
+            <a routerLink="/clogin" routerLinkActive="active">Back</a>
+            </div>    
     </nav>
 </header>
 
 <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     <div class="container">
         <h1>Register</h1>
-        <p>Please fill in Email and Create Password.</p>
+        <p>Please fill in Email and Create Username and Password.</p>
         <hr>
         <div class="form-group">
             <label for="email"><b>Email</b></label>
