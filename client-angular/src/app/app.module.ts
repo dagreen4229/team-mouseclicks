@@ -12,7 +12,8 @@ import { fakeBackendProvider } from './fakeBackend';
 import { JwtInterceptor, ErrorInterceptor } from './fakeBackend';
 
 // Services
-import { FilterPipe } from './Shared/services';
+import { FilterPipe } from './Shared/services/';
+import { MustMatch } from './Shared/services/';
 
 // Client side components
 import { CloginComponent } from './modules/client-ui/clogin/clogin.component';

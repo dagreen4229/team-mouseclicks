@@ -42,39 +42,42 @@ hr {
   opacity:1;
 }
 
-/* Add a blue text color to links */
-a {
+/* Add a blue text color to links 
+ a {
   color: dodgerblue;
 }
+*/
+
+/*  Navigation Bar */
+.navbar {
+  width: 100%;
+  background-color: #12A7F0 ;
+  overflow: auto;
+  border: 1px solid grey;
+  cursor: pointer;
+}
+
+.navbar a {
+  float: left;
+  text-align: center;
+  padding: 5px;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+} 
 
 /* Set a grey background color and center the text of the "sign in" section */
-.container signin {
+/*.container signin {
   background-color: #f1f1f1;
   text-align: center;
 }
+*/
 
-/*  Navigation Bar */
-.navbar-nav {
-    width: 100%;
-    background-color: #12A7F0 ;
-    overflow: auto;
-    border: 1px solid grey;
-    cursor: pointer;
-  }
-  
-.navbar a {
-    float: left;
-    text-align: center;
-    padding: 5px;
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-  }
-  
-  
-  @media screen and (max-width: 400px) {
-    .navbar a {
-      float: none;
-      display: block;
-    }
-} 
