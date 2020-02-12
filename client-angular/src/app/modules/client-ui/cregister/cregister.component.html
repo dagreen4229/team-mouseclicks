@@ -1,34 +1,10 @@
-<!--<h1>Please create your account.</h1>
+<nav>
+    <div class="navbar">
+        <a routerLink="/clogin" routerLinkActive="active">Back</a>
+    </div>
+</nav>
 
-<form id="signup" name="signup" method="POST" action="/client-ui/register">
-    <div>
-        <label for="email">Email:  </label>
-        <input type="text" name="email" required>
-    </div>
-    <div>
-        <label for="username">Create Username:  </label>
-        <input type="text" name="username" required>
-    </div>
-    <div>
-        <label for="Password">Create Password:  </label>
-        <input type="password" name="Password" required>
-    </div>
-    <div>
-        <button type="submit" routerLink="/clogin/setup-account">Submit</button>
-    </div>
-</form>
--->
-
-<header>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <nav class="navbar navbar-expand-md">
-        <div><a href="www.example.com"></a></div>
-            
-            <div class="navbar-nav">
-            <a routerLink="/clogin" routerLinkActive="active">Back</a>
-            </div>    
-    </nav>
-</header>
+<br>
 
 <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     <div class="container">
@@ -42,29 +18,38 @@
         </div>
         <div class="form-group">
             <label for="Username"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="username" required formControlName="Username"
-                class="form-control">
+            <input type="text" class="form-control" formControlName="Username" placeholder="Enter Username" />
+            <!--<input type="text" class="form-control" formControlName="Username" placeholder="Enter Username" name="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+            <div *ngIf="submitted && f.username.errors" class="invalid-feedback"></div>
+            <div *ngIf="f.username.errors.required">Username is Required</div>-->
         </div>
         <div class="form-group">
             <label for="password"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="password" required formControlName="Password"
-                class="form-control">
+            <input type="password" class="form-control" formControlName="Password" placeholder="Enter Password" />
+            <!--<input type="password" class="form-control" formControlName="password" placeholder="Enter Password" name="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+            <div *ngIf="f.password.errors.required">Password is Required</div>
+            <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>-->
         </div>
-        <label for="password-repeat"><b>Repeat Password</b></label>
-        <input type="password" placeholder="Repeat Password" name="password-repeat" required class="form-control">
+        <!-- <div class="form-group">
+            <label><b>Confirm Password</b></label>
+             <input type="password" class="form-control" formControlName="confirmPassword" placeholder="Confirm Password" />-->
+        <!-- <input type="password" class="form-control" formControlName="confirmPassword" placeholder="Confirm Password" name="confirmPassword"
+                [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }">
+            <div *ngIf="f.confirmPassword.errors.required">Confirm Password is Required</div>
+            <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must Match</div> 
+        </div>-->
         <hr>
 
         <div class="form-group">
             <button [disabled]="loading" class="btn btn-primary">Register</button>
-            <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+            <img *ngIf="loading" class="pl-3"
+                src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
             <a routerLink="/clogin" class="btn btn-link">Cancel</a>
         </div>
-        <!--
-        <button type="submit" routerLink="/clogin/setup-account" class="registerbtn">Next</button>
-        -->
+
     </div>
-        
-    </form>
-    <div class="container signin">
-        <p>Already have an account? <a href="clogin">Sign in</a>.</p>
-    </div>
+
+</form>
+<div class="container signin">
+    <p>Already have an account? <a href="clogin">Sign in</a>.</p>
+</div>
