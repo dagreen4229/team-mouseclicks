@@ -15,6 +15,7 @@ public class Provider {
 	private String City;
 	private String State;
 	private String Phone_number;
+	private String Email_Address;
 	private String Deleted;
 
 	public Integer getUser_ID() {
@@ -79,6 +80,24 @@ public class Provider {
 
 	public void setDeleted(String deleted) {
 		Deleted = deleted;
+	}
+
+	public Object getUsername() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Object getPassword() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getEmail_Address() {
+		return Email_Address;
+	}
+
+	public void setEmail_Address(String email_Address) {
+		Email_Address = email_Address;
 	}
 
 }

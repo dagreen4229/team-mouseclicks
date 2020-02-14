@@ -52,56 +52,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/api/provider_profile")
 
 
-public class ProviderController {
-	@Autowired
-	private MySQLUserDetailsService userService;
-	
-	@PostMapping("/register")
-	public void register(@RequestBody Provider newUser) {
-		userService.Save(newUser);
-	}
-	
-	@GetMapping("/")
-	public String getHomePage() {
-		return "home";
-	}
-	
-	@GetMapping("/secure")
-	public String getSecurePage() {
-		return "secure";	
-		}
-	@GetMapping("/login")
-	public String getLoginPage() {
-		return "login";
-	}
-	@GetMapping("/register")
-	public String getRegisterPage() {
-		return "register";
-	}
-	
-// group-dev code
-@GetMapping()
-public ResponseEntity<List<String>> 
-getProvider_profile() {
-	
-List<String> provider_profile = 
-new ArrayList<String>();
-return ResponseEntity.ok(provider_profile);
-	}
-}
-
-//need david to check provider controller
-	/*@Autowired
-	//ProviderRepository dao;
-	
-	//@Value("${spring.datasource.url}")
-	//private String url;
-	
-	//@Value("${spring.datasource.username}")
-	
-	
-	@Value("${spring.datasource.password}")
-	private String password;
 	
  @GetMapping()
  public List<Provider> getProvider(){
@@ -118,8 +68,8 @@ return ResponseEntity.ok(provider_profile);
  }
  }
  
-/* @PostMapping("/provider")
- public ResponseEntity<Provider> postProvider(@RequestBody Provider provider) {
+ @PostMapping("/provider")
+ public ResponseEntity <Provider> postProvider(@RequestBody Provider provider) {
 	 Provider createdProvider = dao.save(provider);
 	 return ResponseEntity.ok(createdProvider);
  }
@@ -162,7 +112,12 @@ return ResponseEntity.ok(provider_profile);
 	 
 	 model.addAttribute("provider", provider);
 	 return "provider";
+ } 
  }
+ 
+ 
+ }
+ 
  
 }
 */

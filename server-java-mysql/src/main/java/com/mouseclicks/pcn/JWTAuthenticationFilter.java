@@ -15,8 +15,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import com.auth0.jwt.JWT;
@@ -28,14 +30,14 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 		 this.authenticationManager = authenticationManager;
 	 }
 	 @Override 
-	 public Authentication attemptAuthentication(HttpServletRequest req, httpServletResponse res)
+	 public Authentication attemptAuthentication(HttpServletRequest req, HttpServletResponse res)
 	 throws AuthenticationException {
 		 try {
-			 com.mouseclicks.pcn.Provider creds = new ObjectMappeer()
-					 .readValue(req.getInputStream(), com.mouseclicks.pcn.Provider.class);
+			 com.mouseclicks.pcn.Provider creds = new ObjectMapper()
+					 .readValue(req.getInputStream(), com.mouseclicks.pcn.User.class);
 			 
 			 return authenticationManager.authenticate(
-					 new UsernamePasswordAuthticationToken(
+					 (Authentication) new UsernamePasswordAuthenticationToken(
 							 creds.getUsername(),
 							 creds.getPassword(),
 							 new ArrayList<>())
@@ -44,11 +46,10 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 			 throw new RuntimeException(e);
 		 }
 	 }
-	 @Override
 	 protected void succesfulAuthentication(HttpServletRequest req, HttpServletResponse rex, FilterChain chain, Authentication auth)
 	 throws IOException, ServletException {
 		 String token = JWT.create()
-				 .withSubject((Provider) auth.getPrincipal()).getUsername())
+				 .withSubject((User) auth.getPrincipal()).getUsername())
                  .withExpiresAt( new Date(System.currentTimeMillis() + EXPIRATION_TIME))
                  .sign(HMAC512(SECRET.getBytes()));
                  res.addHeader(HEADER_STRING, TOKEN_PREFIX + token);
