@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'PCN';
 
-  apiUrl: string = "http://localhost:3000";
+  apiUrl: string = "http://localhost:8080";
 }
