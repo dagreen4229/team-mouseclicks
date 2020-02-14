@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
 })
 export class ClientProfileService {
 //  url: string = "http://localhost:3000/client_profiles"
-  url: string = "http://localhost:3000/clientProfiles"
+  url: string = "http://localhost:8080/client/profiles"
 
   constructor(private http: HttpClient) { }
 
