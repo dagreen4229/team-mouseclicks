@@ -7,7 +7,7 @@ import { Observable, of } from "rxjs";
   providedIn: 'root'
 })
 export class ProviderProfileService {
-  url: string = "http://localhost:3000/provider_profiles"
+  url: string = "http://localhost:8080/provider/profiles"
 
   getProviderProfiles(): Observable<pprofile[]> {
     return this.http.get<pprofile[]>(this.url);
