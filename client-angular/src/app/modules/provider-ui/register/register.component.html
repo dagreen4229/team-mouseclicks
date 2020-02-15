@@ -1,4 +1,4 @@
-<h1>Welcome! Please create your account.</h1>
+
 <!--
 <form id="signup" name="signup" method="POST" action="/plogin/register">
     <div>
@@ -19,39 +19,47 @@
 </form>
 -->
 
+
 <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="container">
+        <h1>Register</h1>
+        <p>Please fill in Email and Create Username and Password.</p>
+        <hr>
     <div class="form-group">
-        <label for="Email_Address">Email</label>
-        <input type="text" formControlName="Email_Address" class="form-control"  />
+        <label for="Email_Address"><b>Email</b></label>
+        <input type="text" formControlName="Email_Address" class="form-control" placeholder="Enter Email" />
         <!-- <input type="text" formControlName="Email_Address" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Email.errors }" /> -->
         <!-- <div *ngIf="submitted && f.Email.errors" class="invalid-feedback"> -->
             <!-- <div *ngIf="f.Email.errors.required">Email is required</div> -->
         <!-- </div> -->
     </div>
     <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" formControlName="Username" class="form-control"  />
+        <label for="username"><b>Username</b></label>
+        <input type="text" formControlName="Username" class="form-control" placeholder="Enter Username" />
         <!-- <input type="text" formControlName="Username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" /> -->
         <!-- <div *ngIf="submitted && f.username.errors" class="invalid-feedback"> -->
             <!-- <div *ngIf="f.username.errors.required">Username is required</div> -->
         <!-- </div> -->
     </div>
     <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" formControlName="Password" class="form-control"  />
+        <label for="password"><b>Password</b></label>
+        <input type="password" formControlName="Password" class="form-control" placeholder="Enter Password" />
         <!-- <input type="password" formControlName="Password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" /> -->
         <!-- <div *ngIf="submitted && f.password.errors" class="invalid-feedback"> -->
             <!-- <div *ngIf="f.password.errors.required">Password is required</div>
             <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div> -->
         <!-- </div> -->
     </div>
+    <hr>
     <div class="form-group">
         <button [disabled]="loading" class="btn btn-primary">Register</button>
         <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
         <a routerLink="/plogin" class="btn btn-link">Cancel</a>
     </div>
-    <div class="container signin">
-        <p>Already have an account? <a href="plogin">Sign in</a>.</p>
-    </div>
+    
+</div>
 
 </form>
+<div class="container signin">
+    <p>Already have an account? Return to <a style="color:blue" href="plogin">Sign in</a>.</p>
+</div>

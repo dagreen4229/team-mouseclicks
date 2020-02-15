@@ -1,10 +1,4 @@
-<nav>
-    <div class="navbar">
-        <a routerLink="/clogin" routerLinkActive="active">Back</a>
-    </div>
-</nav>
 
-<br>
 
 <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     <div class="container">
@@ -51,5 +45,5 @@
 
 </form>
 <div class="container signin">
-    <p>Already have an account? <a href="clogin">Sign in</a>.</p>
+    <p>Already have an account? Return to <a href="clogin" style="color:blue">Sign in</a>.</p>
 </div>
