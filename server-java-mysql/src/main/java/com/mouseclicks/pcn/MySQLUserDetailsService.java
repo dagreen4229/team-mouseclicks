@@ -9,7 +9,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.sercurity.core.userdetails.*;
+import org.springframework.security.core.userdetails.*;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -17,14 +17,14 @@ import org.springframework.stereotype.Service;
 public class MySQLUserDetailsService implements UserDetailsService {
 	
 	@Autowired
-	private ClientRepository clientRepository;
+	private UserRepository userRepository;
 	
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 	
 	@Override
 	public User loadUserByUsername(String username) {
-		User user = clientRepository.findByUsername(username);
+		User user = userRepository.findByUsername(username);
 		if(user == null) {
 			throw new UsernameNotFoundException(username);
 		}
@@ -33,12 +33,11 @@ public class MySQLUserDetailsService implements UserDetailsService {
 	}
 	
 	public UserDetails Save(User newUser) {
-		((Object) newUser).setPassword(passwordEncoder.encode(newUser.getPassword()));
-		User savedUser = ClientRepository.saveAll(newUser);
-		return new org.springframework.security.core.userdetails.User
-				(saved.User.getUsername(), savedUser.getPassword(), getAuthorities());
+		 newUser.getPassword(passwordEncoder.encode(newUser.getPassword()));
+		User savedUser = userRepository.save(newUser);
+		return new org.springframework.security.core.userdetails.User(savedUser.getUsername(),
+				savedUser.getPassword(), getAuthorities());
 	}
-	
 	private List<SimpleGrantedAuthority>getAuthorities() {
 		List<SimpleGrantedAuthority> authList = new ArrayList<>();
 		authList.add(new SimpleGrantedAuthority("ROLE_USER"));
