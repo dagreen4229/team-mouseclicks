@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { first } from 'rxjs/operators';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { AuthenticationService, AlertService } from 'src/app/Shared/services';
+import { AlertService, CauthenticationService } from 'src/app/Shared/services';
 
 
 @Component({
@@ -27,11 +28,11 @@ export class CloginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
-    private authenticationService: AuthenticationService,
+    private cauthenticationService: CauthenticationService,
     private alertService: AlertService
    ) {
 
-    if (this.authenticationService.currentUserValue) {
+    if (this.cauthenticationService.currentUserValue) {
       this.router.navigate(['/cdashboard']);
     }
     }
@@ -56,7 +57,7 @@ export class CloginComponent implements OnInit {
     }
 
     this.loading = true;
-    this.authenticationService.login(this.f.username.value, this.f.password.value)
+    this.cauthenticationService.login(this.f.username.value, this.f.password.value)
       .pipe(first())
       .subscribe(
           data => {
