@@ -11,6 +11,10 @@ a {
   color: blue;
 }
 
+.container {
+  width: 100%
+}
+
 #account {
   border-right: solid;
   border-color: rgb(246, 248, 248);
