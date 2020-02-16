@@ -61,7 +61,7 @@ onSubmit() {
       .pipe(first())
       .subscribe(
           data => {
-              this.router.navigate([this.returnUrl]);
+              this.router.navigate(["/pdashboard"]);
           },
           error => {
               this.alertService.error(error);

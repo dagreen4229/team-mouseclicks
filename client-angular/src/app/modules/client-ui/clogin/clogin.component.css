@@ -1,8 +1,8 @@
 * {box-sizing: border-box}
 
 /* Add padding to containers */
-.container {
-  padding: 16px;
+.form-group {
+  padding: 20px;
 }
 
 /* Full-width input fields */
@@ -61,7 +61,7 @@ hr {
     color: dodgerblue;
     border: none;
     cursor: pointer;
-    margin-left: 3px;
+    margin-left: 5px;
   
   }
   
