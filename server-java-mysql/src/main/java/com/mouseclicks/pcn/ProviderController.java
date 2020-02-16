@@ -17,6 +17,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Timestamp;
 import java.sql.ResultSet;
 
 import org.springframework.stereotype.Controller;
@@ -83,7 +84,7 @@ public List<User> getProvider() {
  
  @PostMapping("/provider")
  public ResponseEntity <Provider> postProvider(@RequestBody Provider provider) {
-	 Provider createdProvider = dao.save(provider);
+	 Provider createdProvider = dao.saveAll(provider);
 	 return ResponseEntity.ok(createdProvider);
  }
  
@@ -114,10 +115,10 @@ public List<User> getProvider() {
 			  
 			  Provider newProvider = new Provider();
 			  
-			 ((Object) newProvider).setProvider_id(rs.getInt("provider_id"));
-			  ((com.mouseclicks.pcn.Provider) newProvider).setFirst_name(rs.getString("first_name"));
-			  ((com.mouseclicks.pcn.Provider) newProvider).setLast_name(rs.getString("last_name"));
-			  ((Object) newProvider).setLast_update(rs.getTimestamp("last_update"));
+			 newProvider.setProvider_id(rs.getInt("provider_id"));
+			  newProvider.setFirst_name(rs.getString("first_name"));
+			  newProvider.setLast_name(rs.getString("last_name"));
+			  newProvider.setLast_update(rs.getTimestamp("last_update"));
 			  
 			  provider.add(newProvider);
 		  }
@@ -128,12 +129,12 @@ public List<User> getProvider() {
 	 
 	 model.addAttribute("provider", provider);
 	 return "provider";
- } 
+ }
+
+ 
+ 
  }
  
  
- }
- 
- 
-} 
+
 

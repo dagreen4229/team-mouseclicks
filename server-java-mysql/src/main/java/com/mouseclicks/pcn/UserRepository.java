@@ -12,5 +12,7 @@ User findByUsername(String username);
 Optional<User> findById(Integer id);
 
 Provider save(Provider provider);
+
+Provider saveAll(Provider provider);
 	
 }
