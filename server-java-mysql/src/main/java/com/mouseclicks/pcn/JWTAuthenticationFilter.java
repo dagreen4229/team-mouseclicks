@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 
+import javax.crypto.SecretKey;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -49,7 +50,7 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 	 throws IOException, ServletException {
 		 String token = JWT.create().withSubject(((User) auth.getPrincipal()).getUsername())
                  .withExpiresAt( new Date(System.currentTimeMillis() + EXPIRATION_TIME))
-                 .sign(HMAC512(SECRET.getBytes()));
+                 .sign(HMAC512(SecretKey.getBytes()));
                  res.addHeader(HEADER_STRING, TOKEN_PREFIX + token);
                  
 	 }

@@ -33,12 +33,11 @@ public class MySQLUserDetailsService implements UserDetailsService {
 	}
 	
 	public UserDetails Save(User newUser) {
-		((Object) newUser).setPassword(passwordEncoder.encode(newUser.getPassword()));
-		User savedUser = ClientRepository.saveAll(newUser);
-		return new org.springframework.security.core.userdetails.User
-				(newUser.User.getUsername(), savedUser.getPassword(), getAuthorities());
+		 newUser.getPassword(passwordEncoder.encode(newUser.getPassword()));
+		User savedUser = userRepository.save(newUser);
+		return new org.springframework.security.core.userdetails.User(savedUser.getUsername(),
+				savedUser.getPassword(), getAuthorities());
 	}
-	
 	private List<SimpleGrantedAuthority>getAuthorities() {
 		List<SimpleGrantedAuthority> authList = new ArrayList<>();
 		authList.add(new SimpleGrantedAuthority("ROLE_USER"));
