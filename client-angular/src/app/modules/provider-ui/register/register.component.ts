@@ -8,7 +8,11 @@ import { AlertService,
     AuthenticationService
  } from '../../../Shared/services';
 
-@Component({templateUrl: 'register.component.html'})
+@Component({
+    selector: 'app-register',
+    templateUrl: 'register.component.html',
+    styleUrls: ['./register.component.css']
+})
 export class RegisterComponent implements OnInit {
     registerForm: FormGroup;
     loading = false;

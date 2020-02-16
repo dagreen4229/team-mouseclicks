@@ -8,7 +8,11 @@ import { AlertService,
 } from '../../../Shared/services';
 //import { MustMatch } from 'src/app/Shared/services/must-match.service';//
 
-@Component({templateUrl: 'cregister.component.html'})
+@Component({
+  selector: 'app-cregister',
+  templateUrl: 'cregister.component.html',
+  styleUrls: ['./cregister.component.css']
+})
 
 export class CregisterComponent implements OnInit {
   registerForm: FormGroup;
