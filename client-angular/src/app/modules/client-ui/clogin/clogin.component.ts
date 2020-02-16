@@ -60,7 +60,7 @@ export class CloginComponent implements OnInit {
       .pipe(first())
       .subscribe(
           data => {
-              this.router.navigate([this.returnUrl]);
+              this.router.navigate(['/cdashboard']);
           },
           error => {
               this.alertService.error(error);
