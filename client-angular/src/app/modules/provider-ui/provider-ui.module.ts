@@ -12,6 +12,7 @@ import { SearchRecordsComponent } from './dashboard/search-records/search-record
 import { DisplayClientComponent } from './dashboard/display-client/display-client.component';
 //import { ClientDetailComponent } from './dashboard/client-detail/client-detail.component';
 import { SearchClientsComponent } from './dashboard/search-records/search-clients/search-clients.component';
+import { ListClientsComponent } from './dashboard/search-records/list-clients/list-clients.component';
 //import { ViewCalendarComponent } from './dashboard/view-calendar/view-calendar.component';
 
 
@@ -28,7 +29,8 @@ import { SearchClientsComponent } from './dashboard/search-records/search-client
 //    ViewCalendarComponent,
     PLoginComponent, 
     PaccountComponent,
-    RegisterComponent, 
+    RegisterComponent,
+    ListClientsComponent, 
   ],
   
   imports: [
