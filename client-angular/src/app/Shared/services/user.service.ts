@@ -1,4 +1,3 @@
-/*
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -30,4 +29,3 @@ export class UserService {
         return this.http.delete(`${environment.apiUrl}/puser/${id}`);
     }
 }
-*/

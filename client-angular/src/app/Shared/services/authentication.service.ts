@@ -10,7 +10,7 @@ import { environment } from '@environments/environment'
 export class AuthenticationService {
     private currentUserSubject: BehaviorSubject<Puser>;
     public currentUser: Observable<Puser>;
-
+   
     constructor(private http: HttpClient) {
         this.currentUserSubject = new BehaviorSubject<Puser>(JSON.parse(localStorage.getItem('currentUser')));
         this.currentUser = this.currentUserSubject.asObservable();
@@ -33,7 +33,7 @@ export class AuthenticationService {
                 return user;
             }));
     }
-
+   
     logout() {
         // remove user from local storage to log user out
         localStorage.removeItem('currentUser');
