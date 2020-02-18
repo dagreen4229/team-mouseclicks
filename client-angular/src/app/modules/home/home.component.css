@@ -1,5 +1,5 @@
 body {
-  font-family: Helvetica, sans-serif;
+  font-family: Georgia;
   padding: 5%;
   text-align: center;
 }
@@ -68,7 +68,7 @@ body {
   width: 100%;
   background-color: #12A7F0 ;
   overflow: auto;
-  border: 1px solid grey;
+  border: 1px solid whitesmoke;
 }
 
 .navbar a {

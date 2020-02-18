@@ -1,4 +1,4 @@
-package com.mouseclicks.pcn;
+package com.mouseclicks.provider;
 
 import java.sql.Timestamp;
 import javax.persistence.*;
@@ -17,6 +17,7 @@ public class Provider {
 	private String Phone_number;
 	private String Email_Address;
 	private String Deleted;
+	private String Appointments;
 
 	public Integer getUser_ID() {
 		return User_ID;
@@ -98,6 +99,24 @@ public class Provider {
 
 	public void setEmail_Address(String email_Address) {
 		Email_Address = email_Address;
+	}
+
+	public void setProvider_id(int Provider_id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setLast_update(Timestamp timestamp) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public String getAppointments() {
+		return Appointments;
+	}
+	
+	public void setAppointments(String Appointments) {
+		this.Appointments = Appointments;
 	}
 
 }
