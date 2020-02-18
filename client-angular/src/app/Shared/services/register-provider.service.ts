@@ -11,27 +11,27 @@ import { Observable, of } from "rxjs";
   providedIn: 'root'
 })
 export class RegisterProviderService {
-  url: string = "http://localhost:3000/registerUser"
-  url2: string = "http://localhost:8080/registerCUser"
-  url3: string = "http://localhost:3000/registerCProfile"
-  url4: string = "http://localhost:3000/registerPProfile"
+  // url: string = "http://localhost:3000/registerUser"
+  // url2: string = "http://localhost:8080/registerCUser"
+   url3: string = "http://localhost:3000/registerCProfile"
+   url4: string = "http://localhost:3000/registerPProfile"
 
-  // url: string = "http://localhost:8080/register/PUser"
+  url: string = "http://localhost:8080/register/user"
   // url2: string = "http://localhost:8080/register/CUser"
   // url3: string = "http://localhost:8080/register/CProfile"
   // url4: string = "http://localhost:8080/register/PProfile"
 
   constructor(private http: HttpClient) { }
 
-  RegisterPUser(value) {
-    console.log(value)
-    return this.http.post<Puser[]>(this.url, value);
-  }
+  // RegisterPUser(value) {
+  //   console.log(value)
+  //   return this.http.post<Puser[]>(this.url, value);
+  // }
 
-  RegisterCUser(value) {
-    console.log (value)
-    return this.http.post<Cuser[]>(this.url2, value);
-  }
+  // RegisterCUser(value) {
+  //   console.log (value)
+  //   return this.http.post<Cuser[]>(this.url2, value);
+  // }
 
   RegisterUser(value) {
     console.log (value)
