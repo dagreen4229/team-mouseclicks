@@ -8,8 +8,11 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ClientProfileService {
-//  url: string = "http://localhost:3000/client_profiles"
-  url: string = "http://localhost:8080/client/profiles"
+ // Express URL Below
+ url: string = "http://localhost:3000/ClientProfiles"
+
+ //Java URL Below
+//  url: string = "http://localhost:8080/client/profiles"
 
   setGroupFilter$ = new Subject<any>();
   getGroupFilter = this.setGroupFilter$.asObservable();
