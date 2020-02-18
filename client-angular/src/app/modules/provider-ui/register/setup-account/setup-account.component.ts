@@ -28,7 +28,7 @@ export class SetupAccountComponent implements OnInit {
 
   ngOnInit() {
     this.ProfileForm = this.formBuilder.group({
-      User_ID: ['', Validators.required],
+//      User_ID: ['', Validators.required],
       First_name: ['', Validators.required],
       Last_name: ['', Validators.required],
       Office_Address: ['', Validators.required],
@@ -44,11 +44,13 @@ export class SetupAccountComponent implements OnInit {
 
       onSubmit() {
         this.submitted = true;
-
+        
         // stop here if form is invalid
         if (this.ProfileForm.invalid) {
+          console.log("form is not valid")
             return;
         } else {
+          console.log("form is valid")
             this.registerProviderService.RegisterPProfile(this.ProfileForm.value)
             .pipe(first())
             .subscribe(

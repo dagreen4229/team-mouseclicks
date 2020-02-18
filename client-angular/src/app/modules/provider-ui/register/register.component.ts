@@ -35,9 +35,12 @@ export class RegisterComponent implements OnInit {
 
     ngOnInit() {
         this.registerForm = this.formBuilder.group({
-            Email_Address: ['', Validators.required],
+            
             Username: ['', Validators.required],
-            Password: ['', [Validators.required, Validators.minLength(6)]]
+            Password: ['', [Validators.required, Validators.minLength(6)]],
+            Email_Address: ['', Validators.required],
+            userType: ['', Validators.required]
+            //userType = true determines user is a provider
         });
     }
 
@@ -50,16 +53,36 @@ export class RegisterComponent implements OnInit {
 
         // stop here if form is invalid
         if (this.registerForm.invalid) {
+            console.log("Whoops something went wrong")
             return;
         } else {
-            this.registerProviderService.RegisterPUser(this.registerForm.value)
-            .pipe(first())
-            .subscribe(
-            puser => {
-                this.alertService.success('Registration successful', true);
-                this.router.navigate(['/plogin/setup-account']);
-            },
-            );
+            console.log("registration initiated")
+            if (this.registerForm.value.userType==="1") {
+                this.registerProviderService.RegisterUser(this.registerForm.value)
+                .pipe(first())
+                .subscribe(
+                user => {
+                    this.alertService.success('Registration successful', true);
+                    console.log(this.registerForm.value.Provider)
+                    this.router.navigate(['/plogin/setup-account']);
+                },
+                );
+            
+            } else {
+                this.registerProviderService.RegisterUser(this.registerForm.value)
+                .pipe(first())
+                .subscribe(
+                user => {
+                    this.alertService.success('Registration successful', true);
+                    console.log(this.registerForm.value.Provider)
+                    this.router.navigate(['/plogin/csetup-account']);
+                },
+                );
+            }
+
+
+            // console.log(this.registerForm.value)
+            // console.log(this.registerForm.value.userType)
         }
 
 

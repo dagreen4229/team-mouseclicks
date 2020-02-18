@@ -70,7 +70,7 @@ const routes: Routes = [
     component: SetupAccountComponent
   },
   {
-    path: 'clogin/setup-account',
+    path: 'plogin/csetup-account',
     component: CsetupAccountComponent
   },
   {

@@ -31,25 +31,38 @@ router.get('/appointments', function(req, res, next) {
   });
 });
 
-// Call to POST a new Provider user
-router.post('/registerPUser', function(req,res,next){
-  models.provider_user.create(req.body)
-  .then(newPUser => {
-    res.setHeader('Content-Type', 'application/json');
-    res.send(JSON.stringify(newPUser));
-  })
-  .catch(err => {
-    res.status(400);
-    res.send(err.message)
-  })
-});  
+// // Call to POST a new Provider user
+// router.post('/registerPUser', function(req,res,next){
+//   models.provider_user.create(req.body)
+//   .then(newPUser => {
+//     res.setHeader('Content-Type', 'application/json');
+//     res.send(JSON.stringify(newPUser));
+//   })
+//   .catch(err => {
+//     res.status(400);
+//     res.send(err.message)
+//   })
+// });  
 
-// Call to post a new Client user
-router.post('/registerCUser', function(req,res,next){
-  models.client_user.create(req.body)
-  .then(newCUser => {
+// // Call to post a new Client user
+// router.post('/registerCUser', function(req,res,next){
+//   models.client_user.create(req.body)
+//   .then(newCUser => {
+//     res.setHeader('Content-Type', 'application/json');
+//     res.send(JSON.stringify(newCUser));
+//   })
+//   .catch(err => {
+//     res.status(400);
+//     res.send(err.message)
+//   })
+// });
+
+// Call to post a new User
+router.post('/registerUser', function(req,res,next){
+  models.user.create(req.body)
+  .then(newUser => {
     res.setHeader('Content-Type', 'application/json');
-    res.send(JSON.stringify(newCUser));
+    res.send(JSON.stringify(newUser));
   })
   .catch(err => {
     res.status(400);
