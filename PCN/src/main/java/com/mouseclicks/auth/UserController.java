@@ -19,8 +19,9 @@ public class UserController {
     userService.Save(newUser);
   }
   @GetMapping("/pdashboard/{id}")
-  public ResponseEntity<String> withUserId(@PathVariable String id) {
-	  return ResponseEntity.ok(String.format(id));
+  public ResponseEntity<ResponseEntity<User>> withUserId(@PathVariable("id") Integer id) {
+	  return ResponseEntity.ok(userService.findById(id));
 	  
   }
+
 }
