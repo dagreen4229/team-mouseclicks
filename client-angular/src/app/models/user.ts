@@ -1,8 +1,8 @@
 export class User {
   
     ID: number;
-    Username: string;
-    Password: string;
+    username: string;
+    password: string;
     Email_Address: string;
     Provider: boolean;
     Admin: boolean;

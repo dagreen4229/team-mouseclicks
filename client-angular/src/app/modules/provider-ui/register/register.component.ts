@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { RegisterProviderService } from 'src/app/Shared/services/register-provider.service'
 import { AlertService, 
@@ -34,10 +34,16 @@ export class RegisterComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.registerForm = new FormGroup({
+            username: new FormControl(),
+            password: new FormControl(), 
+            Email_Address: new FormControl(),
+            userType: new FormControl()
+        })
         this.registerForm = this.formBuilder.group({
             
-            Username: ['', Validators.required],
-            Password: ['', [Validators.required, Validators.minLength(6)]],
+            username: ['', Validators.required],
+            password: ['', [Validators.required, Validators.minLength(6)]],
             Email_Address: ['', Validators.required],
             userType: ['', Validators.required]
             //userType = true determines user is a provider
