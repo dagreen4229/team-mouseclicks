@@ -11,12 +11,13 @@ import { Observable, of } from "rxjs";
   providedIn: 'root'
 })
 export class RegisterProviderService {
-  // url: string = "http://localhost:3000/registerUser"
-  // url2: string = "http://localhost:8080/registerCUser"
-   url3: string = "http://localhost:3000/registerCProfile"
-   url4: string = "http://localhost:3000/registerPProfile"
 
-  url: string = "http://localhost:8080/register/user"
+ // url: string = "http://localhost:3000/registerUser"
+ // url2: string = "http://localhost:8080/registerCUser"
+  url3: string = "http://localhost:3000/registerCProfile"
+  url4: string = "http://localhost:3000/registerPProfile"
+
+   url: string = "http://localhost:8080/register/User"
   // url2: string = "http://localhost:8080/register/CUser"
   // url3: string = "http://localhost:8080/register/CProfile"
   // url4: string = "http://localhost:8080/register/PProfile"

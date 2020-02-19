@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+/*import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Puser } from "./models/puser";
 import { Observable } from "rxjs";
@@ -21,4 +21,4 @@ export class PuserService {
   addPuser(task): Observable<Puser> {
     return this.http.post<Puser>(this.apiUrl, Puser);
   }
-}
+} */
