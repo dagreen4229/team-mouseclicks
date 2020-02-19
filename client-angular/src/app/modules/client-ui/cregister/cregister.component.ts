@@ -7,7 +7,7 @@ import { RegisterProviderService } from 'src/app/Shared/services/register-provid
 import { AlertService,
   AuthenticationService
 } from '../../../Shared/services';
-//import { MustMatch } from 'src/app/Shared/services/must-match.service';//
+
 
 @Component({
   selector: 'app-cregister',
@@ -31,7 +31,7 @@ export class CregisterComponent implements OnInit {
     ) { 
         // redirect to home if already logged in
         if (this.authenticationService.currentUserValue) { 
-            this.router.navigate(['/pdashboard']);
+            this.router.navigate(['/cdashboard']);
         }
     }
 
