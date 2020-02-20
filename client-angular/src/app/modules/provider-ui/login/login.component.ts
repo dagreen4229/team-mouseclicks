@@ -61,7 +61,10 @@ onSubmit() {
       .pipe(first())
       .subscribe(
           data => {
+            //if(user is provider)
               this.router.navigate(["/pdashboard"]);
+              //if ((or else)) (user is client)
+              //this.router.navigate(["/cdashboard"]);
           },
           error => {
               this.alertService.error(error);
