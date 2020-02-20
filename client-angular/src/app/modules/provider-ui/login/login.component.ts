@@ -62,7 +62,7 @@ onSubmit() {
       .subscribe(
           data => {
             //if(user is provider)
-              this.router.navigate(["/pdashboard"]);
+              this.router.navigate(["/cdashboard", { id: 1 }]);
               //if ((or else)) (user is client)
               //this.router.navigate(["/cdashboard"]);
           },
