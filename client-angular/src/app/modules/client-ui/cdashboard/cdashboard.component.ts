@@ -1,10 +1,11 @@
 import { Component, OnInit, Input, ChangeDetectorRef, OnChanges, SimpleChanges, ɵCompiler_compileModuleSync__POST_R3__ } from '@angular/core';
 import { cprofile } from 'src/app/models/cprofile';
 import { ClientProfileService } from 'src/app/Shared/services/client-profile.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { FilterUserService } from '../../../../app/Shared/services/filter-user.service';
 import { FilterPipe } from '../../../../app/Shared/services/filter.pipe';
 import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 import { HttpResponse } from '@angular/common/http';
 
 @Component({
@@ -27,16 +28,21 @@ export class CdashboardComponent implements OnInit {
   http: any;
   service: any;
   response: any;
+  cprofile: any;
   id: any;
 
   constructor(
-   /* private ClientProfileService: ClientProfileService,
+    private ClientProfileService: ClientProfileService,
     private route: ActivatedRoute,
-    private router: Router */
+    private router: Router
   ) { }
 
-  ngOnInit() /*void*/ {
-  //  this.loadProfiles()
+  ngOnInit() {
+    this.cprofile = this.route.paramMap.pipe(
+    switchMap((params: ParamMap) => 
+    this.service.getUserId(params.get('id')))
+    );
+   console.log(this.cprofile);
   }
 
  /* ngOnChanges(changes: SimpleChanges): void {
@@ -94,10 +100,12 @@ export class CdashboardComponent implements OnInit {
     getUserId() {
     //return this.http.get(`http://localhost8080:/pdashboard/${id}`);
     
-    this.service.getUserId(this.id).subscribe(
-       response => this.response = response
+    this.cprofile.getUserId(this.id).subscribe(
+      // response => this.response = response
+      response => (this.cprofile = response)
+       
      //error => this.(error)
-    )
-
+    );
+      console.log(this.response);
     }
   }

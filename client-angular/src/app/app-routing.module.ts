@@ -77,6 +77,10 @@ const routes: Routes = [
     path: 'pdashboard/search-records/history/:Client_ID',
     component: ClientHistoryComponent
   },
+  {
+    path: 'cdashboard/:id',
+    component: CdashboardComponent
+  },
 
 
 
