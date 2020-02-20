@@ -21,6 +21,13 @@
     }
 } 
 
+@media screen and (max-width: 400px) {
+  .container {
+    float: none;
+    display: block;
+  }
+} 
+
 body { 
   margin: 0; 
 }

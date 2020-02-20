@@ -25,6 +25,11 @@ export class ClientProfileService {
     return this.http.get<cprofile[]>(this.url);
   }
 
+
+  getUserId(id) {
+    return this.http.get<cprofile>(`http://localhost8080:/cdashboard/${id}`);
+  }
+
     // getProfiles() {
     //   return this.http.get(this.url)
     // }
