@@ -10,8 +10,8 @@ public class User {
 	private @Column(name = "username", nullable = false, unique = true) String username;
 	private String password;
 	private String Email_Address;
-	private boolean Provider;
-	private boolean Admin;
+	private Integer user_type;
+	private String role;
 	private boolean Deleted;
 	private String token;
 
@@ -47,21 +47,6 @@ public class User {
 		Email_Address = email_Address;
 	}
 
-	public boolean isProvider() {
-		return Provider;
-	}
-
-	public void setProvider(boolean provider) {
-		Provider = provider;
-	}
-
-	public boolean isAdmin() {
-		return Admin;
-	}
-
-	public void setAdmin(boolean admin) {
-		Admin = admin;
-	}
 
 	public boolean isDeleted() {
 		return Deleted;
@@ -77,6 +62,22 @@ public class User {
 
 	public void setToken(String token) {
 		this.token = token;
+	}
+
+	public Integer getUserType() {
+		return user_type;
+	}
+
+	public void setUserType(Integer userType) {
+		this.user_type = userType;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 }

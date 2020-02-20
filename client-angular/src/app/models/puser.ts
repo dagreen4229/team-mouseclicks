@@ -1,11 +1,14 @@
+import { Role } from './role';
+
 export class Puser {
   
     User_ID: number;
     Username: string;
     Password: string;
     Email_Address: string;
-    Admin: boolean;
+    user_type: number;
+    Role: Role;
     Deleted: boolean;
-    token: string;
+    token?: string;
 }
 
