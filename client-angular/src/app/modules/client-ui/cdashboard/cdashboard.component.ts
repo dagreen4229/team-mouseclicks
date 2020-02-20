@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ClientProfileService } from 'src/app/Shared/services/client-profile.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 
@@ -15,14 +17,26 @@ export class CdashboardComponent implements OnInit {
     { path: 'cdashboard/calendar', label: 'Appointments'}
     
   ];
- 
+   
+   id = ''
 
-
-  constructor() { }
+  constructor(private route:ActivatedRoute,private service:ClientProfileService) { }
 
   ngOnInit() {
+ this.id = this.route.snapshot.params['id'];
+ this.getId();
+
+  }
+  
+  getId() {
+    this.service.getUserId(this.id).subscribe(
+      response => this.handleSuccessfulResponse(response.idClient_User)
+    );
+  }
+
+  handleSuccessfulResponse(response) {
+    console.log(response)
   }
 
   
-
 }

@@ -5,6 +5,8 @@ import { first } from 'rxjs/operators';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AlertService, AuthenticationService } from 'src/app/Shared/services';
+import { UserService } from 'src/app/Shared/services/user.service';
+import { User } from 'src/app/models/user';
 
 /* This file will show when a user clicks on the "Provider Login" link on the default route */
 
@@ -18,6 +20,7 @@ export class PLoginComponent implements OnInit {
     loading = false;
     submitted = false;
     returnUrl: string;
+    User: User;
 
 
 
@@ -27,7 +30,8 @@ export class PLoginComponent implements OnInit {
         private route: ActivatedRoute,
         private router: Router,
         private authenticationService: AuthenticationService,
-        private alertService: AlertService
+        private alertService: AlertService,
+        private userService: UserService
   ) { 
 
     if (this.authenticationService.currentUserValue) { 
@@ -61,11 +65,29 @@ onSubmit() {
       .pipe(first())
       .subscribe(
           data => {
-              this.router.navigate(["/pdashboard"]);
-          },
+          this.userService.getByUsername(this.f.username.value).pipe(first()).subscribe( user => {
+            this.User = user;
+            this.redirect()
+             // response => this.logResponse(response)
+          });
+             // this.router.navigate(["/cdashboard", { id: 1 }]);
+            
+             // this.router.navigate(["/pdashboard"]);
+            },           
           error => {
               this.alertService.error(error);
               this.loading = false;
           });
+}
+
+redirect() {
+  if(this.User.authorities[0].authority == "client") {
+    this.router.navigate(["/cdashboard", { id: 1 }]);
+  }
+  if(this.User.authorities[0].authority == "provider") {
+    this.router.navigate(["/pdashboard"]);
+  }
+
+  console.log(this.User.authorities[0].authority);
 }
 }

@@ -1,7 +1,7 @@
 package com.mouseclicks.auth;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,14 +14,15 @@ public class UserController {
   @Autowired
   private MySQLUserDetailsService userService;
 
-  @PostMapping("/regiter/user")
+  @PostMapping("/register/user")
   public void register(@RequestBody User newUser) {
     userService.Save(newUser);
   }
-  @GetMapping("/pdashboard/{id}")
-  public ResponseEntity<ResponseEntity<User>> withUserId(@PathVariable("id") Integer id) {
-	  return ResponseEntity.ok(userService.findById(id));
-	  
+  
+  @GetMapping("/user/{username}")
+  public UserDetails getUserDetails(@PathVariable("username")String username) {
+	  return userService.loadUserByUsername(username);
   }
+  
 
 }

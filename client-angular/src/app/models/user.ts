@@ -1,11 +1,5 @@
 export class User {
-  
-    ID: number;
+    password: string; 
     username: string;
-    password: string;
-    Email_Address: string;
-    Provider: boolean;
-    Admin: boolean;
-    Deleted: boolean;
-    token: string;
+    authorities: any[];
 }

@@ -12,7 +12,7 @@ public class Client {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id_client_user;
+	private Long id_client_user;
 	private String city;
 	private String dob;
 	private String first_name;
@@ -22,11 +22,11 @@ public class Client {
 	private String state;
 	private String street_address;
 
-	public Integer getId_client_user() {
+	public Long getId_client_user() {
 		return id_client_user;
 	}
 
-	public void setId_client_user(Integer id_client_user) {
+	public void setId_client_user(Long id_client_user) {
 		this.id_client_user = id_client_user;
 	}
 
