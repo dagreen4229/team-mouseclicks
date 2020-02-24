@@ -71,7 +71,8 @@ a {
   }
 
   .btn {
-    background-color: #12A7F0
+    background-color: #12A7F0;
+    color: white;
   }
   
   @media screen and (max-width: 400px) {

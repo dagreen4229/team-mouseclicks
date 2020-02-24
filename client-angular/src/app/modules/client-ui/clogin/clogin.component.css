@@ -1,10 +1,8 @@
-
-
 * {box-sizing: border-box}
 
 /* Add padding to containers */
-.container {
-  padding: 16px;
+.form-group {
+  padding: 20px;
 }
 
 /* Full-width input fields */
@@ -52,6 +50,8 @@ hr {
     font-size: 18px;
   }
 
+  
+
   .btn {
     background-color: #12A7F0
     
@@ -61,7 +61,7 @@ hr {
     color: dodgerblue;
     border: none;
     cursor: pointer;
-    margin-left: 3px;
+    margin-left: 5px;
   
   }
   

@@ -14,15 +14,17 @@
 <br>
 
 
+
 <!-- The form -->
-<form class="example" action="action_page.php">
+<!--<form class="example" action="action_page.php">
   <input type="text" placeholder="Provider Search..." name="search">
   <button type="submit"><i class="fa fa-search"></i></button>
-</form>
-
+ batmatt3
+</form>-->
 
 
 <head>
+  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js'></script>
 <meta charset="UTF-8">
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,25 +35,25 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 <body class="w3-light-grey">
 
 <!-- Page Container -->
-<div class="w3-content w3-margin-top" style="max-width:1400px;">
+<div class="w3-content w3-margin-top" style="max-width:1400px;" ng-controller="userCtrl">
 
   <!-- The Grid -->
   <div class="w3-row-padding">
   
     <!-- Left Column -->
     <div class="w3-third">
-      
+      <h1>Welcome {{id}}</h1>
       <div class="w3-white w3-text-grey w3-card-4">
         <div class="w3-display-container"></div>
         
         <div class="w3-container">
-          <h2>"Client Name"</h2>
-          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-blue"></i>"Address"</p>
-          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-blue"></i>"Email"</p>
-          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-blue"></i>"Phone Number"</p>
+          <h2>{{First_Name}}{{Last_Name}}</h2>
+          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-blue"></i>{{Street_Address}}</p>
+          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-blue"></i>{{Email}}</p>
+          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-blue"></i>{{Phone_number}}</p>
           <hr>
-          <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-blue"></i>Language</b></p>
-          <p>"English"</p>
+          <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-blue"></i>Gender</b></p>
+          <p>{{Gender}}</p>
           <div class="w3-light-grey w3-round-large"></div>
           <br>
         </div>
@@ -66,7 +68,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
       <div class="w3-container w3-card w3-white w3-margin-bottom">
         <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-calendar fa-fw w3-margin-right w3-xxlarge w3-text-blue"></i>Appointments</h2>
         <div class="w3-container">
-          <h5 class="w3-opacity"><b>"Provider Name and Address</b></h5>
+          <h5 class="w3-opacity"><b>"Provider Name and Address"</b></h5>
           <h6 class="w3-text-black"><i class="fa fa-calendar fa-fw w3-margin-right"></i><a routerLink = "/cdashboard/calendar" routerLinkActive = "active">Appointment Date and Time</a></h6>
           <p>Provider Information</p>
           <hr>
@@ -98,7 +100,6 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
   
   <!-- End Page Container -->
 </div>
-
 
 </body>
 

@@ -4,13 +4,8 @@ module.exports = function(sequelize, DataTypes) {
   return sequelize.define('provider_profile', {
     User_ID: {
       type: DataTypes.INTEGER(11),
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-      references: {
-        model: 'provider_user',
-        key: 'User_ID'
-      }
+      allowNull: true,
+      primaryKey: true
     },
     First_name: {
       type: DataTypes.STRING(45),

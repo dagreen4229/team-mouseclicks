@@ -12,7 +12,8 @@ import { fakeBackendProvider } from './fakeBackend';
 import { JwtInterceptor, ErrorInterceptor } from './fakeBackend';
 
 // Services
-import { FilterPipe } from './Shared/services';
+import { FilterPipe } from './Shared/services/';
+
 
 // Client side components
 import { CloginComponent } from './modules/client-ui/clogin/clogin.component';
@@ -35,6 +36,7 @@ import { RegisterComponent } from './modules/provider-ui/register/register.compo
 import { SetupAccountComponent } from './modules/provider-ui/register/setup-account/setup-account.component';
 
 import { ClientHistoryComponent } from './modules/provider-ui/dashboard/client-history/client-history.component';
+import { ListClientsComponent } from './modules/provider-ui/dashboard/search-records/list-clients/list-clients.component';
 
 
 
@@ -59,7 +61,7 @@ import { ClientHistoryComponent } from './modules/provider-ui/dashboard/client-h
     CregisterComponent,
     SetupAccountComponent,
     CsetupAccountComponent,
-
+    ListClientsComponent,
     CregisterComponent,
     ClientHistoryComponent
   ],

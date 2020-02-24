@@ -1,10 +1,9 @@
 package com.mouseclicks.pcn;
 import java.util.ArrayList;
-// Group-dev code
-import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import org.springframework.http.ResponseEntity;
-
+import org.springframework.security.core.userdetails.User;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,115 +17,80 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Timestamp;
 import java.sql.ResultSet;
 
-import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping; 
-import org.springframework.web.bind.annotation.RequestMapping;
 import com.mouseclicks.pcn.Provider;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RestController;
-
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.beans.factory.annotation.Autowired;
 
 
 
 
 
 
-
+@SuppressWarnings("hiding")
 @Controller
 
 
 @RestController
+
+
 @RequestMapping("/api/provider_profile")
 
 
-public class ProviderController {
-	@Autowired
-	private MySQLUserDetailsService userService;
 	
-	@PostMapping("/register")
-	public void register(@RequestBody Provider newUser) {
-		userService.Save(newUser);
-	}
-	
+ 
+ public class   ProviderController{
 	@GetMapping("/")
-	public String getHomePage() {
+	public String hetHomepage() {
 		return "home";
 	}
-	
-	@GetMapping("/secure")
-	public String getSecurePage() {
-		return "secure";	
-		}
-	@GetMapping("/login")
-	public String getLoginPage() {
-		return "login";
-	}
-	@GetMapping("/register")
-	public String getRegisterPage() {
-		return "register";
-	}
-	
-// group-dev code
+@GetMapping("/login")
+public String getLoginPage() {
+	return "login";
+}
+@GetMapping("/register")
+public String getRegisterPage() {
+	return "register";
+}
+@Autowired
+UserRepository dao;
+
 @GetMapping()
-public ResponseEntity<List<String>> 
-getProvider_profile() {
-	
-List<String> provider_profile = 
-new ArrayList<String>();
-return ResponseEntity.ok(provider_profile);
-	}
+public List<User> getProvider() {
+	List<User> foundUser = dao.findAll();
+	return foundUser;
 }
 
-//need david to check provider controller
-	/*@Autowired
-	//ProviderRepository dao;
-	
-	//@Value("${spring.datasource.url}")
-	//private String url;
-	
-	//@Value("${spring.datasource.username}")
-	
-	
-	@Value("${spring.datasource.password}")
-	private String password;
-	
- @GetMapping()
- public List<Provider> getProvider(){
-	 List<Provider> foundProvider = dao.findAll();
-	 return foundProvider;
- }
+ 
  @GetMapping("/provider/{id}")
- public ResponseEntity<Provider> getProvider(@PathVariable(value="id") Integer id) {
-	 Provider foundProvider = dao.findById(id).orElse(null);
+ public ResponseEntity<User> getProvider(@PathVariable(value="id") Integer id) {
+	 User foundProvider = dao.findById(id).orElse(null);
 	if(foundProvider == null) {
 		return ResponseEntity.notFound().header("Provider","Nothing was found with that id").build();
 	}
 	return ResponseEntity.ok(foundProvider);
  }
- }
  
-/* @PostMapping("/provider")
- public ResponseEntity<Provider> postProvider(@RequestBody Provider provider) {
-	 Provider createdProvider = dao.save(provider);
+ 
+ @PostMapping("/provider")
+ public ResponseEntity <Provider> postProvider(@RequestBody Provider provider) {
+	 Provider createdProvider = dao.saveAll(provider);
 	 return ResponseEntity.ok(createdProvider);
  }
  
  @DeleteMapping("/provider/{id}")
  public ResponseEntity<Provider> deleteProvider(@PathVariable(value="id")Integer id) {
-	 Provider foundProvider = dao.findById(id).orElse(null);
+	 User foundProvider = dao.findById(id).orElse(null);
  
  if(foundProvider == null) {
 	 return ResponseEntity.notFound().header("Provider","Nothing found with that id").build();
@@ -138,10 +102,13 @@ return ResponseEntity.ok(provider_profile);
  }
  
  public String getAllProvider(Model model) {
-	 List<Provider> provider = new ArrayList<Provider>();
+	 ArrayList<Provider> provider = new ArrayList<Provider>();
 	 Connection con;
 	 try {
-		 con = DriveManager.getConnection(url, username, password);
+		 String url;
+		String username;
+		String password;
+		con = DriverManager.getConnection(url, username, password);
 		 Statement stmt = con.createStatement();
 		 ResultSet rs = stmt.executeQuery("SELECT * FROM provider");
 		 while (rs.next() ) {
@@ -163,6 +130,11 @@ return ResponseEntity.ok(provider_profile);
 	 model.addAttribute("provider", provider);
 	 return "provider";
  }
+
  
-}
-*/
+ 
+ }
+ 
+ 
+
+

@@ -1,7 +1,7 @@
 {
   "development": {
-    "username": "root",
-    "password": "Jay$on1103",
+    "username": "nodemon",
+    "password": "Password1!",
     "database": "pcndatabase",
     "host": "127.0.0.1",
     "dialect": "mysql",

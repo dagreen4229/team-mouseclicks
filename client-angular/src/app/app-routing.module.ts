@@ -17,6 +17,8 @@ import { SetupAccountComponent } from './modules/provider-ui/register/setup-acco
 import { CsetupAccountComponent } from './modules/client-ui/cregister/csetup-account/csetup-account.component';
 
 import { ClientHistoryComponent } from './modules/provider-ui/dashboard/client-history/client-history.component';
+import { AuthGuard } from './modules/provider-ui/_Authguard';
+import { Role } from './models/role';
 
 
 const routes: Routes = [
@@ -35,7 +37,9 @@ const routes: Routes = [
   },
   {
     path: 'pdashboard',
-    component: DashboardComponent
+    component: DashboardComponent,
+    canActivate: [AuthGuard],
+    data: {roles: [Role.Provider]}
   },
   {
     path: 'cdashboard',
@@ -70,7 +74,7 @@ const routes: Routes = [
     component: SetupAccountComponent
   },
   {
-    path: 'clogin/setup-account',
+    path: 'plogin/csetup-account',
     component: CsetupAccountComponent
   },
   {

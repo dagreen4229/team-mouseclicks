@@ -8,11 +8,23 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FilterPipe implements PipeTransform {
 
   transform(items: any[], value: string, prop: string): any[] {
-    if (!items) return [];
-    if (!value) return items;
+    console.log('transform initiated!', items, value)
+    
+    if (!items) {
+      console.log("No Items to filter")
+      return []; 
+    }
+
+    if (!value) {
+      console.log("No values")
+      return items;
+    }
+
     return items.filter(singleItem =>
       singleItem[prop].tolowerCase().startWith(value.toLowerCase())
+
       );
+    console.log('transform complete!')
   }
 
 }

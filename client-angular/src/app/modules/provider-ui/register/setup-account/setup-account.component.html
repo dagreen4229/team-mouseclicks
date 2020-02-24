@@ -1,36 +1,84 @@
-<h1>Set-up your profile</h1>
+<header>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <nav class="navbar navbar-expand-md">
+        <div><a href="www.example.com"></a></div>
+
+        <ul class="navbar-nav">
+            <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+        </ul>
+    </nav>
+</header>
+ 
 
 <form [formGroup]="ProfileForm" (ngSubmit)="onSubmit()">
+    <div class="container">
+        <h1>Set-up your profile</h1>
+
+
+        <hr>
+
+        <div class="form-group">
+
+        <hr>
     <div class="form-group">
+ 
         <label for="First_name">First Name: </label>
-        <input type="text" name="First_name" required formControlName="First_name" class="form-control">
+        <input type="text" name="First_name" required formControlName="First_name" class="form-control"
+        placeholder="First Name">
     </div>
     <div class="form-group">
         <label for="Last_name">Last Name: </label>
-        <input type="text" name="Last_name" required formControlName="Last_name" class="form-control"> 
+        <input type="text" name="Last_name" required formControlName="Last_name" class="form-control"
+        placeholder="Last Name"> 
     </div>
     <div class="form-group">
         <label for="Office_Address">Office Street Address: </label>
-        <input type="text" name="Office_Address" required formControlName="Office_Address" class="form-control">
+        <input type="text" name="Office_Address" required formControlName="Office_Address" class="form-control"
+        placeholder="Street Address">
     </div>
     <div class="form-group">
         <label for="City">City: </label>
-        <input type="text" name="City" required formControlName="City" class="form-control">
+        <input type="text" name="City" required formControlName="City" class="form-control"
+        placeholder="City">
     </div>
     <div class="form-group">
         <label for="State">State: </label>
-        <input type="text" name="State" required formControlName="State" class="form-control">
+        <input type="text" name="State" required formControlName="State" class="form-control"
+        placeholder="State">
     </div>
     <div class="form-group">
         <label for="Phone_number">Phone Number: </label>
-        <input type="text" name="Phone_number" required formControlName="Phone_number" class="form-control">
+        <input type="text" name="Phone_number" required formControlName="Phone_number" class="form-control"
+        placeholder="Phone Number">
     </div>
     <div class="form-group">
         <label for="Bio">Bio: </label>
-        <input type="text" name="Bio" required formControlName="Bio" class="form-control">
+        <input type="text" name="Bio" required formControlName="Bio" class="form-control"
+        placeholder="Bio">
     </div>
+
+    <hr>
+    
+    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
     <div class="form-group">
         <button [disabled]="loading" class="btn btn-primary">Save Profile</button>
         <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
     </div>
-</form>
+
+    <div>
+        <a routerLink="/plogin" class="btn btn-link">Cancel</a>
+    </div>
+
+<div>
+<a routerLink="/plogin" class="btn btn-link">Cancel</a>
+</div>
+
+
+ 
+
+    
+
+
+
+

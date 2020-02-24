@@ -1,22 +1,33 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from "@angular/common/http";
 import { cprofile } from "src/app/models/cprofile"
-import { Observable, of } from "rxjs";
+import { Observable, of, Subject } from "rxjs";
 import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientProfileService {
-//  url: string = "http://localhost:3000/client_profiles"
-  url: string = "http://localhost:3000/clientProfiles"
+ // Express URL Below
+ url: string = "http://localhost:3000/ClientProfiles"
 
+ //Java URL Below
+  //url: string = "http://localhost:8080/client/profiles"
+
+  setGroupFilter$ = new Subject<any>();
+  getGroupFilter = this.setGroupFilter$.asObservable();
+  
   constructor(private http: HttpClient) { }
 
   //cprofile: cprofile[]
 
   getProfiles(): Observable<cprofile[]> {
     return this.http.get<cprofile[]>(this.url);
+  }
+
+
+  getUserId(id) {
+    return this.http.get<cprofile>(`http://localhost:8080/client/${id}`);
   }
 
     // getProfiles() {

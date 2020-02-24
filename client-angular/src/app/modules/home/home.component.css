@@ -87,7 +87,17 @@ body {
   }
 } 
 
-#login {
+/* #login {
   border-right: solid;
   border-color: rgb(169, 212, 219);
+} */
+
+#registerpic {
+  width: 50%;
+  height: auto
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
 }

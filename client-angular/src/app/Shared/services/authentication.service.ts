@@ -10,7 +10,7 @@ import { environment } from '@environments/environment'
 export class AuthenticationService {
     private currentUserSubject: BehaviorSubject<Puser>;
     public currentUser: Observable<Puser>;
-
+   
     constructor(private http: HttpClient) {
         this.currentUserSubject = new BehaviorSubject<Puser>(JSON.parse(localStorage.getItem('currentUser')));
         this.currentUser = this.currentUserSubject.asObservable();
@@ -21,7 +21,7 @@ export class AuthenticationService {
     }
   
     login(username: string, password: string) {
-        return this.http.post<any>(`${environment.apiUrl}/users/authenticate`, { username, password })
+        return this.http.post<any>(`${environment.apiUrl}/login`, { username, password })
             .pipe(map(user => {
                 // login successful if there's a jwt token in the response
                 if (user && user.token) {
@@ -33,7 +33,7 @@ export class AuthenticationService {
                 return user;
             }));
     }
-
+   
     logout() {
         // remove user from local storage to log user out
         localStorage.removeItem('currentUser');
